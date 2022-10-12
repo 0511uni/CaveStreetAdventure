@@ -1,0 +1,9 @@
+[
+    { 
+        "AreaNo":3
+        "AreaName":"Core",
+        "age":42,
+        "Data":[00,01,10,11],
+        "Ext":["car","fishing"]
+    }
+]

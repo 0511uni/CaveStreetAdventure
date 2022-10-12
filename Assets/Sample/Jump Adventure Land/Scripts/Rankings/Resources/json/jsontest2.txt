@@ -1,0 +1,8 @@
+[
+    { 
+        "AreaNo":2
+        "AreaName":"Earth",
+        "Data":[0x1,0x3,0xa,0xe],
+        "Ext":["shopping","tv game"]
+    },
+]

@@ -1,0 +1,8 @@
+[
+    { 
+        "AreaNo":4,
+        "AreaName":"Dummy",
+        "Data":[1,10,100,1000,10000,1213456],
+        "Ext":["box","tri","ball"]
+    },
+]
