@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class PlayerController : MonoBehaviour
 {
     //[SerializeField]
-    public float speed = 15;
+    public float speed = 30;
 
     public float jumppower = 8;
     new
@@ -22,14 +22,15 @@ public class PlayerController : MonoBehaviour
 
     public void LButtonDown()
     {
-        transform.Translate(-20, 0, 0);
+        transform.Translate(-2, 0, 0);
 
         renderer.flipX = true;
     }
 
     public void RButtonDown()
     {
-        transform.Translate(20, 0, 0);
+        rbody.AddForce(transform.right * speed);
+        //transform.Translate(1, 0, 0);
 
         renderer.flipX = false;
     }
