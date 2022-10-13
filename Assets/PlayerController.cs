@@ -22,7 +22,8 @@ public class PlayerController : MonoBehaviour
 
     public void LButtonDown()
     {
-        transform.Translate(-2, 0, 0);
+        rbody.AddForce(-transform.right * speed);
+        //transform.Translate(-2, 0, 0);
 
         renderer.flipX = true;
     }
@@ -37,7 +38,8 @@ public class PlayerController : MonoBehaviour
 
     public void UButtonDown()
     {
-        transform.Translate(0, 2, 0);
+        rbody.AddForce(transform.up * speed);
+        //transform.Translate(0, 2, 0);
 
         if (pushFlag == false)
         {
@@ -52,7 +54,8 @@ public class PlayerController : MonoBehaviour
 
     public void DButtonDown()
     {
-        transform.Translate(0, -20, 0);
+        rbody.AddForce(-transform.up * speed);
+        //transform.Translate(0, -20, 0);
     }
 
     void Start()
