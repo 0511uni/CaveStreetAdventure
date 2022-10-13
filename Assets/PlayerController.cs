@@ -37,7 +37,7 @@ public class PlayerController : MonoBehaviour
 
     public void UButtonDown()
     {
-        transform.Translate(0, 20, 0);
+        transform.Translate(0, 2, 0);
 
         if (pushFlag == false)
         {
