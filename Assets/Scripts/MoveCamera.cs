@@ -1,7 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/// <summary>
+/// Playerに合わせて動くCamera
+/// </summary>
 public class MoveCamera : MonoBehaviour
 {
     internal static Camera main;

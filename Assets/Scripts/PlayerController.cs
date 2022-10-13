@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+/// <summary>
+/// Playerの行動制御
+/// </summary>
 public class PlayerController : MonoBehaviour
 {
     //[SerializeField]
@@ -20,6 +22,9 @@ public class PlayerController : MonoBehaviour
     private bool jumpFlag;
     #endregion
 
+    /// <summary>
+    /// 左ボタンコントローラー
+    /// </summary>
     public void LButtonDown()
     {
         rbody.AddForce(-transform.right * speed);
@@ -28,6 +33,9 @@ public class PlayerController : MonoBehaviour
         renderer.flipX = true;
     }
 
+    /// <summary>
+    /// 右ボタンコントローラー
+    /// </summary>
     public void RButtonDown()
     {
         rbody.AddForce(transform.right * speed);
@@ -36,6 +44,9 @@ public class PlayerController : MonoBehaviour
         renderer.flipX = false;
     }
 
+    /// <summary>
+    /// ジャンプ（上）ボタンコントローラー
+    /// </summary>
     public void UButtonDown()
     {
         rbody.AddForce(transform.up * speed);
@@ -52,6 +63,9 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// 下ボタンのコントローラー（落下ではなくボタンで制御）
+    /// </summary>
     public void DButtonDown()
     {
         rbody.AddForce(-transform.up * speed);
