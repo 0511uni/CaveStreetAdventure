@@ -12,10 +12,12 @@ public class EnemyRoundTripAct : MonoBehaviour
 
     Rigidbody2D rb = null;
     Vector3 pos;
-    float delta = 20.0f;
 
     [SerializeField]
-    float speed = 3;
+    float delta = 1.5f;
+
+    [SerializeField]
+    float speed = 0.3f;
     new SpriteRenderer renderer;
 
     #endregion
@@ -24,7 +26,7 @@ public class EnemyRoundTripAct : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
 
-        renderer = gameObject.GetComponentInChildren<SpriteRenderer>(); //InChidren
+        renderer = gameObject.GetComponentInChildren<SpriteRenderer>();
         renderer.flipX = false;
 
         pos = transform.position;

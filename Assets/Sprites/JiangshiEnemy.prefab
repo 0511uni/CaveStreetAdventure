@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5172905466892657513}
   m_Layer: 0
   m_Name: JiangshiEnemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -100,7 +100,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.04134798, y: 0.02067399}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -111,7 +111,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.082696, y: 1.041348}
   m_EdgeRadius: 0
 --- !u!50 &5172905466892657514
 Rigidbody2D:
@@ -146,4 +146,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1ff1b9b90c66444f9b9253156d52f29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.3
+  delta: 1.5
+  speed: 3
