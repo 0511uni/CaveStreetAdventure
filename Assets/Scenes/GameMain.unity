@@ -7151,6 +7151,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: RoundTripAct 2
       objectReference: {fileID: 0}
+    - target: {fileID: 9153240312990797192, guid: e14353cfac57b3d4ebe8b372ec0ae224, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9153240312990797194, guid: e14353cfac57b3d4ebe8b372ec0ae224, type: 3}
       propertyPath: m_SortingOrder
       value: 1
@@ -7339,6 +7343,10 @@ PrefabInstance:
     - target: {fileID: 8243256923742610901, guid: 7b9f64546d367864a9a1bfa06f2f28ef, type: 3}
       propertyPath: m_Name
       value: RoundTripAct
+      objectReference: {fileID: 0}
+    - target: {fileID: 8243256923742610901, guid: 7b9f64546d367864a9a1bfa06f2f28ef, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8243256923742610902, guid: 7b9f64546d367864a9a1bfa06f2f28ef, type: 3}
       propertyPath: m_RootOrder
