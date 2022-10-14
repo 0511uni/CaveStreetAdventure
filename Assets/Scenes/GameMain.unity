@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -123,6 +123,29 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &44412117 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3441259465449941058, guid: e09de3a6e9f6e5a4c9ac5561092bd98c, type: 3}
+  m_PrefabInstance: {fileID: 1806494318}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &44412118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 44412117}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6070ee4e3a7f07c47b0363dec6b8ecb9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  resultUI: {fileID: 0}
+  resultUI3: {fileID: 0}
+  resultUI5: {fileID: 0}
+  gameOverText: {fileID: 591676581}
+  SoundSE: {fileID: 0}
+  GameOverSE: {fileID: 8300000, guid: b20f4bb6e04dcdd44bf1148d9c3beefe, type: 3}
 --- !u!1 &49566505
 GameObject:
   m_ObjectHideFlags: 0
@@ -6452,7 +6475,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 130
+    m_FontSize: 120
     m_FontStyle: 3
     m_BestFit: 0
     m_MinSize: 0
@@ -8626,7 +8649,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1465663346
 RectTransform:
   m_ObjectHideFlags: 0
