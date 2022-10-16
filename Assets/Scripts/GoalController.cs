@@ -7,9 +7,17 @@ public class GoalController : MonoBehaviour
 {
     #region//インスペクターで設定する
 
-    public Text winText;  //  リザルトのUI
+    [SerializeField]
+    Text winText;  //  リザルトのUI
 
-    public GameObject enemy;
+    [SerializeField]
+    GameObject enemy;
+
+    [SerializeField]
+    GameObject resultRSButton;
+
+    [SerializeField]
+    GameObject resultGameClearPanel;
 
     #endregion
 
@@ -24,6 +32,8 @@ public class GoalController : MonoBehaviour
     {
         winText.enabled = false;
         enemy.GetComponent<EnemyRoundTripAct>().enabled = true;
+        resultRSButton.SetActive(false);
+        resultGameClearPanel.SetActive(false);
     }
 
     void OnCollisionEnter2D(Collision2D other)
@@ -41,6 +51,11 @@ public class GoalController : MonoBehaviour
         gameClear = true;
 
         winText.enabled = true;
+
+        resultRSButton.SetActive(true);
+
+        resultGameClearPanel.SetActive(true);
+
         enemy.GetComponent<EnemyRoundTripAct>().enabled = false;
     }
 }

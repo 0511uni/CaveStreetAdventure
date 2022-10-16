@@ -8,9 +8,20 @@ using UnityEngine.UI;
 public class PitfallsPoint : MonoBehaviour
 {
     #region//インスペクターで設定する ゲームオーバー
-    public Text gameOverText; // ゲームオーバーUI
+    [SerializeField]
+    Text gameOverText; // ゲームオーバーUI
 
-    public GameObject enemy;
+    [SerializeField]
+    GameObject enemy;
+
+    [SerializeField]
+    GameObject resultRSButton;
+
+    [SerializeField]
+    GameObject resultGameOverPanel;
+
+    [SerializeField]
+    GameObject resultGameOverIcon;
 
     #endregion
 
@@ -18,6 +29,9 @@ public class PitfallsPoint : MonoBehaviour
     {
         gameOverText.enabled = false;
         enemy.GetComponent<EnemyRoundTripAct>().enabled = true;
+        resultRSButton.SetActive(false);
+        resultGameOverPanel.SetActive(false);
+        resultGameOverIcon.SetActive(false);
     }
 
     //void Update()
@@ -35,6 +49,12 @@ public class PitfallsPoint : MonoBehaviour
             print("gameovr");
             //  リザルドの表示を最新
             gameOverText.enabled = true;
+
+            resultRSButton.SetActive(true);
+
+            resultGameOverPanel.SetActive(true);
+
+            resultGameOverIcon.SetActive(true);
 
             enemy.GetComponent<EnemyRoundTripAct>().enabled = false;
         }

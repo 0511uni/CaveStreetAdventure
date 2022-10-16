@@ -838,6 +838,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   winText: {fileID: 1056030994}
   enemy: {fileID: 863423059}
+  resultRSButton: {fileID: 1704480757}
+  resultGameClearPanel: {fileID: 850666803}
 --- !u!1001 &454992804
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1072,7 +1074,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7470492719722371895, guid: 6633379e7ebe1134d9f75d659c2447da, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7470492719722371895, guid: 6633379e7ebe1134d9f75d659c2447da, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -1084,6 +1086,11 @@ PrefabInstance:
 --- !u!224 &459472615 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6107100090116112574, guid: 6633379e7ebe1134d9f75d659c2447da, type: 3}
+  m_PrefabInstance: {fileID: 459472614}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &459472616 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7470492719722371895, guid: 6633379e7ebe1134d9f75d659c2447da, type: 3}
   m_PrefabInstance: {fileID: 459472614}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &483752581
@@ -6745,7 +6752,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &748435882
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6906,6 +6913,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 838750357}
   m_CullTransparentMesh: 0
+--- !u!1 &850666803 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7470492719722371895, guid: 6633379e7ebe1134d9f75d659c2447da, type: 3}
+  m_PrefabInstance: {fileID: 1780583571}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &854292204
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9173,7 +9185,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1704480758
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9848,7 +9860,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7470492719722371895, guid: 6633379e7ebe1134d9f75d659c2447da, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7470492719722371895, guid: 6633379e7ebe1134d9f75d659c2447da, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -9908,10 +9920,6 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 44412118, guid: e09de3a6e9f6e5a4c9ac5561092bd98c, type: 3}
-      propertyPath: gameOverText
-      value: 
-      objectReference: {fileID: 591676581}
     - target: {fileID: 44412122, guid: e09de3a6e9f6e5a4c9ac5561092bd98c, type: 3}
       propertyPath: enemy
       value: 
@@ -9920,6 +9928,22 @@ PrefabInstance:
       propertyPath: gameOverText
       value: 
       objectReference: {fileID: 591676581}
+    - target: {fileID: 44412122, guid: e09de3a6e9f6e5a4c9ac5561092bd98c, type: 3}
+      propertyPath: resultRSButton
+      value: 
+      objectReference: {fileID: 1704480757}
+    - target: {fileID: 44412122, guid: e09de3a6e9f6e5a4c9ac5561092bd98c, type: 3}
+      propertyPath: resultGameOverBkGd
+      value: 
+      objectReference: {fileID: 459472616}
+    - target: {fileID: 44412122, guid: e09de3a6e9f6e5a4c9ac5561092bd98c, type: 3}
+      propertyPath: resultGameOverIcon
+      value: 
+      objectReference: {fileID: 748435881}
+    - target: {fileID: 44412122, guid: e09de3a6e9f6e5a4c9ac5561092bd98c, type: 3}
+      propertyPath: resultGameOverPanel
+      value: 
+      objectReference: {fileID: 459472616}
     - target: {fileID: 3441259465449941057, guid: e09de3a6e9f6e5a4c9ac5561092bd98c, type: 3}
       propertyPath: m_RootOrder
       value: 12
@@ -9968,8 +9992,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pitfalls
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 44412118, guid: e09de3a6e9f6e5a4c9ac5561092bd98c, type: 3}
+    m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: e09de3a6e9f6e5a4c9ac5561092bd98c, type: 3}
 --- !u!1 &1810089853
@@ -10901,6 +10924,10 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1815367135, guid: 1b9cd1e0118237d488bd3748984c6720, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.x
+      value: 2.9988096
+      objectReference: {fileID: 0}
     - target: {fileID: 4815906816806166281, guid: 1b9cd1e0118237d488bd3748984c6720, type: 3}
       propertyPath: m_Name
       value: PlatformEffectorFloor
@@ -10966,7 +10993,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8243256923742610900, guid: 7b9f64546d367864a9a1bfa06f2f28ef, type: 3}
       propertyPath: m_SpriteTilingProperty.newSize.y
-      value: 2.060887
+      value: 2.045725
       objectReference: {fileID: 0}
     - target: {fileID: 8243256923742610901, guid: 7b9f64546d367864a9a1bfa06f2f28ef, type: 3}
       propertyPath: m_Name
