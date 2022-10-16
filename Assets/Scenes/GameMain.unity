@@ -837,6 +837,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   winText: {fileID: 1056030994}
+  enemy: {fileID: 863423059}
 --- !u!1001 &454992804
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7013,6 +7014,11 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 5019545236708134024, guid: 6dc713e47f62d9b4da4932c116ef01f4, type: 3}
   m_PrefabInstance: {fileID: 854292204}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &863423059 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5172905466892657302, guid: 947d0fcd01edf2040bd94fa7d5c29714, type: 3}
+  m_PrefabInstance: {fileID: 5172905466964364392}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &866350599
 GameObject:
   m_ObjectHideFlags: 0
@@ -9906,6 +9912,10 @@ PrefabInstance:
       propertyPath: gameOverText
       value: 
       objectReference: {fileID: 591676581}
+    - target: {fileID: 44412122, guid: e09de3a6e9f6e5a4c9ac5561092bd98c, type: 3}
+      propertyPath: enemy
+      value: 
+      objectReference: {fileID: 863423059}
     - target: {fileID: 44412122, guid: e09de3a6e9f6e5a4c9ac5561092bd98c, type: 3}
       propertyPath: gameOverText
       value: 

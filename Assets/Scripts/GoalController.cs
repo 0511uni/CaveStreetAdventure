@@ -9,6 +9,8 @@ public class GoalController : MonoBehaviour
 
     public Text winText;  //  リザルトのUI
 
+    public GameObject enemy;
+
     #endregion
 
     #region//プライベート変数  bool
@@ -21,6 +23,7 @@ public class GoalController : MonoBehaviour
     void Start()
     {
         winText.enabled = false;
+        enemy.GetComponent<EnemyRoundTripAct>().enabled = true;
     }
 
     void OnCollisionEnter2D(Collision2D other)
@@ -38,5 +41,6 @@ public class GoalController : MonoBehaviour
         gameClear = true;
 
         winText.enabled = true;
+        enemy.GetComponent<EnemyRoundTripAct>().enabled = false;
     }
 }

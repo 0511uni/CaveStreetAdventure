@@ -10,11 +10,14 @@ public class PitfallsPoint : MonoBehaviour
     #region//インスペクターで設定する ゲームオーバー
     public Text gameOverText; // ゲームオーバーUI
 
+    public GameObject enemy;
+
     #endregion
 
     void Start()
     {
         gameOverText.enabled = false;
+        enemy.GetComponent<EnemyRoundTripAct>().enabled = true;
     }
 
     //void Update()
@@ -32,6 +35,8 @@ public class PitfallsPoint : MonoBehaviour
             print("gameovr");
             //  リザルドの表示を最新
             gameOverText.enabled = true;
+
+            enemy.GetComponent<EnemyRoundTripAct>().enabled = false;
         }
     }
 }
