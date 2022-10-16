@@ -123,29 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &44412117 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3441259465449941058, guid: e09de3a6e9f6e5a4c9ac5561092bd98c, type: 3}
-  m_PrefabInstance: {fileID: 1806494318}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &44412118
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 44412117}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6070ee4e3a7f07c47b0363dec6b8ecb9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  resultUI: {fileID: 0}
-  resultUI3: {fileID: 0}
-  resultUI5: {fileID: 0}
-  gameOverText: {fileID: 591676581}
-  SoundSE: {fileID: 0}
-  GameOverSE: {fileID: 8300000, guid: b20f4bb6e04dcdd44bf1148d9c3beefe, type: 3}
 --- !u!1 &49566505
 GameObject:
   m_ObjectHideFlags: 0
@@ -9925,6 +9902,14 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 44412118, guid: e09de3a6e9f6e5a4c9ac5561092bd98c, type: 3}
+      propertyPath: gameOverText
+      value: 
+      objectReference: {fileID: 591676581}
+    - target: {fileID: 44412122, guid: e09de3a6e9f6e5a4c9ac5561092bd98c, type: 3}
+      propertyPath: gameOverText
+      value: 
+      objectReference: {fileID: 591676581}
     - target: {fileID: 3441259465449941057, guid: e09de3a6e9f6e5a4c9ac5561092bd98c, type: 3}
       propertyPath: m_RootOrder
       value: 12
@@ -9973,7 +9958,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pitfalls
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 44412118, guid: e09de3a6e9f6e5a4c9ac5561092bd98c, type: 3}
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: e09de3a6e9f6e5a4c9ac5561092bd98c, type: 3}
 --- !u!1 &1810089853

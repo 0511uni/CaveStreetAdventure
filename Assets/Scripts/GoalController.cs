@@ -20,7 +20,7 @@ public class GoalController : MonoBehaviour
 
     void Start()
     {
-        winText.text = " ";
+        winText.enabled = false;
     }
 
     void OnCollisionEnter2D(Collision2D other)
@@ -36,6 +36,7 @@ public class GoalController : MonoBehaviour
     void GameClear()
     {
         gameClear = true;
-        winText.text = "You Win!";
+
+        winText.enabled = true;
     }
 }
