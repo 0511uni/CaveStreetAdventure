@@ -61,6 +61,10 @@ public class PlayerLifeManagement : MonoBehaviour
         resultRSButton.SetActive(false);
         resultGameOverPanel.SetActive(false);
         resultGameOverIcon.SetActive(false);
+
+        highScore = PlayerPrefs.GetInt(key, 0);
+        //保存しておいたハイスコアをキーで呼び出し取得し保存されていなければ0になる
+        highScoreText.text = "High Score: " + highScore.ToString();
     }
 
     //void Update()
@@ -128,7 +132,7 @@ public class PlayerLifeManagement : MonoBehaviour
     }
 
     // UI の表示を最新する
-    void SetCountText()
+    public void SetCountText()
     {
         //  スコアの表示を最新
         scoreText.text = "Count: " + score.ToString();
