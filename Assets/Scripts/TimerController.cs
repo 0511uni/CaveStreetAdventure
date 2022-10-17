@@ -54,10 +54,10 @@ public class TimerController : MonoBehaviour
         oldSeconds = 0f;
         timerText = GetComponentInChildren<Text>();
 
-        highScoreTimer = PlayerPrefs.GetFloat(Timekey, highScoreTimer);
+        highScoreTimer = PlayerPrefs.GetInt(Timekey, (int)highScoreTimer);
         
         //保存しておいたハイスコアをキーで呼び出し取得し保存されていなければ0になる
-        highScoreTimerText.text = "Timer: 00:00" + minute.ToString("00") + ":" + ((int)seconds).ToString("00").ToString();
+        highScoreTimerText.text = "Timer:" + minute.ToString("00") + "00:00" + ((int)seconds).ToString("60").ToString();
     }
 
     // Update is called once per frame
@@ -67,10 +67,10 @@ public class TimerController : MonoBehaviour
         if (seconds >= 60f)
         {
             minute++;
-            seconds -= 60;
+            seconds -= 60f;
         }
         //　値が変わった時だけテキストUIを更新
-        if (seconds != oldSeconds)
+        if ((int)seconds != (int)oldSeconds)
         {
             timerText.text = minute.ToString("00") + ":" + seconds.ToString("00");
         }
@@ -105,15 +105,15 @@ public class TimerController : MonoBehaviour
             highScoreTimer = seconds;
             //ハイスコア更新
 
-            PlayerPrefs.SetFloat(Timekey, highScoreTimer);
+            PlayerPrefs.SetInt(Timekey, (int)highScoreTimer);
             //ハイスコアを保存
 
-            highScoreTimerText.text = "Timer: " + minute.ToString("00") + ":" + seconds.ToString("00").ToString();
+            highScoreTimerText.text = "Timer: " + minute.ToString("00") + ":" + ((int)seconds).ToString("00").ToString();
             //ハイスコアを表示
         }
         else
         {
-            highScoreTimerText.text = "Timer: " + minute.ToString("00") + ":" + seconds.ToString("00").ToString();
+            highScoreTimerText.text = "Timer: " + minute.ToString("00") + ":" + ((int)seconds).ToString("00").ToString();
             //ハイスコアを表示
         }
     }
