@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -123,6 +123,65 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &22987580
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 2
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5172905466892657302, guid: 947d0fcd01edf2040bd94fa7d5c29714, type: 3}
+      propertyPath: m_Name
+      value: JiangshiEnemy2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5172905466892657512, guid: 947d0fcd01edf2040bd94fa7d5c29714, type: 3}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5172905466892657512, guid: 947d0fcd01edf2040bd94fa7d5c29714, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 5172905466892657512, guid: 947d0fcd01edf2040bd94fa7d5c29714, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.52
+      objectReference: {fileID: 0}
+    - target: {fileID: 5172905466892657512, guid: 947d0fcd01edf2040bd94fa7d5c29714, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5172905466892657512, guid: 947d0fcd01edf2040bd94fa7d5c29714, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5172905466892657512, guid: 947d0fcd01edf2040bd94fa7d5c29714, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5172905466892657512, guid: 947d0fcd01edf2040bd94fa7d5c29714, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5172905466892657512, guid: 947d0fcd01edf2040bd94fa7d5c29714, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5172905466892657512, guid: 947d0fcd01edf2040bd94fa7d5c29714, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5172905466892657512, guid: 947d0fcd01edf2040bd94fa7d5c29714, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5172905466892657512, guid: 947d0fcd01edf2040bd94fa7d5c29714, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_AddedGameObjects: []
+  m_SourcePrefab: {fileID: 100100000, guid: 947d0fcd01edf2040bd94fa7d5c29714, type: 3}
 --- !u!1 &49566505
 GameObject:
   m_ObjectHideFlags: 0
@@ -413,6 +472,7 @@ GameObject:
   - component: {fileID: 126741844}
   - component: {fileID: 126741843}
   - component: {fileID: 126741842}
+  - component: {fileID: 126741846}
   m_Layer: 5
   m_Name: TimerText
   m_TagString: Timer
@@ -462,7 +522,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 126741840}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f848d4daebd5a9b45bb941a1a83eba5e, type: 3}
   m_Name: 
@@ -512,6 +572,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 126741840}
   m_CullTransparentMesh: 0
+--- !u!114 &126741846
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 126741840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81adccf037e64384f8bbc16543e15564, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minute: 0
+  seconds: 0
+  highScoreTimerText: {fileID: 1320912214}
 --- !u!1 &235754280
 GameObject:
   m_ObjectHideFlags: 0
@@ -542,7 +617,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &235754282
 MonoBehaviour:
@@ -801,7 +876,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &401843787
 Rigidbody2D:
@@ -836,10 +911,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cdec3a240b61a1438c593564abca5cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 1502327116}
   winText: {fileID: 1056030994}
   enemy: {fileID: 863423059}
   resultRSButton: {fileID: 1704480757}
   resultGameClearPanel: {fileID: 850666803}
+  scoreText2: {fileID: 1384956892}
+  highScoreText2: {fileID: 716900371}
+  timer: {fileID: 126741840}
 --- !u!1001 &454992804
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8026,7 +8105,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1320912214
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9086,13 +9165,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cbff03e29d503d45a808065fefbc093, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameOverText: {fileID: 591676581}
+  enemy: {fileID: 1708339171}
   scoreText: {fileID: 1077790739}
   scoreText2: {fileID: 1384956892}
   score: 0
   score2: 0
   highScoreText: {fileID: 1654266704}
   highScoreText2: {fileID: 716900371}
+  gameOverText: {fileID: 591676581}
+  resultRSButton: {fileID: 1704480757}
+  resultGameOverPanel: {fileID: 459472616}
+  resultGameOverIcon: {fileID: 748435881}
 --- !u!1 &1654266702
 GameObject:
   m_ObjectHideFlags: 0
@@ -9336,6 +9419,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75264e2e8d40c514f9090b3fdbd195d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1708339171 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5172905466892657302, guid: 947d0fcd01edf2040bd94fa7d5c29714, type: 3}
+  m_PrefabInstance: {fileID: 22987580}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1726617964
 GameObject:
   m_ObjectHideFlags: 0
@@ -9945,9 +10033,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 863423059}
     - target: {fileID: 44412122, guid: e09de3a6e9f6e5a4c9ac5561092bd98c, type: 3}
+      propertyPath: timer
+      value: 
+      objectReference: {fileID: 126741840}
+    - target: {fileID: 44412122, guid: e09de3a6e9f6e5a4c9ac5561092bd98c, type: 3}
+      propertyPath: timerText
+      value: 
+      objectReference: {fileID: 126741844}
+    - target: {fileID: 44412122, guid: e09de3a6e9f6e5a4c9ac5561092bd98c, type: 3}
       propertyPath: gameOverText
       value: 
       objectReference: {fileID: 591676581}
+    - target: {fileID: 44412122, guid: e09de3a6e9f6e5a4c9ac5561092bd98c, type: 3}
+      propertyPath: highScoreTimer
+      value: 
+      objectReference: {fileID: 1320912214}
     - target: {fileID: 44412122, guid: e09de3a6e9f6e5a4c9ac5561092bd98c, type: 3}
       propertyPath: resultRSButton
       value: 
@@ -9966,7 +10066,7 @@ PrefabInstance:
       objectReference: {fileID: 459472616}
     - target: {fileID: 3441259465449941057, guid: e09de3a6e9f6e5a4c9ac5561092bd98c, type: 3}
       propertyPath: m_RootOrder
-      value: 12
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 3441259465449941057, guid: e09de3a6e9f6e5a4c9ac5561092bd98c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10832,7 +10932,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9153240312990797195, guid: e14353cfac57b3d4ebe8b372ec0ae224, type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 9153240312990797195, guid: e14353cfac57b3d4ebe8b372ec0ae224, type: 3}
       propertyPath: m_LocalPosition.x
@@ -11025,7 +11125,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8243256923742610902, guid: 7b9f64546d367864a9a1bfa06f2f28ef, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 8243256923742610902, guid: 7b9f64546d367864a9a1bfa06f2f28ef, type: 3}
       propertyPath: m_LocalPosition.x

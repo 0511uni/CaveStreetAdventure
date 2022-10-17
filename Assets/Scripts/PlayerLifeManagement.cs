@@ -8,39 +8,66 @@ using UnityEngine.UI;
 public class PlayerLifeManagement : MonoBehaviour
 {
     #region//インスペクターで設定する
-    public Text gameOverText;
 
-    public Text scoreText;  //  スコアのUI
+    [SerializeField]
+    GameObject enemy;
 
-    public Text scoreText2;  //  スコアのUI
+    [SerializeField]
+    Text scoreText;  //  スコアのUI
 
-    public int score; //  スコア
+    [SerializeField]
+    Text scoreText2;  //  スコアのUI
 
-    public int score2; //  スコア
+    [SerializeField]
+    int score; //  スコア
+    [SerializeField]
+    int score2; //  スコア
 
-    public Text highScoreText; //ハイスコアを表示するText
+    [SerializeField]
+    Text highScoreText; //ハイスコアを表示するText
 
-    public Text highScoreText2; //ハイスコアを表示するText
+    [SerializeField]
+    Text highScoreText2; //ハイスコアを表示するText
+
+    [SerializeField]
+    Text gameOverText; // ゲームオーバーUI
+
+    [SerializeField]
+    GameObject resultRSButton;
+
+    [SerializeField]
+    GameObject resultGameOverPanel;
+
+    [SerializeField]
+    GameObject resultGameOverIcon;
     #endregion
 
     #region//プライベート変数 ハイスコアー保存キー
-    private int highScore; //ハイスコア用変数
+    int highScore; //ハイスコア用変数
 
-    private string key = "HIGH SCORE"; //ハイスコアの保存先キー
+    string key = "HIGH SCORE"; //ハイスコアの保存先キー
     
-    private bool gameOver;
+    bool gameOver;
     #endregion
 
     void Start()
     {
         score = 10;
         scoreText.text = "Count: " + score.ToString();
+        scoreText2.enabled = false;
+        highScoreText2.enabled = false;
+        enemy.GetComponent<EnemyRoundTripAct>().enabled = true;
+        gameOverText.enabled = false;
+        resultRSButton.SetActive(false);
+        resultGameOverPanel.SetActive(false);
+        resultGameOverIcon.SetActive(false);
     }
 
     //void Update()
     //{
 
     //}
+
     // マイキャラが他のオブジェクトにぶつかった時に呼び出される
     void OnCollisionEnter2D(Collision2D other)
     {
@@ -51,7 +78,7 @@ public class PlayerLifeManagement : MonoBehaviour
             other.gameObject.SetActive(false);
 
             //  スコアを加算します
-            score = score + 10;
+            score += 10;
 
 
             //  UI の表示を最新します
@@ -65,7 +92,7 @@ public class PlayerLifeManagement : MonoBehaviour
             other.gameObject.SetActive(false);
 
             //  スコアを加算します
-            score = score + 100;
+            score += 100;
 
 
             //  UI の表示を最新します
@@ -107,14 +134,44 @@ public class PlayerLifeManagement : MonoBehaviour
         scoreText.text = "Count: " + score.ToString();
 
         if (score <= 0)
-        {
+        {//  リザルドの表示を最新
             gameOver = true;
             print("gameovr");
-            //  リザルドの表示を最新
-            GetComponent<PlayerController_J>().enabled = false; // 自分のとこのコンポーネントを止める
+
+            enemy.GetComponent<EnemyRoundTripAct>().enabled = false; // 敵を止める
+
+            GetComponent<PlayerController>().enabled = false; // 自分のとこのコンポーネントを止める
+
+            gameOverText.enabled = true;
+
+            resultRSButton.SetActive(true);
+
+            resultGameOverPanel.SetActive(true);
+
+            resultGameOverIcon.SetActive(true);
+        }
+    }
+
+    public void GameClearScore()
+    {
+        scoreText2.text = "Count: " + score.ToString();
 
 
-            gameOverText.text = "Game Over!";
+        highScoreText2.text = "High Score: " + highScore.ToString();
+
+        // ハイスコアより現在スコアが高い時
+        if (score > highScore)
+        {
+
+            highScore = score;
+            //ハイスコア更新
+
+            PlayerPrefs.SetInt(key, highScore);
+            //ハイスコアを保存
+
+            highScoreText.text = "HighScore: " + highScore.ToString();
+            //ハイスコアを表示
+
         }
     }
 }

@@ -24,6 +24,9 @@ public class PitfallsPoint : MonoBehaviour
     [SerializeField]
     GameObject resultGameOverIcon;
 
+    [SerializeField]
+    GameObject timer;
+
     #endregion
 
     void Start()
@@ -33,6 +36,7 @@ public class PitfallsPoint : MonoBehaviour
         resultRSButton.SetActive(false);
         resultGameOverPanel.SetActive(false);
         resultGameOverIcon.SetActive(false);
+        timer.GetComponent<TimerController>().enabled = true;
     }
 
     //void Update()
@@ -58,6 +62,8 @@ public class PitfallsPoint : MonoBehaviour
             resultGameOverIcon.SetActive(true);
 
             enemy.GetComponent<EnemyRoundTripAct>().enabled = false;
+
+            timer.GetComponent<TimerController>().enabled = false;
         }
     }
 }
