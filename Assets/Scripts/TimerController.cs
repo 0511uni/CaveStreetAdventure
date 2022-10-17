@@ -55,8 +55,9 @@ public class TimerController : MonoBehaviour
         timerText = GetComponentInChildren<Text>();
 
         highScoreTimer = PlayerPrefs.GetFloat(Timekey, highScoreTimer);
+        
         //保存しておいたハイスコアをキーで呼び出し取得し保存されていなければ0になる
-        highScoreTimerText.text = "Timer: " + minute.ToString("00") + ":" + seconds.ToString("00").ToString();
+        highScoreTimerText.text = "Timer: 00:00" + minute.ToString("00") + ":" + ((int)seconds).ToString("00").ToString();
     }
 
     // Update is called once per frame
