@@ -3,7 +3,18 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Timer
+  - Goal
+  - Wall
+  - Wall2
+  - Enemy
+  - Item
+  - Enemy2
+  - Item10
+  - Enemy3
+  - Step
+  - Head
   layers:
   - Default
   - TransparentFX
@@ -38,6 +49,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: TileMap
+    uniqueID: 1089759329
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0

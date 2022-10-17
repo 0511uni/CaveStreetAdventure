@@ -40,13 +40,16 @@ public class PlayerLifeManagement : MonoBehaviour
 
     [SerializeField]
     GameObject resultGameOverIcon;
+
+    [SerializeField]
+    GameObject timer;
     #endregion
 
     #region//プライベート変数 ハイスコアー保存キー
     int highScore; //ハイスコア用変数
 
     string key = "HIGH SCORE"; //ハイスコアの保存先キー
-    
+
     bool gameOver;
     #endregion
 
@@ -103,15 +106,15 @@ public class PlayerLifeManagement : MonoBehaviour
             SetCountText();
         }
 
-        if (other.gameObject.CompareTag("Enemy"))
+        if (other.gameObject.CompareTag("Enemy") && !gameObject.CompareTag("Step"))
         {
-            {
-                score -= 1;
+
+            score -= 1;
 
 
-                //  UI の表示を最新します
-                SetCountText();
-            }
+            //  UI の表示を最新します
+            SetCountText();
+
         }
 
         //  スコアの表示を最新
@@ -153,6 +156,8 @@ public class PlayerLifeManagement : MonoBehaviour
             resultGameOverPanel.SetActive(true);
 
             resultGameOverIcon.SetActive(true);
+
+            timer.GetComponent<TimerController>().enabled = false;
         }
     }
 
