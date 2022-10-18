@@ -18,8 +18,7 @@ public class PlayerLifeManagement : MonoBehaviour
     [SerializeField]
     Text scoreText2;  //  スコアのUI
 
-    [SerializeField]
-    int score; //  スコア
+    public int score; //  スコア
     [SerializeField]
     int score2; //  スコア
 
@@ -78,9 +77,9 @@ public class PlayerLifeManagement : MonoBehaviour
     // マイキャラが他のオブジェクトにぶつかった時に呼び出される
     void OnCollisionEnter2D(Collision2D other)
     {
-        // ぶつかったオブジェクトが収集アイテムだった場合
+        
         if (other.gameObject.CompareTag("Item"))
-        {
+        {// ぶつかったオブジェクトが収集アイテムだった場合
             //　その収集アイテムを非表示にします
             other.gameObject.SetActive(false);
 
@@ -91,9 +90,7 @@ public class PlayerLifeManagement : MonoBehaviour
             //  UI の表示を最新します
             SetCountText();
         }
-
-        // ぶつかったオブジェクトが収集アイテムだった場合
-        if (other.gameObject.CompareTag("Item10"))
+        else if (other.gameObject.CompareTag("Item10"))
         {
             //　その収集アイテムを非表示にします
             other.gameObject.SetActive(false);
@@ -106,16 +103,13 @@ public class PlayerLifeManagement : MonoBehaviour
             SetCountText();
         }
 
-        if (other.gameObject.CompareTag("Enemy") && !gameObject.CompareTag("Step"))
+        if (other.gameObject.CompareTag("Enemy"))
         {
-
-            score -= 1;
-
-
+            score--;
             //  UI の表示を最新します
             SetCountText();
-
         }
+
 
         //  スコアの表示を最新
         scoreText.text = "Count: " + score.ToString();
