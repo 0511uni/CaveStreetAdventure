@@ -1,7 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/// <summary>
+/// 降りてくるリフトの動き
+/// </summary>
 public class LiftDownMove : MonoBehaviour
 {
     #region//インスペクターで設定する

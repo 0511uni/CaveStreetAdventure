@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+/// <summary>
+/// タイマーコントローラー
+/// </summary>
 public class TimerController : MonoBehaviour
 {
     [SerializeField]
