@@ -31,7 +31,7 @@ public class HeadController : MonoBehaviour
 
             //　その収集アイテムを非表示にします
             enemy.SetActive(false);
-
+            enemy.GetComponent<BoxCollider2D>().enabled = false;
             //  スコアを加算します
             player.GetComponent<PlayerLifeManagement>().score += 10;
             //  UI の表示を最新します
