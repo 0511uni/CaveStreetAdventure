@@ -834,7 +834,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 1
   gravity: 7
-  nonVisibleAct: 0
+  nonVisibleAct: 1
 --- !u!1 &235754280
 GameObject:
   m_ObjectHideFlags: 0
