@@ -22,12 +22,17 @@ public class TitleDirector_J : MonoBehaviour {
 
     //　ゲーム終了ボタンを押したら実行する
     public void GameEnd() {
-        print("a");
-        SceneManager.LoadScene("Main");
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#elif UNITY_WEBPLAYER
+        Application.OpenURL("http://www.yahoo.co.jp/");
+#else
+        Application.Quit();
+#endif
     }
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
         Screen.SetResolution(400, 710, false, 60);
     }
 
