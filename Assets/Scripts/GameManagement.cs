@@ -11,7 +11,7 @@ public class GameManagement : MonoBehaviour
     //　タイトルボタンを押したら実行する
     public void TitleBackBottan()
     {
-        print("a");
+        print("Title");
         SceneManager.LoadScene("TitleMenuScene");
     }
 }
