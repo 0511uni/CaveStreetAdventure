@@ -12,7 +12,7 @@ public class GoalController : MonoBehaviour
     GameObject player;
 
     [SerializeField]
-    Text winText;  //  リザルトのUI
+    GameObject winText;
 
     [SerializeField]
     GameObject enemy;
@@ -24,13 +24,16 @@ public class GoalController : MonoBehaviour
     GameObject resultGameClearPanel;
 
     [SerializeField]
-    Text scoreText2;  //  スコアのUI
+    Text scoreTextWin;  //  スコアのUI
 
     [SerializeField]
-    Text highScoreText2; //ハイスコアを表示するText
+    Text highScoreTextWin;  //  スコアのUI
 
     [SerializeField]
-    GameObject timer;
+    GameObject scoreUI;
+
+    [SerializeField]
+    GameObject buttonController;
 
     #endregion
 
@@ -43,13 +46,10 @@ public class GoalController : MonoBehaviour
 
     void Start()
     {
-        winText.enabled = false;
-        enemy.GetComponent<EnemyRoundTripAct>().enabled = true;
+        winText.SetActive(false);
         resultRSButton.SetActive(false);
         resultGameClearPanel.SetActive(false);
-        timer.GetComponent<TimerController>().enabled = true;
-        scoreText2.enabled = false;
-        highScoreText2.enabled = false;
+        scoreTextWin.enabled = false;
     }
 
     void OnCollisionEnter2D(Collision2D other)
@@ -66,20 +66,23 @@ public class GoalController : MonoBehaviour
     {
         gameClear = true;
 
-        winText.enabled = true;
+        winText.SetActive(true);
 
         resultRSButton.SetActive(true);
 
         resultGameClearPanel.SetActive(true);
 
-        enemy.GetComponent<EnemyRoundTripAct>().enabled = false;
+        buttonController.SetActive(false);
 
-        timer.GetComponent<TimerController>().enabled = false;
+        scoreUI.SetActive(false);
+
+        scoreTextWin.enabled = true;
+
+        highScoreTextWin.enabled = true;
+
+        enemy.GetComponent<EnemyRoundTripAct>().enabled = false;
 
         player.GetComponent<PlayerLifeManagement>().GameClearScore();
 
-        scoreText2.enabled = true;
-
-        highScoreText2.enabled = true;
     }
 }

@@ -40,6 +40,12 @@ public class TimerController : MonoBehaviour
     [SerializeField]
     GameObject resultGameOverIcon;
 
+    [SerializeField]
+    GameObject scoreUI;
+
+    [SerializeField]
+    GameObject buttonController;
+
     bool gameOver;
 
     //　タイマー表示用テキスト
@@ -60,6 +66,8 @@ public class TimerController : MonoBehaviour
         
         //保存しておいたハイスコアをキーで呼び出し取得し保存されていなければ0になる
         highScoreTimerText.text = "Timer:" + minute.ToString("00") + "00:00" + ((int)seconds).ToString("60").ToString();
+
+        scoreUI.SetActive(true);
     }
 
     // Update is called once per frame
@@ -97,6 +105,10 @@ public class TimerController : MonoBehaviour
             resultGameOverPanel.SetActive(true);
 
             resultGameOverIcon.SetActive(true);
+
+            scoreUI.SetActive(false);
+
+            buttonController.SetActive(false);
         }
 
         // ハイスコアタイムより現在スコアタイムが高い時

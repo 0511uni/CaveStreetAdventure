@@ -13,6 +13,9 @@ public class PitfallsPoint : MonoBehaviour
     Text gameOverText; // ゲームオーバーUI
 
     [SerializeField]
+    GameObject player;
+
+    [SerializeField]
     GameObject enemy;
 
     [SerializeField]
@@ -25,7 +28,17 @@ public class PitfallsPoint : MonoBehaviour
     GameObject resultGameOverIcon;
 
     [SerializeField]
-    GameObject timer;
+    Text scoreTextGameOver;
+
+    [SerializeField]
+    Text highScoreTextGameOver;
+
+
+    [SerializeField]
+    GameObject scoreUI;
+
+    [SerializeField]
+    GameObject buttonController;
 
     #endregion
 
@@ -36,7 +49,10 @@ public class PitfallsPoint : MonoBehaviour
         resultRSButton.SetActive(false);
         resultGameOverPanel.SetActive(false);
         resultGameOverIcon.SetActive(false);
-        timer.GetComponent<TimerController>().enabled = true;
+        scoreUI.SetActive(true);
+        //timer.GetComponent<TimerController>().enabled = true;
+        scoreTextGameOver.enabled = false;
+        highScoreTextGameOver.enabled = false;
     }
 
     //void Update()
@@ -63,7 +79,16 @@ public class PitfallsPoint : MonoBehaviour
 
             enemy.GetComponent<EnemyRoundTripAct>().enabled = false;
 
-            timer.GetComponent<TimerController>().enabled = false;
+            scoreUI.SetActive(false);
+            //timer.GetComponent<TimerController>().enabled = false;
+
+            buttonController.SetActive(false);
+
+            player.GetComponent<PlayerLifeManagement>().SetCountText();
+
+            scoreTextGameOver.enabled = true;
+
+            highScoreTextGameOver.enabled = true;
         }
     }
 }

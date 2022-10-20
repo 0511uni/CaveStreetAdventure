@@ -7,10 +7,15 @@ using UnityEngine.UI;
 /// </summary>
 public class PlayerController : MonoBehaviour
 {
-    //[SerializeField]
-    public float speed = 30;
+    [SerializeField]
+    float speed = 30;
 
-    public float jumppower = 8;
+    [SerializeField]
+    float jumppower = 8;
+
+    [SerializeField]
+    GameObject buttonController;
+
     new
     #region//プライベート変数　SpriteRenderer
         SpriteRenderer renderer;
@@ -19,7 +24,7 @@ public class PlayerController : MonoBehaviour
 
     #region//プライベート変数  bool
     bool pushFlag;
-    private bool jumpFlag;
+    bool jumpFlag;
     #endregion
 
     /// <summary>
@@ -28,7 +33,6 @@ public class PlayerController : MonoBehaviour
     public void LButtonDown()
     {
         rbody.AddForce(-transform.right * speed);
-        //transform.Translate(-2, 0, 0);
 
         renderer.flipX = true;
     }
@@ -39,7 +43,6 @@ public class PlayerController : MonoBehaviour
     public void RButtonDown()
     {
         rbody.AddForce(transform.right * speed);
-        //transform.Translate(1, 0, 0);
 
         renderer.flipX = false;
     }
@@ -50,7 +53,6 @@ public class PlayerController : MonoBehaviour
     public void UButtonDown()
     {
         rbody.AddForce(transform.up * speed);
-        //transform.Translate(0, 2, 0);
 
         if (pushFlag == false)
         {
@@ -69,11 +71,11 @@ public class PlayerController : MonoBehaviour
     public void DButtonDown()
     {
         rbody.AddForce(-transform.up * speed);
-        //transform.Translate(0, -20, 0);
     }
 
     void Start()
     {
+        buttonController.SetActive(true);
         renderer = gameObject.GetComponentInChildren<SpriteRenderer>();
         renderer.flipX = false;
 

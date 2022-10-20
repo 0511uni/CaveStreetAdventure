@@ -16,7 +16,10 @@ public class PlayerLifeManagement : MonoBehaviour
     Text scoreText;  //  スコアのUI
 
     [SerializeField]
-    Text scoreText2;  //  スコアのUI
+    Text scoreTextWin;  //  スコアのUI
+
+    [SerializeField]
+    Text scoreTextGameOver;
 
     public int score; //  スコア
     [SerializeField]
@@ -26,7 +29,10 @@ public class PlayerLifeManagement : MonoBehaviour
     Text highScoreText; //ハイスコアを表示するText
 
     [SerializeField]
-    Text highScoreText2; //ハイスコアを表示するText
+    Text highScoreTextWin; //Winハイスコアを表示するText
+
+    [SerializeField]
+    Text highScoreTextGameOver;
 
     [SerializeField]
     Text gameOverText; // ゲームオーバーUI
@@ -41,7 +47,10 @@ public class PlayerLifeManagement : MonoBehaviour
     GameObject resultGameOverIcon;
 
     [SerializeField]
-    GameObject timer;
+    GameObject scoreUI;
+
+    [SerializeField]
+    GameObject buttonController;
     #endregion
 
     #region//プライベート変数 ハイスコアー保存キー
@@ -56,8 +65,10 @@ public class PlayerLifeManagement : MonoBehaviour
     {
         score = 10;
         scoreText.text = "Count: " + score.ToString();
-        scoreText2.enabled = false;
-        highScoreText2.enabled = false;
+        scoreTextWin.enabled = false;
+        scoreTextGameOver.enabled = false;
+        highScoreTextWin.enabled = false;
+        highScoreTextGameOver.enabled = false;
         enemy.GetComponent<EnemyRoundTripAct>().enabled = true;
         gameOverText.enabled = false;
         resultRSButton.SetActive(false);
@@ -112,7 +123,7 @@ public class PlayerLifeManagement : MonoBehaviour
 
 
         //  スコアの表示を最新
-        scoreText.text = "Count: " + score.ToString();
+        scoreText.text = "Score: " + score.ToString();
         // ハイスコアより現在スコアが高い時
         if (score > highScore)
         {
@@ -132,7 +143,11 @@ public class PlayerLifeManagement : MonoBehaviour
     public void SetCountText()
     {
         //  スコアの表示を最新
-        scoreText.text = "Count: " + score.ToString();
+        scoreText.text = "Score: " + score.ToString();//Count: 
+
+        scoreTextGameOver.text = "Score: " + score.ToString();//Count:
+
+        highScoreTextGameOver.text = "High Score: " + highScore.ToString();
 
         if (score <= 0)
         {//  リザルドの表示を最新
@@ -151,16 +166,22 @@ public class PlayerLifeManagement : MonoBehaviour
 
             resultGameOverIcon.SetActive(true);
 
-            timer.GetComponent<TimerController>().enabled = false;
+            scoreTextGameOver.enabled = true;
+
+            highScoreTextGameOver.enabled = true;
+
+            scoreUI.SetActive(false);
+
+            buttonController.SetActive(false);
         }
     }
 
     public void GameClearScore()
     {
-        scoreText2.text = "Count: " + score.ToString();
+        scoreTextWin.text = "Score: " + score.ToString();
 
 
-        highScoreText2.text = "High Score: " + highScore.ToString();
+        highScoreTextWin.text = "High Score: " + highScore.ToString();
 
         // ハイスコアより現在スコアが高い時
         if (score > highScore)
