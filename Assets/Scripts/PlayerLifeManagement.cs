@@ -88,7 +88,7 @@ public class PlayerLifeManagement : MonoBehaviour
     // マイキャラが他のオブジェクトにぶつかった時に呼び出される
     void OnCollisionEnter2D(Collision2D other)
     {
-        
+
         if (other.gameObject.CompareTag("Item"))
         {// ぶつかったオブジェクトが収集アイテムだった場合
             //　その収集アイテムを非表示にします
@@ -117,6 +117,20 @@ public class PlayerLifeManagement : MonoBehaviour
         if (other.gameObject.CompareTag("Enemy"))
         {
             score--;
+            //  UI の表示を最新します
+            SetCountText();
+        }
+        else if
+         (other.gameObject.CompareTag("Enemy2"))
+        {
+            score -= 10;
+            //  UI の表示を最新します
+            SetCountText();
+        }
+        else if
+         (other.gameObject.CompareTag("Enemy3"))
+        {
+            score -= 20;
             //  UI の表示を最新します
             SetCountText();
         }

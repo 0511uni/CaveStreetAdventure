@@ -15,8 +15,8 @@ public class HeadController : MonoBehaviour
     [SerializeField]
     GameObject player;
 
-    //[SerializeField]
-    //int score; //  スコア
+    [SerializeField]
+    int enemyPoint;
 
     /// <summary>
     /// 当たった時の処理
@@ -33,7 +33,7 @@ public class HeadController : MonoBehaviour
             enemy.SetActive(false);
             enemy.GetComponent<BoxCollider2D>().enabled = false;
             //  スコアを加算します
-            player.GetComponent<PlayerLifeManagement>().score += 10;
+            player.GetComponent<PlayerLifeManagement>().score += enemyPoint;
             //  UI の表示を最新します
             player.GetComponent<PlayerLifeManagement>().SetCountText();
         }
