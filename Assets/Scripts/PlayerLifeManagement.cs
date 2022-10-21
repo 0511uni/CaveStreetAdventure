@@ -107,8 +107,8 @@ public class PlayerLifeManagement : MonoBehaviour
             other.gameObject.SetActive(false);
 
             //  スコアを加算します
-            score += 100;
-
+            score += 20;
+            print("ビックだ");
 
             //  UI の表示を最新します
             SetCountText();
