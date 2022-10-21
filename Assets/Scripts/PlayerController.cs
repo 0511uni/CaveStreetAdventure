@@ -8,10 +8,10 @@ using UnityEngine.UI;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField]
-    float speed = 30;
+    float speed = 10;
 
     [SerializeField]
-    float jumppower = 8;
+    float jumppower = 5;
 
     [SerializeField]
     GameObject buttonController;
