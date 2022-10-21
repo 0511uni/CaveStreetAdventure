@@ -6,11 +6,13 @@ using UnityEngine;
 /// </summary>
 public class WarpPoint : MonoBehaviour
 {
+    
     GameObject obj;
 
-    [SerializeField]
-    Warp transObj;
+    
+    public WarpPoint transObj;
 
+    
     Vector2 transVec;
 
     //移動状態を表すフラグ
@@ -22,7 +24,7 @@ public class WarpPoint : MonoBehaviour
         transVec = transObj.transform.position;
 
         //初期では移動可能なためTrue
-        moveStatus = true;// 左右移動のみ
+        moveStatus = true;
     }
 
     /// <summary>
@@ -36,11 +38,22 @@ public class WarpPoint : MonoBehaviour
 
 
         if (moveStatus)
-        { // 左右移動のみ
+        { 
 
-            //移動先は直後移動できないようにする  // 左右移動のみ
-            transObj.moveStatus = false; // 左右移動のみ
+            //移動先は直後移動できないようにする 
+            transObj.moveStatus = false; 
             obj.transform.position = transVec;
         } // 左右移動のみ
+    }
+
+    /// <summary>
+    /// 物体と離れた直後呼ばれる 
+    /// </summary>
+    /// <param name="other">オブジェクト</param>
+    void OnTriggerExit2D(Collider2D other)
+    {
+        //移動可能にする。
+        moveStatus = true;
+
     }
 }
