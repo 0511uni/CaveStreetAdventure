@@ -84,5 +84,7 @@ public class GoalController : MonoBehaviour
 
         player.GetComponent<PlayerLifeManagement>().GameClearScore();
 
+        player.GetComponent<PlayerLifeManagement>().enabled = false;
+
     }
 }

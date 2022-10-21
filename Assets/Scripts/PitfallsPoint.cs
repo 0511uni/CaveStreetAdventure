@@ -10,7 +10,7 @@ public class PitfallsPoint : MonoBehaviour
 {
     #region//インスペクターで設定する ゲームオーバー
     [SerializeField]
-    Text gameOverText; // ゲームオーバーUI
+    Text gameOverText; // ゲームオーバーUIText
 
     [SerializeField]
     GameObject player;
@@ -44,11 +44,10 @@ public class PitfallsPoint : MonoBehaviour
 
     void Start()
     {
-        gameOverText.enabled = false;
+        
+        
         enemy.GetComponent<EnemyRoundTripAct>().enabled = true;
-        resultRSButton.SetActive(false);
-        resultGameOverPanel.SetActive(false);
-        resultGameOverIcon.SetActive(false);
+        
         scoreUI.SetActive(true);
         //timer.GetComponent<TimerController>().enabled = true;
         scoreTextGameOver.enabled = false;

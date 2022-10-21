@@ -7,10 +7,11 @@ using UnityEngine;
 public class LiftDownMove : MonoBehaviour
 {
     #region//インスペクターで設定する
-    [Header("移動速度")] public float speed;
+    [SerializeField]
+    [Header("移動速度")] float speed;
 
-
-    [Header("重力")] public float gravity;
+    [SerializeField]
+    [Header("重力")] float gravity;
     #endregion
 
     #region//プライベート変数
