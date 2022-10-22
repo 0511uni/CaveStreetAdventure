@@ -8,12 +8,6 @@ using UnityEngine.UI;
 public class TimerController : MonoBehaviour
 {
     [SerializeField]
-    GameObject player;
-
-    //[SerializeField]
-    //GameObject timer;
-
-    [SerializeField]
     int minute;
 
     [SerializeField]
@@ -23,30 +17,13 @@ public class TimerController : MonoBehaviour
     float oldSeconds;
 
     [SerializeField]
-    GameObject enemy;
-
-    [SerializeField]
     Text highScoreTimerText; //ハイスコアタイムを表示するText
-
-    [SerializeField]
-    Text gameOverText; // ゲームオーバーUI
-
-    [SerializeField]
-    GameObject resultRSButton;
-
-    [SerializeField]
-    GameObject resultGameOverPanel;
-
-    [SerializeField]
-    GameObject resultGameOverIcon;
 
     [SerializeField]
     GameObject scoreUI;
 
     [SerializeField]
-    GameObject buttonController;
-
-    bool gameOver;
+    GameManagement gameManagement;
 
     //　タイマー表示用テキスト
     Text timerText;
@@ -88,27 +65,7 @@ public class TimerController : MonoBehaviour
 
         if (seconds <= 0f)
         {
-            //  リザルドの表示を最新
-            gameOver = true;
-            print("gameovr");
-
-            GetComponent<TimerController>().enabled = false;
-
-            enemy.GetComponent<EnemyRoundTripAct>().enabled = false; // 敵を止める
-
-            GetComponent<TimerController>().enabled = false; // 自分のとこのコンポーネントを止める
-
-            gameOverText.enabled = true;
-
-            resultRSButton.SetActive(true);
-
-            resultGameOverPanel.SetActive(true);
-
-            resultGameOverIcon.SetActive(true);
-
-            scoreUI.SetActive(false);
-
-            buttonController.SetActive(false);
+            gameManagement.GameOver();
         }
 
         // ハイスコアタイムより現在スコアタイムが高い時

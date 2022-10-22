@@ -15,18 +15,6 @@ public class PitfallsPoint : MonoBehaviour
 
     #endregion
 
-
-
-    //void Start()
-    //{
-
-    //}
-
-    //void Update()
-    //{
-
-    //}
-
     //他のオブジェクトにぶつかった時に呼び出される
     void OnCollisionEnter2D(Collision2D other)
     {

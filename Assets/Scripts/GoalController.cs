@@ -7,6 +7,13 @@ using UnityEngine.UI;
 
 public class GoalController : MonoBehaviour
 {
+    #region//インスペクターで設定する ゲームオーバー
+
+    [SerializeField]
+    GameManagement GameManagement;
+
+    #endregion
+
     #region//インスペクターで設定する
     [SerializeField]
     GameObject player;
@@ -57,34 +64,35 @@ public class GoalController : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             {
-                GameClear();
+                //GameClear();
+                GameManagement.GameClear();
             }
         }
     }
 
-    void GameClear()
-    {
-        gameClear = true;
+    //void GameClear()
+    //{
+    //    gameClear = true;
 
-        winText.SetActive(true);
+    //    winText.SetActive(true);
 
-        resultRSButton.SetActive(true);
+    //    resultRSButton.SetActive(true);
 
-        resultGameClearPanel.SetActive(true);
+    //    resultGameClearPanel.SetActive(true);
 
-        buttonController.SetActive(false);
+    //    buttonController.SetActive(false);
 
-        scoreUI.SetActive(false);
+    //    scoreUI.SetActive(false);
 
-        scoreTextWin.enabled = true;
+    //    scoreTextWin.enabled = true;
 
-        highScoreTextWin.enabled = true;
+    //    highScoreTextWin.enabled = true;
 
-        enemy.GetComponent<EnemyRoundTripAct>().enabled = false;
+    //    enemy.GetComponent<EnemyRoundTripAct>().enabled = false;
 
-        player.GetComponent<PlayerLifeManagement>().GameClearScore();
+    //    player.GetComponent<PlayerLifeManagement>().GameClearScore();
 
-        player.GetComponent<PlayerLifeManagement>().enabled = false;
+    //    player.GetComponent<PlayerLifeManagement>().enabled = false;
 
-    }
+    //}
 }

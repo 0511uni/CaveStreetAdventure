@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -730,6 +730,7 @@ MonoBehaviour:
   resultGameOverIcon: {fileID: 748435881}
   scoreUI: {fileID: 1388215406}
   buttonController: {fileID: 579694172}
+  gameManagement: {fileID: 235754282}
 --- !u!1 &193152430
 GameObject:
   m_ObjectHideFlags: 0
@@ -1050,8 +1051,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94f4491f498ffa8409926b27ba76ae72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameOverText: {fileID: 591676581}
   player: {fileID: 1502327116}
+  winText: {fileID: 1056030991}
+  resultRSButton: {fileID: 1704480757}
+  resultGameClearPanel: {fileID: 850666803}
+  scoreTextWin: {fileID: 1384956892}
+  highScoreTextWin: {fileID: 716900371}
+  scoreUI: {fileID: 1388215406}
+  buttonController: {fileID: 579694172}
+  gameOverText: {fileID: 591676581}
   enemys:
   - {fileID: 863423059}
   - {fileID: 1708339171}
@@ -1067,13 +1075,10 @@ MonoBehaviour:
   - {fileID: 474704473}
   - {fileID: 1689506605}
   - {fileID: 665955988}
-  resultRSButton: {fileID: 1704480757}
   resultGameOverPanel: {fileID: 459472616}
   resultGameOverIcon: {fileID: 748435881}
   scoreTextGameOver: {fileID: 526058258}
   highScoreTextGameOver: {fileID: 1308151648}
-  scoreUI: {fileID: 1388215406}
-  buttonController: {fileID: 579694172}
 --- !u!1 &337881602
 GameObject:
   m_ObjectHideFlags: 0
@@ -1491,6 +1496,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cdec3a240b61a1438c593564abca5cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GameManagement: {fileID: 235754282}
   player: {fileID: 1502327116}
   winText: {fileID: 1056030991}
   enemy: {fileID: 863423059}
@@ -2307,7 +2313,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1780583572}
-  - {fileID: 1056030992}
   - {fileID: 2110278876}
   m_Father: {fileID: 1446776941}
   m_RootOrder: -1
@@ -11194,7 +11199,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &650478825
 Transform:
   m_ObjectHideFlags: 0
@@ -13003,15 +13008,15 @@ RectTransform:
   m_GameObject: {fileID: 1056030991}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.9, y: 0.9, z: 0.9}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 507293924}
-  m_RootOrder: 1
+  m_Father: {fileID: 2110278876}
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 4, y: 345}
+  m_AnchoredPosition: {x: 27.777761, y: 11.999939}
   m_SizeDelta: {x: 1000, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1056030993
@@ -16841,6 +16846,7 @@ RectTransform:
   - {fileID: 350449762}
   - {fileID: 1384956891}
   - {fileID: 716900370}
+  - {fileID: 1056030992}
   m_Father: {fileID: 507293924}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
