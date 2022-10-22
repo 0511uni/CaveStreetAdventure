@@ -719,17 +719,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81adccf037e64384f8bbc16543e15564, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1502327116}
   minute: 0
   seconds: 0
-  enemy: {fileID: 1708339171}
   highScoreTimerText: {fileID: 1320912214}
-  gameOverText: {fileID: 591676581}
-  resultRSButton: {fileID: 1704480757}
-  resultGameOverPanel: {fileID: 459472616}
-  resultGameOverIcon: {fileID: 748435881}
   scoreUI: {fileID: 1388215406}
-  buttonController: {fileID: 579694172}
   gameManagement: {fileID: 235754282}
 --- !u!1 &193152430
 GameObject:
@@ -14678,7 +14671,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 7
 --- !u!4 &1497926112 stripped
 Transform:
@@ -17797,6 +17790,10 @@ PrefabInstance:
       propertyPath: m_Size.y
       value: 2.045725
       objectReference: {fileID: 0}
+    - target: {fileID: 8243256923742610903, guid: 7b9f64546d367864a9a1bfa06f2f28ef, type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 7b9f64546d367864a9a1bfa06f2f28ef, type: 3}
@@ -17824,7 +17821,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 7
 --- !u!4 &8243256924205911622 stripped
 Transform:
