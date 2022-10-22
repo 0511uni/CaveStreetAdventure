@@ -16,7 +16,13 @@ public class PitfallsPoint : MonoBehaviour
     GameObject player;
 
     [SerializeField]
-    GameObject enemy;
+    GameObject[] enemys;
+
+    [SerializeField]
+    GameObject[] warps;
+
+    [SerializeField]
+    GameObject[] downLifts;
 
     [SerializeField]
     GameObject resultRSButton;
@@ -40,13 +46,13 @@ public class PitfallsPoint : MonoBehaviour
     [SerializeField]
     GameObject buttonController;
 
+    [SerializeField]
+    GameManagement GameManagement;
+
     #endregion
 
     void Start()
     {
-        
-        
-        enemy.GetComponent<EnemyRoundTripAct>().enabled = true;
         
         scoreUI.SetActive(true);
         //timer.GetComponent<TimerController>().enabled = true;
@@ -66,28 +72,56 @@ public class PitfallsPoint : MonoBehaviour
         // 接触対象はPlayerタグですか？
         if (other.gameObject.CompareTag("Player"))
         {
-            print("gameovr");
-            //  リザルドの表示を最新
-            gameOverText.enabled = true;
 
-            resultRSButton.SetActive(true);
+            GameManagement.GameOver();
 
-            resultGameOverPanel.SetActive(true);
+            //gameOverText.enabled = true;
 
-            resultGameOverIcon.SetActive(true);
+            //resultRSButton.SetActive(true);
 
-            enemy.GetComponent<EnemyRoundTripAct>().enabled = false;
+            //resultGameOverPanel.SetActive(true);
 
-            scoreUI.SetActive(false);
-            //timer.GetComponent<TimerController>().enabled = false;
+            //resultGameOverIcon.SetActive(true);
 
-            buttonController.SetActive(false);
+            //enemys = GameObject.FindGameObjectsWithTag("Enemy");
 
-            player.GetComponent<PlayerLifeManagement>().SetCountText();
+            //foreach (var enemy in enemys)
+            //{
+            //    enemy.GetComponent<EnemyRoundTripAct>().enabled = false; // Enemyのコンポーネントを止める。
+            //}
 
-            scoreTextGameOver.enabled = true;
+            //enemys = GameObject.FindGameObjectsWithTag("Enemy2");
 
-            highScoreTextGameOver.enabled = true;
+            //foreach (var enemy in enemys)
+            //{
+            //    enemy.GetComponent<LoopMoveEnemy>().enabled = false; // Enemyのコンポーネントを止める。
+            //}
+
+            //warps = GameObject.FindGameObjectsWithTag("Warp");
+            //foreach (var warp in warps)
+            //{
+            //    warp.SetActive(false); // Warpのコンポーネントを止める。
+            //}
+
+            //downLifts = GameObject.FindGameObjectsWithTag("Lift");
+
+            //foreach (var downLift in downLifts)
+            //{
+            //    downLift.GetComponent<LiftDownMove>().enabled = false; // Liftのコンポーネントを止める。
+            //    Destroy(downLift.GetComponent<Rigidbody2D>()); // Liftのコンポーネントを止める。
+            //}
+
+
+            //scoreUI.SetActive(false);
+            ////timer.GetComponent<TimerController>().enabled = false;
+
+            //buttonController.SetActive(false);
+
+            //player.GetComponent<PlayerLifeManagement>().SetCountText();
+
+            //scoreTextGameOver.enabled = true;
+
+            //highScoreTextGameOver.enabled = true;
         }
     }
 }

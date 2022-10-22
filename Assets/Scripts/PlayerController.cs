@@ -32,7 +32,8 @@ public class PlayerController : MonoBehaviour
     /// </summary>
     public void LButtonDown()
     {
-        rbody.AddForce(-transform.right * speed);
+        //rbody.AddForce(-transform.right * speed);
+        rbody.MovePosition(transform.position + Vector3.left);
 
         renderer.flipX = true;
     }
@@ -42,8 +43,9 @@ public class PlayerController : MonoBehaviour
     /// </summary>
     public void RButtonDown()
     {
-        rbody.AddForce(transform.right * speed);
-
+        //rbody.AddForce(transform.right * speed);
+        //ransform.Translate(1, 0, 0);
+        rbody.MovePosition(transform.position + Vector3.right);
         renderer.flipX = false;
     }
 
@@ -70,7 +72,8 @@ public class PlayerController : MonoBehaviour
     /// </summary>
     public void DButtonDown()
     {
-        rbody.AddForce(-transform.up * speed);
+        rbody.MovePosition(transform.position + Vector3.down);
+        //rbody.AddForce(-transform.up * speed);
     }
 
     void Start()
