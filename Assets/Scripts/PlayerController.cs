@@ -84,11 +84,12 @@ public class PlayerController : MonoBehaviour
 
     //void Update()
     //{
-        
+    //    rbody.velocity *= 0.98f;
     //}
 
     void FixedUpdate()
     {
+        
         if (jumpFlag)
         {
             jumpFlag = false;
