@@ -9,14 +9,14 @@ public class PlayerLifeManagement : MonoBehaviour
 {
     #region//インスペクターで設定する
 
-    [SerializeField]
-    GameObject enemy;
+    //[SerializeField]
+    //GameObject enemy;
 
     [SerializeField]
     Text scoreText;  //  スコアのUI
 
-    [SerializeField]
-    Text scoreTextWin;  //  スコアのUI
+    //[SerializeField]
+    //Text scoreTextWin;  //  スコアのUI
 
     [SerializeField]
     Text scoreTextGameOver;
@@ -24,37 +24,42 @@ public class PlayerLifeManagement : MonoBehaviour
     public int score; //  スコア
     [SerializeField]
     int score2; //  スコア
+    public int highScore; //ハイスコア用変数
 
     [SerializeField]
     Text highScoreText; //ハイスコアを表示するText
 
-    [SerializeField]
-    Text highScoreTextWin; //Winハイスコアを表示するText
+    //[SerializeField]
+    //Text highScoreTextWin; //Winハイスコアを表示するText
 
-    [SerializeField]
-    Text highScoreTextGameOver;
+    //[SerializeField]
+    //Text highScoreTextGameOver;
 
     [SerializeField]
     Text gameOverText; // ゲームオーバーUI
 
-    [SerializeField]
-    GameObject resultRSButton;
+    //[SerializeField]
+    //GameObject resultRSButton;
+
+    //[SerializeField]
+    //GameObject resultGameOverPanel;
+
+    //[SerializeField]
+    //GameObject resultGameOverIcon;
+
+    //[SerializeField]
+    //GameObject scoreUI;
+
+    //[SerializeField]
+    //GameObject buttonController;
 
     [SerializeField]
-    GameObject resultGameOverPanel;
-
-    [SerializeField]
-    GameObject resultGameOverIcon;
-
-    [SerializeField]
-    GameObject scoreUI;
-
-    [SerializeField]
-    GameObject buttonController;
+    GameManagement gameManagement;
     #endregion
 
     #region//プライベート変数 ハイスコアー保存キー
-    int highScore; //ハイスコア用変数
+    
+    
 
     string key = "HIGH SCORE"; //ハイスコアの保存先キー
 
@@ -65,15 +70,14 @@ public class PlayerLifeManagement : MonoBehaviour
     {
         score = 10;
         scoreText.text = "Count: " + score.ToString();
-        scoreTextWin.enabled = false;
-        scoreTextGameOver.enabled = false;
-        highScoreTextWin.enabled = false;
-        highScoreTextGameOver.enabled = false;
-        enemy.GetComponent<EnemyRoundTripAct>().enabled = true;
-        gameOverText.enabled = false;
-        resultRSButton.SetActive(false);
-        resultGameOverPanel.SetActive(false);
-        resultGameOverIcon.SetActive(false);
+        //scoreTextWin.enabled = false;
+        //scoreTextGameOver.enabled = false;
+        //highScoreTextWin.enabled = false;
+        //highScoreTextGameOver.enabled = false;
+        //gameOverText.enabled = false;
+        //resultRSButton.SetActive(false);
+        //resultGameOverPanel.SetActive(false);
+        //resultGameOverIcon.SetActive(false);
 
         highScore = PlayerPrefs.GetInt(key, 0);
         //保存しておいたハイスコアをキーで呼び出し取得し保存されていなければ0になる
@@ -159,43 +163,46 @@ public class PlayerLifeManagement : MonoBehaviour
         //  スコアの表示を最新
         scoreText.text = "Score: " + score.ToString();//Count: 
 
-        scoreTextGameOver.text = "Score: " + score.ToString();//Count:
+        //scoreTextGameOver.text = "Score: " + score.ToString();//Count:
 
-        highScoreTextGameOver.text = "High Score: " + highScore.ToString();
+        //highScoreTextGameOver.text = "High Score: " + highScore.ToString();
 
         if (score <= 0)
         {//  リザルドの表示を最新
-            gameOver = true;
-            print("gameovr");
 
-            enemy.GetComponent<EnemyRoundTripAct>().enabled = false; // 敵を止める
+            gameManagement.GameOver();
 
-            GetComponent<PlayerController>().enabled = false; // 自分のとこのコンポーネントを止める
+            //gameOver = true;
+            //print("gameovr");
 
-            gameOverText.enabled = true;
+            //enemy.GetComponent<EnemyRoundTripAct>().enabled = false; // 敵を止める
 
-            resultRSButton.SetActive(true);
+            //GetComponent<PlayerController>().enabled = false; // 自分のとこのコンポーネントを止める
 
-            resultGameOverPanel.SetActive(true);
+            //gameOverText.enabled = true;
 
-            resultGameOverIcon.SetActive(true);
+            //resultRSButton.SetActive(true);
 
-            scoreTextGameOver.enabled = true;
+            //resultGameOverPanel.SetActive(true);
 
-            highScoreTextGameOver.enabled = true;
+            //resultGameOverIcon.SetActive(true);
 
-            scoreUI.SetActive(false);
+            //scoreTextGameOver.enabled = true;
 
-            buttonController.SetActive(false);
+            //highScoreTextGameOver.enabled = true;
+
+            //scoreUI.SetActive(false);
+
+            //buttonController.SetActive(false);
         }
     }
 
     public void GameClearScore()
     {
-        scoreTextWin.text = "Score: " + score.ToString();
+        //scoreTextWin.text = "Score: " + score.ToString();
 
 
-        highScoreTextWin.text = "High Score: " + highScore.ToString();
+        //highScoreTextWin.text = "High Score: " + highScore.ToString();
 
         // ハイスコアより現在スコアが高い時
         if (score > highScore)

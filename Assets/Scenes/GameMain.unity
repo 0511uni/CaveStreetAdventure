@@ -1072,6 +1072,7 @@ MonoBehaviour:
   resultGameOverIcon: {fileID: 748435881}
   scoreTextGameOver: {fileID: 526058258}
   highScoreTextGameOver: {fileID: 1308151648}
+  playerLifeManagement: {fileID: 1502327123}
 --- !u!1 &337881602
 GameObject:
   m_ObjectHideFlags: 0
@@ -11192,7 +11193,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &650478825
 Transform:
   m_ObjectHideFlags: 0
@@ -14840,21 +14841,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cbff03e29d503d45a808065fefbc093, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 1708339171}
   scoreText: {fileID: 1077790739}
-  scoreTextWin: {fileID: 1384956892}
   scoreTextGameOver: {fileID: 526058258}
   score: 0
   score2: 0
   highScoreText: {fileID: 1654266704}
-  highScoreTextWin: {fileID: 716900371}
-  highScoreTextGameOver: {fileID: 1308151648}
   gameOverText: {fileID: 591676581}
-  resultRSButton: {fileID: 1704480757}
-  resultGameOverPanel: {fileID: 459472616}
-  resultGameOverIcon: {fileID: 748435881}
-  scoreUI: {fileID: 1388215406}
-  buttonController: {fileID: 579694172}
+  gameManagement: {fileID: 235754282}
 --- !u!1 &1504520101
 GameObject:
   m_ObjectHideFlags: 0

@@ -30,6 +30,9 @@ public class GameManagement : MonoBehaviour
     [SerializeField]
     Text highScoreTextWin;  //  スコアのUI
 
+    //[SerializeField]
+    //Text highScoreTextGameOver;
+
     [SerializeField]
     GameObject scoreUI;
 
@@ -69,8 +72,23 @@ public class GameManagement : MonoBehaviour
     [SerializeField]
     Text highScoreTextGameOver;
 
+    [SerializeField]
+    PlayerLifeManagement playerLifeManagement;
+
     #endregion
 
+    void Start()
+    {
+        //scoreText.text = "Count: " + score.ToString();
+        scoreTextWin.enabled = false;
+        scoreTextGameOver.enabled = false;
+        highScoreTextWin.enabled = false;
+        highScoreTextGameOver.enabled = false;
+        gameOverText.enabled = false;
+        resultRSButton.SetActive(false);
+        resultGameOverPanel.SetActive(false);
+        resultGameOverIcon.SetActive(false);
+    }
     //　タイトルボタンを押したら実行する
     public void TitleBackBottan()
     {
@@ -129,6 +147,9 @@ public class GameManagement : MonoBehaviour
         scoreTextGameOver.enabled = true;
 
         highScoreTextGameOver.enabled = true;
+
+        scoreTextGameOver.text = "Score: " + playerLifeManagement.score.ToString();
+        highScoreTextGameOver.text = "High Score: " + playerLifeManagement.highScore.ToString();
     }
 
     public void GameClear()
