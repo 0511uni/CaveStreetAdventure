@@ -2,9 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class TitleDirectorController : MonoBehaviour
 {
+    [SerializeField]
+    DataCreateSave datSave;
+
+    [SerializeField]
+    Text resultGamehighScoreText;
+    
+ 
+
     //　スタートボタンを押したら実行する
     public void GameStart()
     {
@@ -35,6 +44,7 @@ public class TitleDirectorController : MonoBehaviour
     void Start()
     {
         Screen.SetResolution(400, 710, false, 60);
+        resultGamehighScoreText.text = datSave.highScore;
     }
 
 }

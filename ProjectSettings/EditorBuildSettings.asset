@@ -11,4 +11,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GameMain.unity
     guid: f44d177afda34534ba773887e6fbd093
+  - enabled: 1
+    path: Assets/Sample/DataCreateSample/DataCreateMain.unity
+    guid: ab8bfb642fd498b4482c8fb04508be3e
+  - enabled: 1
+    path: Assets/Sample/DataCreateSample/DataCreateSub.unity
+    guid: 880c75719301b034a8b3126f6e8e8c3b
   m_configObjects: {}

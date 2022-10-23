@@ -1150,6 +1150,7 @@ MonoBehaviour:
   resultGameOverIcon: {fileID: 748435881}
   resultGameScoreText: {fileID: 735420301}
   resultGamehighScoreText: {fileID: 162020059}
+  createSave: {fileID: 11400000, guid: 7596a03b4de9c9440aceea3798abb451, type: 2}
   playerLifeManagement: {fileID: 1502327123}
 --- !u!1 &337881602
 GameObject:

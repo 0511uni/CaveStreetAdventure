@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 /// <summary>
 /// プレイヤーのライフ管理
@@ -21,6 +22,7 @@ public class PlayerLifeManagement : MonoBehaviour
 
     [SerializeField]
     GameManagement gameManagement;
+
     #endregion
 
     #region//プライベート変数 ハイスコアー保存キー
