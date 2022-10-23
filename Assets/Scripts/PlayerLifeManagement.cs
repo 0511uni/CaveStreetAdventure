@@ -18,12 +18,12 @@ public class PlayerLifeManagement : MonoBehaviour
     //[SerializeField]
     //Text scoreTextWin;  //  スコアのUI
 
-    [SerializeField]
-    Text scoreTextGameOver;
+    //[SerializeField]
+    //Text scoreTextGameOver;
 
     public int score; //  スコア
-    [SerializeField]
-    int score2; //  スコア
+    //[SerializeField]
+    //int score2; //  スコア
     public int highScore; //ハイスコア用変数
 
     [SerializeField]
@@ -35,8 +35,8 @@ public class PlayerLifeManagement : MonoBehaviour
     //[SerializeField]
     //Text highScoreTextGameOver;
 
-    [SerializeField]
-    Text gameOverText; // ゲームオーバーUI
+    //[SerializeField]
+    //Text gameOverText; // ゲームオーバーUI
 
     //[SerializeField]
     //GameObject resultRSButton;
@@ -63,7 +63,7 @@ public class PlayerLifeManagement : MonoBehaviour
 
     string key = "HIGH SCORE"; //ハイスコアの保存先キー
 
-    bool gameOver;
+    //bool gameOver;
     #endregion
 
     void Start()
@@ -140,6 +140,27 @@ public class PlayerLifeManagement : MonoBehaviour
         }
 
 
+        ////  スコアの表示を最新
+        //scoreText.text = "Score: " + score.ToString();
+        //// ハイスコアより現在スコアが高い時
+        //if (score > highScore)
+        //{
+
+        //    highScore = score;
+        //    //ハイスコア更新
+
+        //    PlayerPrefs.SetInt(key, highScore);
+        //    //ハイスコアを保存
+
+        //    highScoreText.text = "HighScore: " + highScore.ToString();
+        //    //ハイスコアを表示
+        //}
+    }
+
+    // UI の表示を最新する
+    public void SetCountText()
+    {
+        Debug.Log("setcount");
         //  スコアの表示を最新
         scoreText.text = "Score: " + score.ToString();
         // ハイスコアより現在スコアが高い時
@@ -155,13 +176,8 @@ public class PlayerLifeManagement : MonoBehaviour
             highScoreText.text = "HighScore: " + highScore.ToString();
             //ハイスコアを表示
         }
-    }
-
-    // UI の表示を最新する
-    public void SetCountText()
-    {
         //  スコアの表示を最新
-        scoreText.text = "Score: " + score.ToString();//Count: 
+        //scoreText.text = "Score: " + score.ToString();//Count: 
 
         //scoreTextGameOver.text = "Score: " + score.ToString();//Count:
 

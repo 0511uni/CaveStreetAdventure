@@ -12,8 +12,6 @@ using static UnityEditor.Timeline.TimelinePlaybackControls;
 public class GameManagement : MonoBehaviour
 {
     #region//インスペクターで設定する
-    [SerializeField]
-    GameObject player;
 
     [SerializeField]
     GameObject winText;
@@ -30,24 +28,12 @@ public class GameManagement : MonoBehaviour
     [SerializeField]
     Text highScoreTextWin;  //  スコアのUI
 
-    //[SerializeField]
-    //Text highScoreTextGameOver;
-
     [SerializeField]
     GameObject scoreUI;
 
     [SerializeField]
     GameObject buttonController;
 
-    #endregion
-
-    #region//プライベート変数  bool
-
-    bool gameClear = false; //ゲームクリアーしたら操作を無効にする
-
-    #endregion
-
-    #region//インスペクターで設定する ゲームオーバー
     [SerializeField]
     Text gameOverText; // ゲームオーバーUIText
 
@@ -77,15 +63,22 @@ public class GameManagement : MonoBehaviour
 
     #endregion
 
+    #region//プライベート変数  bool
+
+    //bool gameClear = false; //ゲームクリアーしたら操作を無効にする
+
+    #endregion
+
     void Start()
     {
-        //scoreText.text = "Count: " + score.ToString();
+        winText.SetActive(false);
+        resultRSButton.SetActive(false);
+        resultGameClearPanel.SetActive(false);
         scoreTextWin.enabled = false;
         scoreTextGameOver.enabled = false;
         highScoreTextWin.enabled = false;
         highScoreTextGameOver.enabled = false;
         gameOverText.enabled = false;
-        resultRSButton.SetActive(false);
         resultGameOverPanel.SetActive(false);
         resultGameOverIcon.SetActive(false);
     }
@@ -98,7 +91,7 @@ public class GameManagement : MonoBehaviour
 
     public void GameOver()
     {
-        Debug.Log("ゲームオーバーメソッド");
+        //Debug.Log("ゲームオーバーメソッド");
 
         gameOverText.enabled = true;
 
@@ -142,8 +135,6 @@ public class GameManagement : MonoBehaviour
 
         buttonController.SetActive(false);
 
-        player.GetComponent<PlayerLifeManagement>().SetCountText();
-
         scoreTextGameOver.enabled = true;
 
         highScoreTextGameOver.enabled = true;
@@ -154,7 +145,7 @@ public class GameManagement : MonoBehaviour
 
     public void GameClear()
     {
-        gameClear = true;
+        //gameClear = true;
 
         winText.SetActive(true);
 
@@ -165,10 +156,6 @@ public class GameManagement : MonoBehaviour
         buttonController.SetActive(false);
 
         scoreUI.SetActive(false);
-
-        scoreTextWin.enabled = true;
-
-        highScoreTextWin.enabled = true;
 
         enemys = GameObject.FindGameObjectsWithTag("Enemy");
 
@@ -198,9 +185,12 @@ public class GameManagement : MonoBehaviour
             Destroy(downLift.GetComponent<Rigidbody2D>()); // Liftのコンポーネントを止める。
         }
 
-        player.GetComponent<PlayerLifeManagement>().GameClearScore();
+        scoreTextWin.enabled = true;
 
-        player.GetComponent<PlayerLifeManagement>().enabled = false;
+        highScoreTextWin.enabled = true;
+
+        scoreTextWin.text = "Score: " + playerLifeManagement.score.ToString();
+        highScoreTextWin.text = "High Score: " + playerLifeManagement.highScore.ToString();
 
     }
 }
