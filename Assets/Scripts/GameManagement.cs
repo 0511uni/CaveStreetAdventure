@@ -25,8 +25,8 @@ public class GameManagement : MonoBehaviour
     [SerializeField]
     Text scoreTextWin;  //  スコアのUI
 
-    [SerializeField]
-    Text highScoreTextWin;  //  スコアのUI
+    //[SerializeField]
+    //Text highScoreTextWin;  //  スコアのUI
 
     [SerializeField]
     GameObject scoreUI;
@@ -53,10 +53,15 @@ public class GameManagement : MonoBehaviour
     GameObject resultGameOverIcon;
 
     [SerializeField]
-    Text scoreTextGameOver;
+    Text resultGameScoreText;
 
     [SerializeField]
-    Text highScoreTextGameOver;
+    Text resultGamehighScoreText;
+    //[SerializeField]
+    //Text scoreTextGameOver;
+
+    //[SerializeField]
+    //Text highScoreTextGameOver;
 
     [SerializeField]
     PlayerLifeManagement playerLifeManagement;
@@ -74,10 +79,8 @@ public class GameManagement : MonoBehaviour
         winText.SetActive(false);
         resultRSButton.SetActive(false);
         resultGameClearPanel.SetActive(false);
-        scoreTextWin.enabled = false;
-        scoreTextGameOver.enabled = false;
-        highScoreTextWin.enabled = false;
-        highScoreTextGameOver.enabled = false;
+        resultGameScoreText.enabled = false;
+        resultGamehighScoreText.enabled = false;
         gameOverText.enabled = false;
         resultGameOverPanel.SetActive(false);
         resultGameOverIcon.SetActive(false);
@@ -129,18 +132,16 @@ public class GameManagement : MonoBehaviour
             Destroy(downLift.GetComponent<Rigidbody2D>()); // Liftのコンポーネントを止める。
         }
 
-
         scoreUI.SetActive(false);
-        //timer.GetComponent<TimerController>().enabled = false;
 
         buttonController.SetActive(false);
 
-        scoreTextGameOver.enabled = true;
+        resultGameScoreText.enabled = true;
 
-        highScoreTextGameOver.enabled = true;
+        resultGamehighScoreText.enabled = true;
 
-        scoreTextGameOver.text = "Score: " + playerLifeManagement.score.ToString();
-        highScoreTextGameOver.text = "High Score: " + playerLifeManagement.highScore.ToString();
+        resultGameScoreText.text = "Score: " + playerLifeManagement.score.ToString();
+        resultGamehighScoreText.text = "High Score: " + playerLifeManagement.highScore.ToString();
     }
 
     public void GameClear()
@@ -185,12 +186,12 @@ public class GameManagement : MonoBehaviour
             Destroy(downLift.GetComponent<Rigidbody2D>()); // Liftのコンポーネントを止める。
         }
 
-        scoreTextWin.enabled = true;
+        resultGameScoreText.enabled = true;
 
-        highScoreTextWin.enabled = true;
+        resultGamehighScoreText.enabled = true;
 
-        scoreTextWin.text = "Score: " + playerLifeManagement.score.ToString();
-        highScoreTextWin.text = "High Score: " + playerLifeManagement.highScore.ToString();
+        resultGameScoreText.text = "Score: " + playerLifeManagement.score.ToString();
+        resultGamehighScoreText.text = "High Score: " + playerLifeManagement.highScore.ToString();
 
     }
 }

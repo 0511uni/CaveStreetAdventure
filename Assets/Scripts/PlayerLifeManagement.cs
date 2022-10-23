@@ -39,11 +39,6 @@ public class PlayerLifeManagement : MonoBehaviour
         highScoreText.text = "High Score: " + highScore.ToString();
     }
 
-    //void Update()
-    //{
-
-    //}
-
     // マイキャラが他のオブジェクトにぶつかった時に呼び出される
     void OnCollisionEnter2D(Collision2D other)
     {
@@ -118,25 +113,6 @@ public class PlayerLifeManagement : MonoBehaviour
         if (score <= 0)
         {
             gameManagement.GameOver();
-        }
-    }
-
-    public void GameClearScore()
-    {
-
-        // ハイスコアより現在スコアが高い時
-        if (score > highScore)
-        {
-
-            highScore = score;
-            //ハイスコア更新
-
-            PlayerPrefs.SetInt(key, highScore);
-            //ハイスコアを保存
-
-            highScoreText.text = "HighScore: " + highScore.ToString();
-            //ハイスコアを表示
-
         }
     }
 }

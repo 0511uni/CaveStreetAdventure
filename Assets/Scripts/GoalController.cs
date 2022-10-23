@@ -14,12 +14,6 @@ public class GoalController : MonoBehaviour
 
     #endregion
 
-    //#region//プライベート変数  bool
-
-    //bool gameClear = false; //ゲームクリアーしたら操作を無効にする
-
-    //#endregion
-
 
     void OnCollisionEnter2D(Collision2D other)
     {
