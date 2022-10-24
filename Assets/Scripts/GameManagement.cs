@@ -53,6 +53,9 @@ public class GameManagement : MonoBehaviour
     GameObject resultGameOverIcon;
 
     [SerializeField]
+    GameObject resultWinIcon;
+
+    [SerializeField]
     Text resultGameScoreText;
 
     [SerializeField]
@@ -78,6 +81,7 @@ public class GameManagement : MonoBehaviour
         resultRSButton.SetActive(false);
         resultGameClearPanel.SetActive(false);
         resultGameScoreText.enabled = false;
+        resultWinIcon.SetActive(false);
         resultGamehighScoreText.enabled = false;
         gameOverText.enabled = false;
         resultGameOverPanel.SetActive(false);
@@ -157,6 +161,8 @@ public class GameManagement : MonoBehaviour
         resultRSButton.SetActive(true);
 
         resultGameClearPanel.SetActive(true);
+
+        resultWinIcon.SetActive(true);
 
         buttonController.SetActive(false);
 
