@@ -1228,13 +1228,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94f4491f498ffa8409926b27ba76ae72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  winText: {fileID: 1056030991}
   resultRSButton: {fileID: 1704480757}
-  resultGameClearPanel: {fileID: 850666803}
-  scoreTextWin: {fileID: 1056030994}
   scoreUI: {fileID: 1388215406}
   buttonController: {fileID: 579694172}
-  gameOverText: {fileID: 591676581}
   enemys:
   - {fileID: 863423059}
   - {fileID: 1708339171}
@@ -1250,9 +1246,6 @@ MonoBehaviour:
   - {fileID: 474704473}
   - {fileID: 1689506605}
   - {fileID: 665955988}
-  resultGameOverPanel: {fileID: 459472616}
-  resultGameOverIcon: {fileID: 748435881}
-  resultWinIcon: {fileID: 1311440738}
   winUI: {fileID: 507293923}
   gameOverUI: {fileID: 1465663345}
   resultGameScoreText: {fileID: 735420301}
@@ -1639,7 +1632,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 401843783}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 38.482033, y: 3.519426, z: 0}
+  m_LocalPosition: {x: 32.39, y: 3.519426, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2473,7 +2466,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &507293924
 RectTransform:
   m_ObjectHideFlags: 0
@@ -12005,11 +11998,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 838750357}
   m_CullTransparentMesh: 0
---- !u!1 &850666803 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7470492719722371895, guid: 6633379e7ebe1134d9f75d659c2447da, type: 3}
-  m_PrefabInstance: {fileID: 1780583571}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &856798351 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5022960959289328531, guid: bd9443788574cf84cbf9ff2c4b65024b, type: 3}
