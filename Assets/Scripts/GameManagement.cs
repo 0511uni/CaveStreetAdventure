@@ -60,12 +60,6 @@ public class GameManagement : MonoBehaviour
 
     #endregion
 
-    #region//プライベート変数  bool
-
-    //bool gameClear = false; //ゲームクリアーしたら操作を無効にする
-
-    #endregion
-
     void Start()
     {
         resultRSButton.SetActive(false);

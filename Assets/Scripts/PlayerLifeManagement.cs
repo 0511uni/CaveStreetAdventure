@@ -111,8 +111,7 @@ public class PlayerLifeManagement : MonoBehaviour
             highScoreText.text = "HighScore: " + highScore.ToString();
             //ハイスコアを表示
         }
-
-        if (score <= 0)
+        else if (score <= 0)
         {
             gameManagement.GameOver();
         }
