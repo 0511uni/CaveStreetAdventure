@@ -145,7 +145,7 @@ public class GameManagement : MonoBehaviour
         resultGameScoreText.text = "Score: " + playerLifeManagement.score.ToString();
         resultGamehighScoreText.text = "High Score: " + playerLifeManagement.highScore.ToString();
 
-        createSave.score = "Score: " + playerLifeManagement.score.ToString();
+        createSave.score += "Score: " + playerLifeManagement.score.ToString();
         createSave.highScore = "High Score: " + playerLifeManagement.highScore.ToString();
 
 
