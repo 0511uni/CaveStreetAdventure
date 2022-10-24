@@ -25,9 +25,6 @@ public class GameManagement : MonoBehaviour
     [SerializeField]
     Text scoreTextWin;  //  スコアのUI
 
-    //[SerializeField]
-    //Text highScoreTextWin;  //  スコアのUI
-
     [SerializeField]
     GameObject scoreUI;
 
@@ -56,16 +53,31 @@ public class GameManagement : MonoBehaviour
     GameObject resultWinIcon;
 
     [SerializeField]
+    GameObject winUI;
+
+    [SerializeField]
+    GameObject gameOverUI;
+
+    [SerializeField]
     Text resultGameScoreText;
 
     [SerializeField]
     Text resultGamehighScoreText;
 
     [SerializeField]
+    GameObject resultScoreText;
+
+    [SerializeField]
     DataCreateSave createSave;
 
     [SerializeField]
     PlayerLifeManagement playerLifeManagement;
+
+    [SerializeField]
+    Text resultTimer;
+
+    [SerializeField]
+    TimerController timerController;
 
     #endregion
 
@@ -77,15 +89,14 @@ public class GameManagement : MonoBehaviour
 
     void Start()
     {
-        winText.SetActive(false);
+        //resultUI.SetActive(false);
         resultRSButton.SetActive(false);
-        resultGameClearPanel.SetActive(false);
-        resultGameScoreText.enabled = false;
-        resultWinIcon.SetActive(false);
-        resultGamehighScoreText.enabled = false;
-        gameOverText.enabled = false;
-        resultGameOverPanel.SetActive(false);
-        resultGameOverIcon.SetActive(false);
+        //resultGameScoreText.enabled = false;
+        //resultGamehighScoreText.enabled = false;
+        resultScoreText.SetActive(false);
+        resultTimer.enabled = false;
+        gameOverUI.SetActive(false);
+        //winUI.SetActive(false);
     }
     //　タイトルボタンを押したら実行する
     public void TitleBackBottan()
@@ -96,7 +107,13 @@ public class GameManagement : MonoBehaviour
 
     public void GameOver()
     {
-        //Debug.Log("ゲームオーバーメソッド");
+        //resultUI.SetActive(true);
+
+        resultScoreText.SetActive(true);
+
+        winUI.SetActive(false);
+
+        gameOverUI.SetActive(true);
 
         gameOverText.enabled = true;
 
@@ -105,6 +122,12 @@ public class GameManagement : MonoBehaviour
         resultGameOverPanel.SetActive(true);
 
         resultGameOverIcon.SetActive(true);
+
+        //resultTimer.text = timerController.ToString();
+
+        resultTimer.enabled = true;
+
+        timerController.enabled = false;
 
         enemys = GameObject.FindGameObjectsWithTag("Enemy");
 
@@ -138,9 +161,9 @@ public class GameManagement : MonoBehaviour
 
         buttonController.SetActive(false);
 
-        resultGameScoreText.enabled = true;
+        //resultGameScoreText.enabled = true;
 
-        resultGamehighScoreText.enabled = true;
+        //resultGamehighScoreText.enabled = true;
 
         resultGameScoreText.text = "Score: " + playerLifeManagement.score.ToString();
         resultGamehighScoreText.text = "High Score: " + playerLifeManagement.highScore.ToString();
@@ -149,12 +172,16 @@ public class GameManagement : MonoBehaviour
         createSave.highScore = "High Score: " + playerLifeManagement.highScore.ToString();
 
 
-        //SceneManager.LoadScene("DataCreateSub");
+        //SceneManager.LoadScene("");
     }
 
     public void GameClear()
     {
-        //gameClear = true;
+        resultScoreText.SetActive(true);
+
+        winUI.SetActive(true);
+
+        gameOverUI.SetActive(false);
 
         winText.SetActive(true);
 
@@ -168,6 +195,10 @@ public class GameManagement : MonoBehaviour
 
         scoreUI.SetActive(false);
 
+        resultTimer.enabled = true;
+
+        timerController.enabled = false;
+
         enemys = GameObject.FindGameObjectsWithTag("Enemy");
 
         foreach (var enemy in enemys)
@@ -196,9 +227,9 @@ public class GameManagement : MonoBehaviour
             Destroy(downLift.GetComponent<Rigidbody2D>()); // Liftのコンポーネントを止める。
         }
 
-        resultGameScoreText.enabled = true;
+        //resultGameScoreText.enabled = true;
 
-        resultGamehighScoreText.enabled = true;
+        //resultGamehighScoreText.enabled = true;
 
         resultGameScoreText.text = "Score: " + playerLifeManagement.score.ToString();
         resultGamehighScoreText.text = "High Score: " + playerLifeManagement.highScore.ToString();

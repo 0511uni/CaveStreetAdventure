@@ -10,8 +10,7 @@ public class TimerController : MonoBehaviour
     [SerializeField]
     int minute;
 
-    [SerializeField]
-    float seconds;
+    public float seconds;
 
     //　前のUpdateの時の秒数
     float oldSeconds;
@@ -47,7 +46,6 @@ public class TimerController : MonoBehaviour
         scoreUI.SetActive(true);
     }
 
-    // Update is called once per frame
     void Update()
     {
         seconds -= Time.deltaTime;
@@ -68,24 +66,24 @@ public class TimerController : MonoBehaviour
             gameManagement.GameOver();
         }
 
-        // ハイスコアタイムより現在スコアタイムが高い時
-        if (highScoreTimer < seconds || seconds <= 50f)
-        {
+        //// ハイスコアタイムより現在スコアタイムが高い時
+        //if (highScoreTimer < seconds || seconds <= 50f)
+        //{
 
-            // highScoreTimer = minute;
-            highScoreTimer = seconds;
-            //ハイスコア更新
+        //    // highScoreTimer = minute;
+        //    highScoreTimer = seconds;
+        //    //ハイスコア更新
 
-            PlayerPrefs.SetInt(Timekey, (int)highScoreTimer);
-            //ハイスコアを保存
+        //    PlayerPrefs.SetInt(Timekey, (int)highScoreTimer);
+        //    //ハイスコアを保存
 
-            highScoreTimerText.text = "Timer: " + minute.ToString("00") + ":" + ((int)seconds).ToString("00").ToString();
-            //ハイスコアを表示
-        }
-        else
-        {
-            highScoreTimerText.text = "Timer: " + minute.ToString("00") + ":" + ((int)seconds).ToString("00").ToString();
-            //ハイスコアを表示
-        }
+        //    highScoreTimerText.text = "Timer: " + minute.ToString("00") + ":" + ((int)seconds).ToString("00").ToString();
+        //    //ハイスコアを表示
+        //}
+        //else
+        //{
+        //    highScoreTimerText.text = "Timer: " + minute.ToString("00") + ":" + ((int)seconds).ToString("00").ToString();
+        //    //ハイスコアを表示
+        //}
     }
 }
