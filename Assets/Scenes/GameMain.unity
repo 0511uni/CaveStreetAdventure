@@ -2468,7 +2468,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &507293924
 RectTransform:
   m_ObjectHideFlags: 0
@@ -12098,7 +12098,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 878947187}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 21.43, y: -4.8, z: 0}
+  m_LocalPosition: {x: 21.62, y: -4.8, z: 0}
   m_LocalScale: {x: 5, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -12442,7 +12442,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 954958971}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 21.43, y: 10.16, z: 0}
+  m_LocalPosition: {x: 21.62, y: 10.16, z: 0}
   m_LocalScale: {x: 5, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -12649,7 +12649,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5022960959289328520, guid: bd9443788574cf84cbf9ff2c4b65024b, type: 3}
       propertyPath: m_BodyType
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5022960959289328520, guid: bd9443788574cf84cbf9ff2c4b65024b, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5022960959289328521, guid: bd9443788574cf84cbf9ff2c4b65024b, type: 3}
       propertyPath: speed
@@ -12941,7 +12945,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 987843432}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 33.62, y: -2.65, z: 0}
+  m_LocalPosition: {x: 33.62, y: -2.7, z: 0}
   m_LocalScale: {x: 3, y: 0.2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -14008,6 +14012,10 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 880476212}
     m_Modifications:
+    - target: {fileID: 6093463853863417664, guid: 8bbffcd688dceef489de5056da722459, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.x
+      value: -1.9766707
+      objectReference: {fileID: 0}
     - target: {fileID: 6093463853863417666, guid: 8bbffcd688dceef489de5056da722459, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -14257,7 +14265,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5022960959289328520, guid: bd9443788574cf84cbf9ff2c4b65024b, type: 3}
       propertyPath: m_BodyType
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5022960959289328520, guid: bd9443788574cf84cbf9ff2c4b65024b, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5022960959289328521, guid: bd9443788574cf84cbf9ff2c4b65024b, type: 3}
       propertyPath: speed
@@ -14800,7 +14812,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!212 &1502327119
 SpriteRenderer:
@@ -14974,7 +14986,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5022960959289328520, guid: bd9443788574cf84cbf9ff2c4b65024b, type: 3}
       propertyPath: m_BodyType
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5022960959289328520, guid: bd9443788574cf84cbf9ff2c4b65024b, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5022960959289328521, guid: bd9443788574cf84cbf9ff2c4b65024b, type: 3}
       propertyPath: speed
@@ -16583,7 +16599,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5022960959289328520, guid: bd9443788574cf84cbf9ff2c4b65024b, type: 3}
       propertyPath: m_BodyType
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5022960959289328520, guid: bd9443788574cf84cbf9ff2c4b65024b, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5022960959289328521, guid: bd9443788574cf84cbf9ff2c4b65024b, type: 3}
       propertyPath: speed
@@ -17706,11 +17726,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5022960959289328520, guid: bd9443788574cf84cbf9ff2c4b65024b, type: 3}
       propertyPath: m_BodyType
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5022960959289328520, guid: bd9443788574cf84cbf9ff2c4b65024b, type: 3}
       propertyPath: m_Constraints
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5022960959289328520, guid: bd9443788574cf84cbf9ff2c4b65024b, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5022960959289328521, guid: bd9443788574cf84cbf9ff2c4b65024b, type: 3}
       propertyPath: speed

@@ -43,7 +43,7 @@ public class WarpPoint : MonoBehaviour
             //移動先は直後移動できないようにする 
             transObj.moveStatus = false; 
             obj.transform.position = transVec;
-        } // 左右移動のみ
+        } // 移動
     }
 
     /// <summary>
