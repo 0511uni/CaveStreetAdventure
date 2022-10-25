@@ -126,9 +126,6 @@ public class GameManagement : MonoBehaviour
 
         createSave.score = "Score: " + playerLifeManagement.score.ToString();
         createSave.highScore = "High Score: " + playerLifeManagement.highScore.ToString();
-
-
-        //SceneManager.LoadScene("");
     }
 
     public void GameClear()
