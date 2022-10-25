@@ -41,7 +41,10 @@ public class PlayerLifeManagement : MonoBehaviour
         highScoreText.text = "High Score: " + highScore.ToString();
     }
 
-    // マイキャラが他のオブジェクトにぶつかった時に呼び出される
+    /// <summary>
+    /// マイキャラが他のオブジェクトにぶつかった時に呼び出される
+    /// </summary>
+    /// <param name="other">タグの相手</param>
     void OnCollisionEnter2D(Collision2D other)
     {
 
