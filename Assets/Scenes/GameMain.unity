@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -964,7 +964,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!61 &193152434
 BoxCollider2D:
@@ -1633,7 +1633,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 401843783}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 32.39, y: 3.519426, z: 0}
+  m_LocalPosition: {x: 38.44, y: 3.519426, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -18034,8 +18034,16 @@ PrefabInstance:
     m_TransformParent: {fileID: 880476212}
     m_Modifications:
     - target: {fileID: 6093463853863417664, guid: 8bbffcd688dceef489de5056da722459, type: 3}
+      propertyPath: m_Size.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6093463853863417664, guid: 8bbffcd688dceef489de5056da722459, type: 3}
       propertyPath: m_SpriteTilingProperty.newSize.x
-      value: -2.994824
+      value: 2.467987
+      objectReference: {fileID: 0}
+    - target: {fileID: 6093463853863417664, guid: 8bbffcd688dceef489de5056da722459, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.y
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6093463853863417666, guid: 8bbffcd688dceef489de5056da722459, type: 3}
       propertyPath: m_RootOrder
@@ -18043,11 +18051,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6093463853863417666, guid: 8bbffcd688dceef489de5056da722459, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.5081
+      value: 36.8019
       objectReference: {fileID: 0}
     - target: {fileID: 6093463853863417666, guid: 8bbffcd688dceef489de5056da722459, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.5034
+      value: 2.46
       objectReference: {fileID: 0}
     - target: {fileID: 6093463853863417666, guid: 8bbffcd688dceef489de5056da722459, type: 3}
       propertyPath: m_LocalPosition.z
@@ -18087,11 +18095,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6093463853863417692, guid: 8bbffcd688dceef489de5056da722459, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6093463853863417693, guid: 8bbffcd688dceef489de5056da722459, type: 3}
       propertyPath: m_Size.x
-      value: -2.994824
+      value: 2.134537
+      objectReference: {fileID: 0}
+    - target: {fileID: 6093463853863417693, guid: 8bbffcd688dceef489de5056da722459, type: 3}
+      propertyPath: m_Size.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6093463853863417693, guid: 8bbffcd688dceef489de5056da722459, type: 3}
+      propertyPath: m_Color.b
+      value: 0.09493288
+      objectReference: {fileID: 0}
+    - target: {fileID: 6093463853863417693, guid: 8bbffcd688dceef489de5056da722459, type: 3}
+      propertyPath: m_Color.g
+      value: 0.09493288
+      objectReference: {fileID: 0}
+    - target: {fileID: 6093463853863417693, guid: 8bbffcd688dceef489de5056da722459, type: 3}
+      propertyPath: m_Color.r
+      value: 0.9433962
+      objectReference: {fileID: 0}
+    - target: {fileID: 6093463853863417693, guid: 8bbffcd688dceef489de5056da722459, type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
