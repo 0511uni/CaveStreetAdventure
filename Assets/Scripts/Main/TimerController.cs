@@ -15,8 +15,13 @@ public class TimerController : MonoBehaviour
     //　前のUpdateの時の秒数
     float oldSeconds;
 
+    float timeOut;
+
     [SerializeField]
     Text highScoreTimerText; //ハイスコアタイムを表示するText
+
+    [SerializeField]
+    Text resultTimer;
 
     [SerializeField]
     GameObject scoreUI;
@@ -36,6 +41,7 @@ public class TimerController : MonoBehaviour
         minute = 00;
         seconds = 60f;
         oldSeconds = 0f;
+        timeOut = 0f;
         timerText = GetComponentInChildren<Text>();
 
         highScoreTimer = PlayerPrefs.GetInt(Timekey, (int)highScoreTimer);
@@ -61,8 +67,10 @@ public class TimerController : MonoBehaviour
         }
         oldSeconds = seconds;
 
-        if (seconds < 0f)
+        if (seconds <= timeOut)
         {
+            Debug.Log("timeOut");
+            resultTimer.text = minute.ToString("00") + ":" + seconds.ToString("00");
             gameManagement.GameOver();
         }
 
