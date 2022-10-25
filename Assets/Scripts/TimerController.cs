@@ -61,7 +61,7 @@ public class TimerController : MonoBehaviour
         }
         oldSeconds = seconds;
 
-        if (seconds <= 0f)
+        if (seconds < 0f)
         {
             gameManagement.GameOver();
         }
