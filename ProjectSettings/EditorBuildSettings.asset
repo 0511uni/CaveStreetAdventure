@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Sample/DataCreateSample/DataCreateSub.unity
     guid: 880c75719301b034a8b3126f6e8e8c3b
+  - enabled: 0
+    path: Assets/Sample/Jump Adventure Land/Scenes/Main_Jump Adventure Land.unity
+    guid: 69a89891edea5a140b6ee3437a2b84e6
   m_configObjects: {}
