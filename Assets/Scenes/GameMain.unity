@@ -17867,6 +17867,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: BigItem
       objectReference: {fileID: 0}
+    - target: {fileID: 3493103939603611605, guid: b4f5814582dce694293969325d263a07, type: 3}
+      propertyPath: m_Size.x
+      value: 0.8594239
+      objectReference: {fileID: 0}
+    - target: {fileID: 3493103939603611605, guid: b4f5814582dce694293969325d263a07, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.046201706
+      objectReference: {fileID: 0}
+    - target: {fileID: 3493103939603611605, guid: b4f5814582dce694293969325d263a07, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.0003284216
+      objectReference: {fileID: 0}
+    - target: {fileID: 3493103939603611605, guid: b4f5814582dce694293969325d263a07, type: 3}
+      propertyPath: m_AutoTiling
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: b4f5814582dce694293969325d263a07, type: 3}
