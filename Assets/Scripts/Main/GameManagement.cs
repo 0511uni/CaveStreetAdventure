@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.SocialPlatforms.Impl;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
-using static UnityEditor.Timeline.TimelinePlaybackControls;
+//using static UnityEditor.Timeline.TimelinePlaybackControls;
 /// <summary>
 /// ゲーム全体を制御する
 /// </summary>
