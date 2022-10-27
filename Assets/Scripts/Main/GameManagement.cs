@@ -103,6 +103,13 @@ public class GameManagement : MonoBehaviour
             enemy.GetComponent<LoopMoveEnemy>().enabled = false; // Enemyのコンポーネントを止める。
         }
 
+        enemys = GameObject.FindGameObjectsWithTag("Enemy3");
+
+        foreach (var enemy in enemys)
+        {
+            enemy.GetComponent<EnemyDownMove>().enabled = false; // Enemyのコンポーネントを止める。
+        }
+
         warps = GameObject.FindGameObjectsWithTag("Warp");
         foreach (var warp in warps)
         {

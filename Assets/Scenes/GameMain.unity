@@ -1261,7 +1261,7 @@ GameObject:
   - component: {fileID: 235754282}
   m_Layer: 0
   m_Name: GameManager
-  m_TagString: Wall2
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1300,6 +1300,7 @@ MonoBehaviour:
   - {fileID: 863423059}
   - {fileID: 1708339171}
   - {fileID: 1288771742}
+  - {fileID: 193152430}
   warps:
   - {fileID: 878947187}
   - {fileID: 954958971}
@@ -16817,7 +16818,7 @@ GameObject:
   - component: {fileID: 1916187835}
   m_Layer: 0
   m_Name: Warps
-  m_TagString: Untagged
+  m_TagString: Warp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
