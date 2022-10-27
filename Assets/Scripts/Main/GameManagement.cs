@@ -114,6 +114,7 @@ public class GameManagement : MonoBehaviour
         foreach (var warp in warps)
         {
             warp.SetActive(false); // Warpのコンポーネントを止める。
+            //warp.GetComponent<WarpPoint>().enabled = false;
         }
 
         downLifts = GameObject.FindGameObjectsWithTag("Lift");

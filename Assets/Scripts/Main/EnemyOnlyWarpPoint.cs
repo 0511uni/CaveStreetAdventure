@@ -1,18 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-/// <summary>
-/// オブジェクトがワープする
-/// </summary>
-public class WarpPoint : MonoBehaviour
+
+public class EnemyOnlyWarpPoint : MonoBehaviour
 {
-    
     GameObject obj;
 
-    
-    public WarpPoint transObj;
 
-    
+    public EnemyOnlyWarpPoint transObj;
+
+
     Vector2 transVec;
 
     //移動状態を表すフラグ
@@ -33,6 +30,8 @@ public class WarpPoint : MonoBehaviour
     /// <param name="other">オブジェクト</param>
     void OnTriggerEnter2D(Collider2D other)
     {
+        if (other.CompareTag("Enemy3"))
+        {
             obj = GameObject.Find(other.name);
             //自分が移動可能なとき移動する。
 
@@ -43,7 +42,10 @@ public class WarpPoint : MonoBehaviour
                 //移動先は直後移動できないようにする 
                 transObj.moveStatus = false;
                 obj.transform.position = transVec;
-            } // 移動   
+            } // 移動
+        }
+
+
     }
 
     /// <summary>

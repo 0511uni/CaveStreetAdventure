@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1306,6 +1306,7 @@ MonoBehaviour:
   - {fileID: 954958971}
   - {fileID: 987843432}
   - {fileID: 487201763}
+  - {fileID: 1916187834}
   downLifts:
   - {fileID: 1879682915}
   - {fileID: 1516666805}
@@ -2109,7 +2110,7 @@ GameObject:
   - component: {fileID: 487201764}
   - component: {fileID: 487201767}
   - component: {fileID: 487201766}
-  - component: {fileID: 487201765}
+  - component: {fileID: 487201768}
   m_Layer: 0
   m_Name: EnemyDownWarpOut
   m_TagString: Warp
@@ -2132,20 +2133,6 @@ Transform:
   m_Father: {fileID: 1916187835}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &487201765
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 487201763}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd8baf0269c7bbe4caf595c85f0ec261, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  transObj: {fileID: 987843433}
-  moveStatus: 1
 --- !u!61 &487201766
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2224,6 +2211,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &487201768
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 487201763}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d16db6ef990a3fb408205f93e6c28467, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  transObj: {fileID: 987843437}
+  moveStatus: 1
 --- !u!1 &492747671
 GameObject:
   m_ObjectHideFlags: 0
@@ -13197,7 +13198,7 @@ GameObject:
   - component: {fileID: 987843436}
   - component: {fileID: 987843435}
   - component: {fileID: 987843434}
-  - component: {fileID: 987843433}
+  - component: {fileID: 987843437}
   m_Layer: 0
   m_Name: EnemyDownWarpIn
   m_TagString: Warp
@@ -13205,20 +13206,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &987843433
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 987843432}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd8baf0269c7bbe4caf595c85f0ec261, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  transObj: {fileID: 487201765}
-  moveStatus: 0
 --- !u!61 &987843434
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -13304,14 +13291,28 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 987843432}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 33.62, y: -2.7, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: 33.07, y: -3.1, z: 0}
   m_LocalScale: {x: 3, y: 0.2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1916187835}
   m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+--- !u!114 &987843437
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 987843432}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d16db6ef990a3fb408205f93e6c28467, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  transObj: {fileID: 487201768}
+  moveStatus: 1
 --- !u!1 &1037042340
 GameObject:
   m_ObjectHideFlags: 0

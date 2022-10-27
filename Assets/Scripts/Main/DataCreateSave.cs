@@ -6,4 +6,5 @@ public class DataCreateSave : ScriptableObject
 {
     public string score = "Score: ";
     public string highScore = "High Score: ";
+    public string key = "HIGH SCORE";
 }

@@ -11,6 +11,9 @@ public class TitleDirectorController : MonoBehaviour
 
     [SerializeField]
     Text resultGamehighScoreText;
+
+    [SerializeField]
+    PlayerLifeManagement playerLifeManagement;
     
  
 
@@ -41,10 +44,10 @@ public class TitleDirectorController : MonoBehaviour
     }
 
     // Use this for initialization
-    void Start()
+    void Start() 
     {
         Screen.SetResolution(400, 710, false, 60);
-        resultGamehighScoreText.text = datSave.highScore;
+        resultGamehighScoreText.text = datSave.highScore + PlayerPrefs.GetInt(datSave.key).ToString();
     }
 
 }
