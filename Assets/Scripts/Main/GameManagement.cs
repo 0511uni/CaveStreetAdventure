@@ -1,10 +1,11 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.SocialPlatforms.Impl;
 using UnityEngine.UI;
-using UnityEngine.UIElements;
+//using UnityEngine.UIElements;
 //using static UnityEditor.Timeline.TimelinePlaybackControls;
 /// <summary>
 /// ゲーム全体を制御する
@@ -58,6 +59,12 @@ public class GameManagement : MonoBehaviour
     [SerializeField]
     TimerController timerController;
 
+    [SerializeField] GameObject pausePanel;
+
+    [SerializeField] Button pauseButton;
+
+    [SerializeField] Button resumeButton;
+
     #endregion
 
     void Start()
@@ -67,14 +74,41 @@ public class GameManagement : MonoBehaviour
         resultTimer.enabled = false;
         gameOverUI.SetActive(false);
         winUI.SetActive(false);
+        pausePanel.SetActive(false);// 最初は非表示
+        pauseButton.onClick.AddListener(Pause);
+        resumeButton.onClick.AddListener(Resume);
     }
-    //　タイトルボタンを押したら実行する
+
+    /// <summary>
+    /// ゲームを一時停止する
+    /// </summary>
+    private void Pause()
+    {
+        Time.timeScale = 0; // Time.timeScaleで時間の流れの速さを決める。0だと時間が停止する
+        pausePanel.SetActive(true);
+    }
+
+    /// <summary>
+    /// ゲームを再開する
+    /// </summary>
+    private void Resume()
+    {
+        Time.timeScale = 1; // また時間が流れるようにする
+        pausePanel.SetActive(false);
+    }
+
+    /// <summary>
+    /// タイトルボタン実行する
+    /// </summary>
     public void TitleBackBottan()
     {
         print("Title");
         SceneManager.LoadScene("TitleMenuScene");
     }
 
+    /// <summary>
+    /// ゲームオーバー実行
+    /// </summary>
     public void GameOver()
     {
         resultScoreText.SetActive(true);
@@ -136,6 +170,9 @@ public class GameManagement : MonoBehaviour
         createSave.highScore = "High Score: " + playerLifeManagement.highScore.ToString();
     }
 
+    /// <summary>
+    /// ゲームクリア実行
+    /// </summary>
     public void GameClear()
     {
         resultScoreText.SetActive(true);

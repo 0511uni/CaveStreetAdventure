@@ -47,7 +47,7 @@ public class TitleDirectorController : MonoBehaviour
     void Start() 
     {
         Screen.SetResolution(400, 710, false, 60);
-        resultGamehighScoreText.text = datSave.highScore + PlayerPrefs.GetInt(datSave.key).ToString();
+        resultGamehighScoreText.text = "High Score: " + PlayerPrefs.GetInt(datSave.key).ToString();
     }
 
 }
