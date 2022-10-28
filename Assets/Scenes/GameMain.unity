@@ -18186,7 +18186,7 @@ GameObject:
   - component: {fileID: 2035560315}
   m_Layer: 0
   m_Name: Shot Spawn
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18899,6 +18899,14 @@ PrefabInstance:
       value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 3493103939603611560, guid: b4f5814582dce694293969325d263a07, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3493103939603611560, guid: b4f5814582dce694293969325d263a07, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3493103939603611560, guid: b4f5814582dce694293969325d263a07, type: 3}
       propertyPath: m_LocalPosition.x
       value: 6.96
       objectReference: {fileID: 0}
@@ -18939,8 +18947,12 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3493103939603611563, guid: b4f5814582dce694293969325d263a07, type: 3}
+      propertyPath: m_DrawMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3493103939603611563, guid: b4f5814582dce694293969325d263a07, type: 3}
       propertyPath: m_SortingOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3493103939603611604, guid: b4f5814582dce694293969325d263a07, type: 3}
       propertyPath: m_Name
