@@ -16052,7 +16052,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  tilt: 7
+  tilt: 4
   shot: {fileID: 5465650612423489041, guid: fd6c84105013b334c83a824b8e487be8, type: 3}
   shotSpawn: {fileID: 2035560315}
   fireRate: 5
