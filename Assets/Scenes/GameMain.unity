@@ -271,7 +271,7 @@ GameObject:
   - component: {fileID: 48355227}
   - component: {fileID: 48355226}
   m_Layer: 5
-  m_Name: ItemBoxIcon1 (1)
+  m_Name: ItemBoxIcon4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -837,7 +837,7 @@ GameObject:
   - component: {fileID: 125372050}
   - component: {fileID: 125372049}
   m_Layer: 5
-  m_Name: ItemBoxIcon3 (2)
+  m_Name: ItemBoxIcon7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15568,7 +15568,7 @@ GameObject:
   - component: {fileID: 1328430058}
   - component: {fileID: 1328430057}
   m_Layer: 5
-  m_Name: ItemBoxIcon2 (1)
+  m_Name: ItemBoxIcon5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16641,6 +16641,10 @@ MonoBehaviour:
   - {fileID: 1862657367}
   - {fileID: 152734654}
   - {fileID: 1267556758}
+  - {fileID: 48355224}
+  - {fileID: 1328430055}
+  - {fileID: 1683097430}
+  - {fileID: 125372047}
 --- !u!114 &1502327124
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17038,7 +17042,7 @@ GameObject:
   - component: {fileID: 1683097433}
   - component: {fileID: 1683097432}
   m_Layer: 5
-  m_Name: ItemBoxIcon3 (1)
+  m_Name: ItemBoxIcon6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
