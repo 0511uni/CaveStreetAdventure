@@ -15,7 +15,7 @@ public class PlayerShotAttackController : MonoBehaviour
 
     //[SerializeField]
     //GameObject getItem;
-
+    int itemNam;
     [SerializeField]
     GameObject[] items; 
 
@@ -29,7 +29,8 @@ public class PlayerShotAttackController : MonoBehaviour
         Instantiate(shot, shotSpawn.position, shotSpawn.rotation);
         //GetComponent<AudioSource>().Play();
         //Instantiate(getItem, new Vector3(-1.0f, 0.0f, 0.0f), Quaternion.identity);
-        ShowItem(3);
+        itemNam++;
+        ShowItem(itemNam);
     }
 
     
