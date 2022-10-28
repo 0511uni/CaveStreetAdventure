@@ -23,10 +23,14 @@ public class PlayerLifeManagement : MonoBehaviour
     [SerializeField]
     GameManagement gameManagement;
 
+    int itemNam;
+    [SerializeField]
+    GameObject[] items;
+
     #endregion
 
     #region//プライベート変数 ハイスコアー保存キー
-    
+
     string key = "HIGH SCORE"; //ハイスコアの保存先キー
 
     //bool gameOver;
@@ -39,6 +43,11 @@ public class PlayerLifeManagement : MonoBehaviour
         highScore = PlayerPrefs.GetInt(key, 0);
         //保存しておいたハイスコアをキーで呼び出し取得し保存されていなければ0になる
         highScoreText.text = "High Score: " + highScore.ToString();
+
+        foreach (var item in items)
+        {
+            item.SetActive(false);
+        }
     }
 
     /// <summary>
@@ -59,6 +68,9 @@ public class PlayerLifeManagement : MonoBehaviour
 
             //  UI の表示を最新します
             SetCountText();
+
+            itemNam++;
+            ShowItem(itemNam);
         }
         else if (other.gameObject.CompareTag("Item10"))
         {
@@ -117,6 +129,14 @@ public class PlayerLifeManagement : MonoBehaviour
         else if (score <= 0)
         {
             gameManagement.GameOver();
+        }
+    }
+
+    public void ShowItem(int namber)
+    {
+        for (int i = 0; i < namber; i++)
+        {
+            items[i].SetActive(true);
         }
     }
 }

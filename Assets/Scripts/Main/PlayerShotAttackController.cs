@@ -18,7 +18,7 @@ public class PlayerShotAttackController : MonoBehaviour
     //GameObject getItem;
     int itemNam;
     [SerializeField]
-    GameObject[] items; 
+    GameObject[] items;
 
     //[SerializeField]
     //Transform tran;
@@ -44,13 +44,12 @@ public class PlayerShotAttackController : MonoBehaviour
     }
     void Start()
     {
-        //ShowItem(0);
-        items[0].SetActive(false);
-        items[1].SetActive(false);
-        items[2].SetActive(false);
+        foreach (var item in items)
+        {
+            item.SetActive(false);
+        }
     }
 
-    // Update is called once per frame
     void Update()
     {
         foreach (Transform shotSpawn in shotSpawn)
