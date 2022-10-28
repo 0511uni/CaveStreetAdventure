@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Globalization;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -36,24 +37,9 @@ public class PlayerShotAttackController : MonoBehaviour
     
     public void ShowItem(int namber) 
     {
-        if (namber == 1)
+        for (int i = 0; i < namber; i++)
         {
-            items[0].SetActive(true);
-            items[1].SetActive(false);
-            items[2].SetActive(false);
-            
-        }
-        if(namber == 2)
-        {
-            items[0].SetActive(true);
-            items[1].SetActive(true);
-            items[2].SetActive(false);
-        }
-        if (namber == 3)
-        {
-            items[0].SetActive(true);
-            items[1].SetActive(true);
-            items[2].SetActive(true);
+            items[i].SetActive(true);
         }
     }
     void Start()
