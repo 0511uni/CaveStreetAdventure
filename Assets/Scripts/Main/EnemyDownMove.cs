@@ -23,7 +23,7 @@ public class EnemyDownMove : MonoBehaviour
 
     private bool rightTleftF = false;
 
-    
+
     #endregion
 
     void Start()
@@ -47,10 +47,29 @@ public class EnemyDownMove : MonoBehaviour
             else
             {
                 transform.localScale = new Vector3(1, 1, 0);// (1, 1, 0)
-                                                              //renderer.flipX = true;
+                                                            //renderer.flipX = true;
             }
             rbody.velocity = new Vector2(xVector * speed, -gravity);
         }
 
+    }
+
+    /// <summary>
+    /// isTriggerの相手に対しての対応
+    /// </summary>
+    /// <param name="other">isTriggerしてる相手</param>
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        // 相手のタグがBillだったら
+        if (other.gameObject.CompareTag("Bill"))
+        {
+            Destroy(other.gameObject);
+            //other.GetComponent<BillAttack>().enabled = false;
+
+            // Enemy自身
+            GetComponent<EnemyDownMove>().enabled = false;
+            Destroy(GetComponent<Rigidbody2D>());
+
+        }
     }
 }

@@ -16,17 +16,41 @@ public class EnemyRoundTripAct : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
 
-    private void FixedUpdate()
+    void FixedUpdate()
     {
         rb.velocity = direction * Vector3.left * 2;
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    /// <summary>
+    /// コライダー
+    /// </summary>
+    /// <param name="collision">コライダー</param>
+    void OnCollisionEnter2D(Collision2D collision)
     {
+        // 当たったコライダーが壁だったら
         if (collision.gameObject.CompareTag("Wall"))
         {
             direction *= -1;
             transform.localScale = new Vector3(direction, transform.localScale.y, transform.localScale.z);
+        }
+    }
+
+    /// <summary>
+    /// isTriggerの相手に対しての対応
+    /// </summary>
+    /// <param name="other">isTriggerしてる相手</param>
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        // 相手のタグがBillだったら
+        if (other.gameObject.CompareTag("Bill"))
+        {
+            Destroy(other.gameObject);
+            //other.GetComponent<BillAttack>().enabled = false;
+
+            // Enemy自身
+            GetComponent<EnemyRoundTripAct>().enabled = false;
+            Destroy(GetComponent<Rigidbody2D>());
+
         }
     }
 }

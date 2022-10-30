@@ -147,7 +147,7 @@ public class GameManagement : MonoBehaviour
         warps = GameObject.FindGameObjectsWithTag("Warp");
         foreach (var warp in warps)
         {
-            warp.SetActive(false); // Warpのコンポーネントを止める。
+            warp.SetActive(false); // Warpを止める。
             //warp.GetComponent<WarpPoint>().enabled = false;
         }
 

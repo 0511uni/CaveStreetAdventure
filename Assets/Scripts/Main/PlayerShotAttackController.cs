@@ -6,19 +6,22 @@ using UnityEngine.UI;
 
 public class PlayerShotAttackController : MonoBehaviour
 {
-    public float speed;
-    public float tilt;
+    [SerializeField]
+    GameObject bill;
 
-    public GameObject shot;
-    public Transform shotSpawn;
-    public float fireRate;
-    private float nextFire;
+    //public float speed;
+    //public float tilt;
+
+    //public GameObject shot;
+    //public Transform shotSpawn;
+    //public float fireRate;
+    //private float nextFire;
 
     //[SerializeField]
     //GameObject getItem;
-    int itemNam;
-    [SerializeField]
-    GameObject[] items;
+    //int itemNam;
+    //[SerializeField]
+    //GameObject[] items;
 
     //[SerializeField]
     //Transform tran;
@@ -27,34 +30,37 @@ public class PlayerShotAttackController : MonoBehaviour
 
     public void SButtonDown()
     {
-        Instantiate(shot, shotSpawn.position, shotSpawn.rotation);
+        Instantiate(bill, transform.position, Quaternion.identity);
+
+        //Instantiate(shot, shotSpawn.position, shotSpawn.rotation);
         //GetComponent<AudioSource>().Play();
         //Instantiate(getItem, new Vector3(-1.0f, 0.0f, 0.0f), Quaternion.identity);
-        itemNam++;
-        ShowItem(itemNam);
+        //itemNam++;
+        //ShowItem(itemNam);
     }
 
     
-    public void ShowItem(int namber) 
-    {
-        for (int i = 0; i < namber; i++)
-        {
-            items[i].SetActive(true);
-        }
-    }
-    void Start()
-    {
-        foreach (var item in items)
-        {
-            item.SetActive(false);
-        }
-    }
+    //public void ShowItem(int namber) 
+    //{
+    //    for (int i = 0; i < namber; i++)
+    //    {
+    //        items[i].SetActive(true);
+    //    }
+    //}
 
-    void Update()
-    {
-        foreach (Transform shotSpawn in shotSpawn)
-        {
-            Instantiate(shot, shotSpawn.position, shotSpawn.rotation);
-        }
-    }
+    //void Start()
+    //{
+    //    foreach (var item in items)
+    //    {
+    //        item.SetActive(false);
+    //    }
+    //}
+
+    //void Update()
+    //{
+    //    foreach (Transform shotSpawn in shotSpawn)
+    //    {
+    //        Instantiate(shot, shotSpawn.position, shotSpawn.rotation);
+    //    }
+    //}
 }

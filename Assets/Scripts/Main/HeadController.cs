@@ -15,6 +15,9 @@ public class HeadController : MonoBehaviour
     [SerializeField]
     GameObject player;
 
+    //[SerializeField]
+    //GameObject billPlefab;
+
     [SerializeField]
     int enemyPoint;
 
@@ -26,18 +29,14 @@ public class HeadController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            //enemy.GetComponent<BoxCollider2D>().enabled = false;
-            //enemy.transform.Rotate(0, 0, 15);
-
-            //　その収集アイテムを非表示にします
+            //　敵を非表示にします
             enemy.SetActive(false);
             enemy.GetComponent<BoxCollider2D>().enabled = false;
+
             //  スコアを加算します
             player.GetComponent<PlayerLifeManagement>().score += enemyPoint;
             //  UI の表示を最新します
             player.GetComponent<PlayerLifeManagement>().SetCountText();
         }
     }
-
-
 }

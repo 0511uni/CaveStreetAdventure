@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EnemyOnlyWarpPoint : MonoBehaviour
 {
+
     GameObject obj;
 
 
@@ -14,7 +15,7 @@ public class EnemyOnlyWarpPoint : MonoBehaviour
 
     //移動状態を表すフラグ
     [SerializeField]
-    bool moveStatus;//左右移動のみ
+    bool moveStatus;//移動
 
     void Start()
     {
@@ -30,22 +31,17 @@ public class EnemyOnlyWarpPoint : MonoBehaviour
     /// <param name="other">オブジェクト</param>
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Enemy3"))
+        obj = GameObject.Find(other.name);
+        //自分が移動可能なとき移動する。
+
+
+        if (moveStatus)
         {
-            obj = GameObject.Find(other.name);
-            //自分が移動可能なとき移動する。
 
-
-            if (moveStatus)
-            {
-
-                //移動先は直後移動できないようにする 
-                transObj.moveStatus = false;
-                obj.transform.position = transVec;
-            } // 移動
-        }
-
-
+            //移動先は直後移動できないようにする 
+            transObj.moveStatus = false;
+            obj.transform.position = transVec;
+        } // 移動   
     }
 
     /// <summary>
