@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
-
+/// <summary>
+/// お札のアクション
+/// </summary>
 public class BillAttack : MonoBehaviour
 {
     //[SerializeField]
