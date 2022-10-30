@@ -18,8 +18,16 @@ public class BillAttack : MonoBehaviour
         //}
     }
 
-    void OnBecameInvisible()
+    /*このオブジェクトが画面外に出ると呼ばれる*/
+    private void OnBecameInvisible()
     {
+        Debug.Log("画面外に出ました");
         Destroy(gameObject);
+    }
+
+    /*逆に画面内に表示されたタイミングで呼ばれます*/
+    private void OnBecameVisible()
+    {
+        Debug.Log("画面内です");
     }
 }
