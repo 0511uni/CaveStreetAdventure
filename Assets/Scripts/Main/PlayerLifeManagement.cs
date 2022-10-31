@@ -24,8 +24,8 @@ public class PlayerLifeManagement : MonoBehaviour
     GameManagement gameManagement;
 
     int itemNam;
-    [SerializeField]
-    GameObject[] items;
+    
+    public GameObject[] items;
 
     #endregion
 
@@ -63,7 +63,7 @@ public class PlayerLifeManagement : MonoBehaviour
             other.gameObject.SetActive(false);
 
             //  スコアを加算します
-            score += 10;
+            score += 1;
 
 
             //  UI の表示を最新します

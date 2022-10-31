@@ -16664,6 +16664,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bill: {fileID: 4137562578587263125, guid: 2112c252e7ff7aa4b87d71c93d5f4800, type: 3}
+  playerLifeManagement: {fileID: 1502327123}
 --- !u!1 &1504520101
 GameObject:
   m_ObjectHideFlags: 0

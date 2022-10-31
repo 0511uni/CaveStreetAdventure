@@ -19,7 +19,11 @@ public class PlayerShotAttackController : MonoBehaviour
 
     //[SerializeField]
     //GameObject getItem;
-    //int itemNam;
+    int itemNam;
+
+    [SerializeField]
+    PlayerLifeManagement playerLifeManagement;
+
     //[SerializeField]
     //GameObject[] items;
 
@@ -35,18 +39,18 @@ public class PlayerShotAttackController : MonoBehaviour
         //Instantiate(shot, shotSpawn.position, shotSpawn.rotation);
         //GetComponent<AudioSource>().Play();
         //Instantiate(getItem, new Vector3(-1.0f, 0.0f, 0.0f), Quaternion.identity);
-        //itemNam++;
-        //ShowItem(itemNam);
+        itemNam++;
+        ShowItem(itemNam);
     }
 
-    
-    //public void ShowItem(int namber) 
-    //{
-    //    for (int i = 0; i < namber; i++)
-    //    {
-    //        items[i].SetActive(true);
-    //    }
-    //}
+
+    public void ShowItem(int namber)
+    {
+        for (int i = 0; i < namber; i++)
+        {
+            playerLifeManagement.items[i].SetActive(false);
+        }
+    }
 
     //void Start()
     //{
