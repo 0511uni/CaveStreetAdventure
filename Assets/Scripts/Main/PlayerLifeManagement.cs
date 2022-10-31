@@ -42,6 +42,25 @@ public class PlayerLifeManagement : MonoBehaviour
     //bool gameOver;
     #endregion
 
+    public int Items
+    {
+        get => itemNam;
+        set
+        {
+            if (value < 0 || value > items.Length)
+            {
+                return;
+            }
+
+            itemNam = value;
+
+            for (int i = 0; i < items.Length; i++)
+            {
+                items[i].SetActive(i < value);
+            }
+        }
+    }
+
     void Start()
     {
         score = 10;
@@ -75,10 +94,11 @@ public class PlayerLifeManagement : MonoBehaviour
             //  UI の表示を最新します
             SetCountText();
 
-            shotButton.SetActive(true);
+            //shotButton.SetActive(true);
 
-            itemNam++;
-            ShowItem(itemNam);
+            Items++;
+            //itemNam++;
+            //ShowItem(itemNam);
 
             //itemNam--;
             //ShowItem(itemNam);
@@ -143,16 +163,16 @@ public class PlayerLifeManagement : MonoBehaviour
         }
     }
 
-    public void ShowItem(int namber)
-    {
-        foreach (GameObject item in items)
-        {
-            item.SetActive(false);
-        }
+    //public void ShowItem(int namber)
+    //{
+    //    foreach (GameObject item in items)
+    //    {
+    //        item.SetActive(false);
+    //    }
 
-        for (int i = 0; i < namber; i++)
-        {
-            items[i].SetActive(true);
-        }       
-    }
+    //    for (int i = 0; i < namber; i++)
+    //    {
+    //        items[i].SetActive(true);
+    //    }       
+    //}
 }

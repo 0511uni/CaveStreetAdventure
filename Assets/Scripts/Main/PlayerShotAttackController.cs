@@ -36,10 +36,10 @@ public class PlayerShotAttackController : MonoBehaviour
     //public Transform shotTarget;
     //public Transform shotTargetSpawn;
 
-    void Start()
-    {
-        shotButton.SetActive(false);
-    }
+    //void Start()
+    //{
+    //    shotButton.SetActive(false);
+    //}
 
     public void SButtonDown()
     {
@@ -51,9 +51,9 @@ public class PlayerShotAttackController : MonoBehaviour
         //if (playerLifeManagement.itemNam <= 1)
         //{
         ShotInstantiate(playerLifeManagement.itemNam);
-        playerLifeManagement.itemNam--;
-        playerLifeManagement.ShowItem(playerLifeManagement.itemNam);
-        shotButton.SetActive(false);
+        playerLifeManagement.Items--;
+        //playerLifeManagement.ShowItem(playerLifeManagement.itemNam);
+        //shotButton.SetActive(false);
 
         //}
 
