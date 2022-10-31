@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -16643,6 +16643,9 @@ MonoBehaviour:
   highScore: 0
   highScoreText: {fileID: 1654266704}
   gameManagement: {fileID: 235754282}
+  playerShotAttackController: {fileID: 1502327124}
+  shotButton: {fileID: 348916868}
+  itemNam: 0
   items:
   - {fileID: 1862657367}
   - {fileID: 152734654}
@@ -16665,6 +16668,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bill: {fileID: 4137562578587263125, guid: 2112c252e7ff7aa4b87d71c93d5f4800, type: 3}
   playerLifeManagement: {fileID: 1502327123}
+  shotButton: {fileID: 348916868}
 --- !u!1 &1504520101
 GameObject:
   m_ObjectHideFlags: 0

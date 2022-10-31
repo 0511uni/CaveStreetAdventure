@@ -19,10 +19,14 @@ public class PlayerShotAttackController : MonoBehaviour
 
     //[SerializeField]
     //GameObject getItem;
-    int itemNam;
+
+    //int itemNam;
 
     [SerializeField]
     PlayerLifeManagement playerLifeManagement;
+
+    [SerializeField]
+    GameObject shotButton;
 
     //[SerializeField]
     //GameObject[] items;
@@ -32,25 +36,60 @@ public class PlayerShotAttackController : MonoBehaviour
     //public Transform shotTarget;
     //public Transform shotTargetSpawn;
 
+    void Start()
+    {
+        shotButton.SetActive(false);
+    }
+
     public void SButtonDown()
     {
-        Instantiate(bill, transform.position, Quaternion.identity);
-
         //Instantiate(shot, shotSpawn.position, shotSpawn.rotation);
         //GetComponent<AudioSource>().Play();
         //Instantiate(getItem, new Vector3(-1.0f, 0.0f, 0.0f), Quaternion.identity);
-        itemNam++;
-        ShowItem(itemNam);
+        //shotButton.SetActive(true);
+
+        //if (playerLifeManagement.itemNam <= 1)
+        //{
+        ShotInstantiate(playerLifeManagement.itemNam);
+        playerLifeManagement.itemNam--;
+        playerLifeManagement.ShowItem(playerLifeManagement.itemNam);
+        shotButton.SetActive(false);
+
+        //}
+
+
+
+
+        //if ()
+        //{
+        //    Debug.Log("0以下");
+        //    ShotInstantiate();
+        //}
+        //else
+        //{
+        //    return;
+        //}
+
+
     }
 
-
-    public void ShowItem(int namber)
+    void ShotInstantiate(int shotNum)
     {
-        for (int i = 0; i < namber; i++)
+        for (int i = 0; i < shotNum; i++)
         {
-            playerLifeManagement.items[i].SetActive(false);
+            Instantiate(bill, transform.position, Quaternion.identity);
         }
     }
+
+
+    //public void ShowItem(int namber)
+    //{
+    //    for (int i = 0; i < namber; i++)
+    //    {
+    //        Instantiate(bill, transform.position, Quaternion.identity);
+    //        playerLifeManagement.items[i].SetActive(false);
+    //    }
+    //}
 
     //void Start()
     //{

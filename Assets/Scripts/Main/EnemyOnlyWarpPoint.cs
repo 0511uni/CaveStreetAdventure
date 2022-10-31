@@ -31,17 +31,20 @@ public class EnemyOnlyWarpPoint : MonoBehaviour
     /// <param name="other">オブジェクト</param>
     void OnTriggerEnter2D(Collider2D other)
     {
-        obj = GameObject.Find(other.name);
-        //自分が移動可能なとき移動する。
-
-
-        if (moveStatus)
+        if (!other.CompareTag("Player"))
         {
+            obj = GameObject.Find(other.name);
+            //自分が移動可能なとき移動する。
 
-            //移動先は直後移動できないようにする 
-            transObj.moveStatus = false;
-            obj.transform.position = transVec;
-        } // 移動   
+
+            if (moveStatus)
+            {
+
+                //移動先は直後移動できないようにする 
+                transObj.moveStatus = false;
+                obj.transform.position = transVec;
+            } // 移動 
+        }  
     }
 
     /// <summary>

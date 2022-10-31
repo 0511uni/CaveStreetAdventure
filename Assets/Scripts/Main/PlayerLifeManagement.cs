@@ -14,7 +14,7 @@ public class PlayerLifeManagement : MonoBehaviour
     Text scoreText;  //  スコアのUI
 
     public int score; //  スコア
- 
+
     public int highScore; //ハイスコア用変数
 
     [SerializeField]
@@ -23,7 +23,13 @@ public class PlayerLifeManagement : MonoBehaviour
     [SerializeField]
     GameManagement gameManagement;
 
-    int itemNam;
+    [SerializeField]
+    PlayerShotAttackController playerShotAttackController;
+
+    [SerializeField]
+    GameObject shotButton;
+
+    public int itemNam;
     
     public GameObject[] items;
 
@@ -69,8 +75,13 @@ public class PlayerLifeManagement : MonoBehaviour
             //  UI の表示を最新します
             SetCountText();
 
+            shotButton.SetActive(true);
+
             itemNam++;
             ShowItem(itemNam);
+
+            //itemNam--;
+            //ShowItem(itemNam);
         }
         else if (other.gameObject.CompareTag("Item10"))
         {
@@ -134,9 +145,14 @@ public class PlayerLifeManagement : MonoBehaviour
 
     public void ShowItem(int namber)
     {
+        foreach (GameObject item in items)
+        {
+            item.SetActive(false);
+        }
+
         for (int i = 0; i < namber; i++)
         {
             items[i].SetActive(true);
-        }
+        }       
     }
 }
