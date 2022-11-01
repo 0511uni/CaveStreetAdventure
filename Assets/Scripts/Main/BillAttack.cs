@@ -7,22 +7,29 @@ using UnityEngine;
 /// </summary>
 public class BillAttack : MonoBehaviour
 {
-    [SerializeField]
-    GameObject player; 
+    GameObject player;
+
+    private void Start()
+    {
+        player = GameObject.Find("Player");
+    }
     void Update()
     {
-        transform.Translate(0.3f, 0, 0);
+        
+        Debug.Log(player.GetComponent<SpriteRenderer>().flipX?"playerのイラストのまま":"playerのイラストを反転");
 
-        if (player.GetComponent<SpriteRenderer>().flipX == true)
+
+        switch (player.GetComponent<SpriteRenderer>().flipX)
         {
-            Debug.Log("反転");
+            case false:
+                transform.Translate(0.3f, 0, 0);
+                Debug.Log("そのまま");
+                break;
+            case true:
+                transform.Translate(-0.3f, 0, 0);
+                Debug.Log("プレイヤースプライトを反転");
+                break;
         }
-
-        //if (transform.position.x > 2.0f)
-        //{
-        //    bill.SetActive(false);
-        //   // Destroy(gameObject);
-        //}
     }
 
     /// <summary>
