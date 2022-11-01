@@ -15,9 +15,9 @@ public class MoveCamera : MonoBehaviour
         transform.position = new Vector3(player.transform.position.x, 1, -10);
 
 
-        if (transform.position.x < 1)// 左
+        if (transform.position.x < 0.1)// 左
         {
-            transform.position = new Vector3(1, 1, -10);
+            transform.position = new Vector3(0.1f, 1, -10);
         }
 
         if (transform.position.x >= 500) //右
