@@ -1,17 +1,22 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Experimental.GraphView;
+//using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 /// <summary>
 /// お札のアクション
 /// </summary>
 public class BillAttack : MonoBehaviour
 {
-    //[SerializeField]
-    //GameObject bill;
+    [SerializeField]
+    GameObject player; 
     void Update()
     {
         transform.Translate(0.3f, 0, 0);
+
+        if (player.GetComponent<SpriteRenderer>().flipX == true)
+        {
+            Debug.Log("反転");
+        }
 
         //if (transform.position.x > 2.0f)
         //{
