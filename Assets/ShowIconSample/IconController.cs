@@ -22,6 +22,8 @@ public class IconController : MonoBehaviour
             for (int i = 0; i < icon.Length; i++)
             {
                 icon[i].SetActive(i < value);//省略化
+
+
                 
                 //三項演算子
                 //(i < value ? true : false)
