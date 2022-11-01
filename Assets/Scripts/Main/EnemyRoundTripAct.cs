@@ -27,6 +27,11 @@ public class EnemyRoundTripAct : MonoBehaviour
     /// <param name="collision">コライダー</param>
     void OnCollisionEnter2D(Collision2D collision)
     {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            return;
+        }
+
         // 当たったコライダーが壁だったら
         if (collision.gameObject.CompareTag("Wall"))
         {
