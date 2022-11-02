@@ -15,7 +15,10 @@ public class PitfallsPoint : MonoBehaviour
 
     #endregion
 
-    //他のオブジェクトにぶつかった時に呼び出される
+    /// <summary>
+    /// 他のオブジェクトにぶつかった時に呼び出される
+    /// </summary>
+    /// <param name="other">ぶつかった相手</param>
     void OnCollisionEnter2D(Collision2D other)
     {
 
