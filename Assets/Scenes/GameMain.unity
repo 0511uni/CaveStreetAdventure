@@ -2194,8 +2194,8 @@ Transform:
   - {fileID: 1497926112}
   - {fileID: 588263168}
   - {fileID: 1292688368}
-  - {fileID: 2124693326}
   - {fileID: 1572092202}
+  - {fileID: 2124693326}
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -20727,7 +20727,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9153240312990797193, guid: e14353cfac57b3d4ebe8b372ec0ae224, type: 3}
       propertyPath: m_SpriteTilingProperty.newSize.y
-      value: 0.9581916
+      value: 0.9874843
       objectReference: {fileID: 0}
     - target: {fileID: 9153240312990797194, guid: e14353cfac57b3d4ebe8b372ec0ae224, type: 3}
       propertyPath: m_Size.x
@@ -27253,7 +27253,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1502327116}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 38.6, y: 4.2, z: 0}
+  m_LocalPosition: {x: -2, y: 8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -27570,7 +27570,7 @@ GameObject:
   - component: {fileID: 1572092204}
   - component: {fileID: 1572092203}
   m_Layer: 0
-  m_Name: ClauseWall (1)
+  m_Name: ClauseWall1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27584,7 +27584,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1572092201}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 29.5094, y: -5.36, z: 0}
+  m_LocalPosition: {x: 29.5094, y: 0.0188, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -27621,7 +27621,7 @@ BoxCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 1, y: 1}
-    newSize: {x: 4.9411607, y: 3.8102036}
+    newSize: {x: 4.9411607, y: 3.9877872}
     adaptiveTilingThreshold: 0.5
     drawMode: 2
     adaptiveTiling: 0
@@ -27675,7 +27675,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 2
-  m_Size: {x: 4.9411607, y: 3.8102036}
+  m_Size: {x: 4.9411607, y: 3.9877872}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -29378,11 +29378,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9153240312990797193, guid: e14353cfac57b3d4ebe8b372ec0ae224, type: 3}
       propertyPath: m_SpriteTilingProperty.newSize.x
-      value: 0.92975616
+      value: 1.0122377
       objectReference: {fileID: 0}
     - target: {fileID: 9153240312990797193, guid: e14353cfac57b3d4ebe8b372ec0ae224, type: 3}
       propertyPath: m_SpriteTilingProperty.newSize.y
-      value: 0.9581916
+      value: 1.0010521
       objectReference: {fileID: 0}
     - target: {fileID: 9153240312990797194, guid: e14353cfac57b3d4ebe8b372ec0ae224, type: 3}
       propertyPath: m_Size.x
@@ -30340,7 +30340,7 @@ GameObject:
   - component: {fileID: 2124693328}
   - component: {fileID: 2124693329}
   m_Layer: 0
-  m_Name: ClauseWall
+  m_Name: ClauseWall2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30876,15 +30876,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3493103939603611560, guid: b4f5814582dce694293969325d263a07, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.8
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3493103939603611560, guid: b4f5814582dce694293969325d263a07, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.8
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3493103939603611560, guid: b4f5814582dce694293969325d263a07, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.96
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 3493103939603611560, guid: b4f5814582dce694293969325d263a07, type: 3}
       propertyPath: m_LocalPosition.y
