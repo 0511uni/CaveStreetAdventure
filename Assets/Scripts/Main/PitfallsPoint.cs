@@ -25,5 +25,10 @@ public class PitfallsPoint : MonoBehaviour
 
             GameManagement.GameOver();
         }
+
+        if (other.gameObject.CompareTag("Wall"))
+        {
+            Destroy(other.gameObject);
+        }
     }
 }
