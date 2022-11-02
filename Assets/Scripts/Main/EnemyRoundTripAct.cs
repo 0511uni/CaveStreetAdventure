@@ -9,7 +9,10 @@ public class EnemyRoundTripAct : MonoBehaviour
 {
     Rigidbody2D rb;
 
+    
     int direction = 1;
+
+    bool playerCol;//
 
     void Start()
     {
@@ -18,7 +21,31 @@ public class EnemyRoundTripAct : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (playerCol)
+        {
+            return;
+        }
+
         rb.velocity = direction * Vector3.left * 2;
+    }
+
+
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            playerCol = true;
+            Debug.Log("");
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            playerCol = false;
+            Debug.Log("");
+        }
     }
 
     /// <summary>
@@ -32,8 +59,9 @@ public class EnemyRoundTripAct : MonoBehaviour
             return;
         }
 
+
         // 当たったコライダーが壁だったら
-        if (collision.gameObject.CompareTag("Wall"))
+        if (collision.gameObject.CompareTag("Wall")) 
         {
             direction *= -1;
             transform.localScale = new Vector3(direction, transform.localScale.y, transform.localScale.z);
