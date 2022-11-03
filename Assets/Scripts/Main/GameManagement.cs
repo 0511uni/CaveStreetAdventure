@@ -132,6 +132,15 @@ public class GameManagement : MonoBehaviour
             //Destroy(enemy.GetComponent<Rigidbody2D>());// EnemyのRigidbodyを止める。
         }
 
+        //enemys = GameObject.FindGameObjectsWithTag("Enemy");
+
+        //foreach (var enemy2 in enemys)
+        //{
+
+        //    enemy2.GetComponent<EnemyDownMove>().enabled = false; // Enemyのコンポーネントを止める。
+        //    Destroy(enemy2.GetComponent<Rigidbody2D>());// EnemyのRigidbodyを止める。
+        //}
+
         enemys = GameObject.FindGameObjectsWithTag("Enemy2");
 
         foreach (var enemy in enemys)
