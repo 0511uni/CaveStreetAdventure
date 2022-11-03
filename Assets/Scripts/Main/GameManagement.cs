@@ -142,6 +142,7 @@ public class GameManagement : MonoBehaviour
         foreach (var enemy in enemys)
         {
             enemy.GetComponent<EnemyDownMove>().enabled = false; // Enemyのコンポーネントを止める。
+            Destroy(enemy.GetComponent<Rigidbody2D>());// EnemyのRigidbodyを止める。
         }
 
         warps = GameObject.FindGameObjectsWithTag("Warp");
@@ -156,7 +157,7 @@ public class GameManagement : MonoBehaviour
         foreach (var downLift in downLifts)
         {
             downLift.GetComponent<LiftDownMove>().enabled = false; // Liftのコンポーネントを止める。
-            Destroy(downLift.GetComponent<Rigidbody2D>()); // Liftのコンポーネントを止める。
+            Destroy(downLift.GetComponent<Rigidbody2D>()); // LiftのRigidbodyを止める。
         }
 
         scoreUI.SetActive(false);

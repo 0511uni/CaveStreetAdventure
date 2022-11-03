@@ -3,21 +3,27 @@ using System.Collections.Generic;
 using UnityEngine;
 /// <summary>
 /// オブジェクトがワープする
+/// 移動先オブジェクトのisTrigger外すと一方通行ができる。
 /// </summary>
 public class WarpPoint : MonoBehaviour
 {
-    
     GameObject obj;
 
-    
+    [Header("-----------------------------\n" +
+        "【 一方通行を作る方法 】\n" +
+        "移動先オブジェクトのコライダーの\n" +
+        "isTriggerのチェックを外すだけ！\n" +
+        "-----------------------------")]
+    [Header("ワープさせる相手オブジェクト\n" +
+        "※ 双方をアタッチ必須 ※")]
     public WarpPoint transObj;
 
-    
     Vector2 transVec;
 
     //移動状態を表すフラグ
+    [Header("移動状態を表すフラグ")]
     [SerializeField]
-    bool moveStatus;//左右移動のみ
+    bool moveStatus;//移動のみ
 
     void Start()
     {
