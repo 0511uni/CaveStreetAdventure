@@ -128,6 +128,8 @@ public class GameManagement : MonoBehaviour
         foreach (var enemy in enemys)
         {
             enemy.GetComponent<EnemyRoundTripAct>().enabled = false; // Enemyのコンポーネントを止める。
+            //enemy.GetComponent<EnemyDownMove>().enabled = false; // Enemyのコンポーネントを止める。
+            //Destroy(enemy.GetComponent<Rigidbody2D>());// EnemyのRigidbodyを止める。
         }
 
         enemys = GameObject.FindGameObjectsWithTag("Enemy2");
