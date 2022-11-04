@@ -23,8 +23,9 @@ public class ItemPoint : MonoBehaviour
         if (other.gameObject.CompareTag("Wall"))
         {
             Debug.Log("atatta???");
-            transform.Translate(0, 1, 0);
             other.transform.Translate(0, -1, 0);
+            transform.Translate(0, 1, 0);
+            
         }
         else if (other.gameObject.CompareTag("Player"))
         {

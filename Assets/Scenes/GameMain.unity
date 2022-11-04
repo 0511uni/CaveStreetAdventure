@@ -4380,7 +4380,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3493103939603611605, guid: b4f5814582dce694293969325d263a07, type: 3}
       propertyPath: m_Size.y
-      value: 1.3215654
+      value: 1.3010471
       objectReference: {fileID: 0}
     - target: {fileID: 3493103939603611605, guid: b4f5814582dce694293969325d263a07, type: 3}
       propertyPath: m_Offset.x
@@ -4388,7 +4388,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3493103939603611605, guid: b4f5814582dce694293969325d263a07, type: 3}
       propertyPath: m_Offset.y
-      value: 0.12632692
+      value: 0.11606777
       objectReference: {fileID: 0}
     - target: {fileID: 3493103939603611605, guid: b4f5814582dce694293969325d263a07, type: 3}
       propertyPath: m_AutoTiling
@@ -21129,11 +21129,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9153240312990797194, guid: e14353cfac57b3d4ebe8b372ec0ae224, type: 3}
       propertyPath: m_Size.x
-      value: 0.9898797
+      value: 0.9793703
       objectReference: {fileID: 0}
     - target: {fileID: 9153240312990797194, guid: e14353cfac57b3d4ebe8b372ec0ae224, type: 3}
       propertyPath: m_Size.y
-      value: 1.0075704
+      value: 1.0174023
       objectReference: {fileID: 0}
     - target: {fileID: 9153240312990797194, guid: e14353cfac57b3d4ebe8b372ec0ae224, type: 3}
       propertyPath: m_Color.b
@@ -21157,7 +21157,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9153240312990797195, guid: e14353cfac57b3d4ebe8b372ec0ae224, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 43.5018
+      value: 42.5053
       objectReference: {fileID: 0}
     - target: {fileID: 9153240312990797195, guid: e14353cfac57b3d4ebe8b372ec0ae224, type: 3}
       propertyPath: m_LocalPosition.y
@@ -21223,12 +21223,12 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 90
-  m_Material: {fileID: 6200000, guid: d0984407a50180341bf31ec1eace6659, type: 2}
+  m_GravityScale: 10
+  m_Material: {fileID: 6200000, guid: 48a52cd176763bc48b973a331db0e397, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 6
+  m_Constraints: 4
 --- !u!1 &591676578
 GameObject:
   m_ObjectHideFlags: 0
@@ -30412,7 +30412,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1805373580}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 44.5, y: 5.5, z: 0}
+  m_LocalPosition: {x: 43.07, y: 5.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
