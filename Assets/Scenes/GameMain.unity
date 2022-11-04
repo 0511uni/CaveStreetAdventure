@@ -2174,6 +2174,7 @@ MonoBehaviour:
   resultTimer: {fileID: 753169941}
   timerController: {fileID: 753169943}
   pausePanel: {fileID: 2124735719}
+  titleBackButton: {fileID: 1736698269}
   pauseButton: {fileID: 741232256}
   resumeButton: {fileID: 1582491325}
 --- !u!1 &243260043
@@ -29708,7 +29709,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1502327116}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 75.06, y: 8, z: 0}
+  m_LocalPosition: {x: -2, y: 8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -34072,9 +34073,9 @@ RectTransform:
   - {fileID: 1388215407}
   - {fileID: 579694173}
   - {fileID: 1446776941}
-  - {fileID: 1736698270}
   - {fileID: 243260044}
   - {fileID: 596846086}
+  - {fileID: 1736698270}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

@@ -61,6 +61,8 @@ public class GameManagement : MonoBehaviour
 
     [SerializeField] GameObject pausePanel;
 
+    [SerializeField] GameObject titleBackButton;
+
     [SerializeField] Button pauseButton;
 
     [SerializeField] Button resumeButton;
@@ -69,6 +71,7 @@ public class GameManagement : MonoBehaviour
 
     void Start()
     {
+        titleBackButton.SetActive(false);
         resultRSButton.SetActive(false);
         resultScoreText.SetActive(false);
         resultTimer.enabled = false;
@@ -86,6 +89,7 @@ public class GameManagement : MonoBehaviour
     {
         Time.timeScale = 0; // Time.timeScaleで時間の流れの速さを決める。0だと時間が停止する
         pausePanel.SetActive(true);
+        titleBackButton.SetActive(true);
     }
 
     /// <summary>
@@ -95,6 +99,7 @@ public class GameManagement : MonoBehaviour
     {
         Time.timeScale = 1; // また時間が流れるようにする
         pausePanel.SetActive(false);
+        titleBackButton.SetActive(false);
     }
 
     /// <summary>
@@ -103,6 +108,7 @@ public class GameManagement : MonoBehaviour
     public void TitleBackBottan()
     {
         print("Title");
+        Resume();
         SceneManager.LoadScene("TitleMenuScene");
     }
 
@@ -111,6 +117,8 @@ public class GameManagement : MonoBehaviour
     /// </summary>
     public void GameOver()
     {
+        titleBackButton.SetActive(true);
+
         resultScoreText.SetActive(true);
 
         winUI.SetActive(false);
@@ -187,6 +195,8 @@ public class GameManagement : MonoBehaviour
     /// </summary>
     public void GameClear()
     {
+        titleBackButton.SetActive(true);
+
         resultScoreText.SetActive(true);
 
         winUI.SetActive(true);
