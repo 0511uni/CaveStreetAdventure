@@ -21129,7 +21129,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9153240312990797194, guid: e14353cfac57b3d4ebe8b372ec0ae224, type: 3}
       propertyPath: m_Size.x
-      value: 1.013527
+      value: 0.9898797
       objectReference: {fileID: 0}
     - target: {fileID: 9153240312990797194, guid: e14353cfac57b3d4ebe8b372ec0ae224, type: 3}
       propertyPath: m_Size.y
@@ -21157,7 +21157,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9153240312990797195, guid: e14353cfac57b3d4ebe8b372ec0ae224, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 43.49
+      value: 43.5018
       objectReference: {fileID: 0}
     - target: {fileID: 9153240312990797195, guid: e14353cfac57b3d4ebe8b372ec0ae224, type: 3}
       propertyPath: m_LocalPosition.y
@@ -21224,7 +21224,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 90
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: d0984407a50180341bf31ec1eace6659, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
