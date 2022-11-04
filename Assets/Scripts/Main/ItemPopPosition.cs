@@ -18,7 +18,12 @@ public class ItemPopPosition : MonoBehaviour
         // Wellに当たったら
         if (hit.CompareTag("Wall"))
         {
+            if (item == null)
+            {
+                return;
+            }
+
             item.transform.Translate(0, 2, 0);
-        }     
+        }
     }
 }

@@ -1,23 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
 /// <summary>
-/// アイテムコントローラー
+/// アイテム制御
 /// </summary>
 public class ItemPoint : MonoBehaviour
 {
-    //// トリガーとの接触時に呼ばれるコールバック
-    //void OnTriggerEnter2D(Collider2D hit)
-    //{
-    //    // 接触対象はPlayerタグですか？
-    //    if (hit.CompareTag("Player"))
-    //    {
-            
-    //    }
-
-        
-    //}
-
+    /// <summary>
+    /// 相手のコライダーと接触した時呼ばれる
+    /// </summary>
+    /// <param name="other">接触相手</param>
     void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.CompareTag("Wall"))
@@ -30,7 +23,7 @@ public class ItemPoint : MonoBehaviour
         else if (other.gameObject.CompareTag("Player"))
         {
             //当たったオブジェクトを消す
-            Destroy(this.gameObject);
+            Destroy(gameObject);
         }
     }
 }
