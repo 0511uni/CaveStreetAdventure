@@ -14,15 +14,15 @@ public class MoveCamera : MonoBehaviour
     {
         transform.position = new Vector3(player.transform.position.x, 1, -10);
 
-
+        // Build時に合わせている
         if (transform.position.x < 1)// 左
         {
             transform.position = new Vector3(1, 1, -10);
         }
 
-        if (transform.position.x >= 500) //右
+        if (transform.position.x >= 78) //右
         {
-            transform.position = new Vector3(500, 1, -10);
+            transform.position = new Vector3(78, 1, -10);
         }
     }
 }
