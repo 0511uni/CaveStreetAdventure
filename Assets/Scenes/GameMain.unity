@@ -190,7 +190,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5172905466892657512, guid: 947d0fcd01edf2040bd94fa7d5c29714, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.46
+      value: 0.54
       objectReference: {fileID: 0}
     - target: {fileID: 5172905466892657512, guid: 947d0fcd01edf2040bd94fa7d5c29714, type: 3}
       propertyPath: m_LocalPosition.y
@@ -704,7 +704,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.04561299, y: 0.48862493}
+  m_Offset: {x: -0.06299724, y: 0.50311166}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -715,7 +715,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.5195221, y: 0.041430473}
+  m_Size: {x: 0.47316417, y: 0.07040405}
   m_EdgeRadius: 0
 --- !u!114 &60174900
 MonoBehaviour:
@@ -732,6 +732,7 @@ MonoBehaviour:
   enemy: {fileID: 1708339171}
   player: {fileID: 1502327116}
   enemyPoint: 15
+  playerLifeManagement: {fileID: 1502327123}
 --- !u!1 &63163633
 GameObject:
   m_ObjectHideFlags: 0
@@ -2109,6 +2110,7 @@ GameObject:
   m_Component:
   - component: {fileID: 235754281}
   - component: {fileID: 235754282}
+  - component: {fileID: 235754283}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -2177,6 +2179,105 @@ MonoBehaviour:
   titleBackButton: {fileID: 1736698269}
   pauseButton: {fileID: 741232256}
   resumeButton: {fileID: 1582491325}
+  SoundSE: {fileID: 235754283}
+  WinSE: {fileID: 8300000, guid: 580d00fb56820c84fa31235700b7fc29, type: 3}
+  GameOverSE: {fileID: 8300000, guid: 805465a2069ce564fa01f4c4cf9d7dd6, type: 3}
+--- !u!82 &235754283
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 235754280}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &243260043
 GameObject:
   m_ObjectHideFlags: 0
@@ -3774,6 +3875,7 @@ MonoBehaviour:
   enemy: {fileID: 116892710}
   player: {fileID: 1502327116}
   enemyPoint: 10
+  playerLifeManagement: {fileID: 1502327123}
 --- !u!1001 &468295232
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21374,7 +21476,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 53af71da072b0a74db0399b019edafc6, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 8d4b0311cfee5714d81d12cd22a71842, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -22498,6 +22600,7 @@ MonoBehaviour:
   enemy: {fileID: 388097293}
   player: {fileID: 1502327116}
   enemyPoint: 30
+  playerLifeManagement: {fileID: 0}
 --- !u!1001 &653343794
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28267,6 +28370,7 @@ MonoBehaviour:
   enemy: {fileID: 5172905466429576677}
   player: {fileID: 1502327116}
   enemyPoint: 15
+  playerLifeManagement: {fileID: 1502327123}
 --- !u!1001 &1375008769
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -29794,6 +29898,9 @@ MonoBehaviour:
   - {fileID: 1251913312}
   - {fileID: 2104892673}
   - {fileID: 1542964935}
+  SoundSE: {fileID: 579694174}
+  Se1: {fileID: 8300000, guid: 8993072bd7188fc42800ecf86b3ae64e, type: 3}
+  Se2: {fileID: 8300000, guid: 9d9d51a399b5ab6479e061518b847861, type: 3}
 --- !u!114 &1502327124
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29922,6 +30029,7 @@ MonoBehaviour:
   enemy: {fileID: 1964523611}
   player: {fileID: 1502327116}
   enemyPoint: 10
+  playerLifeManagement: {fileID: 1502327123}
 --- !u!1001 &1533437426
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -31376,6 +31484,7 @@ MonoBehaviour:
   enemy: {fileID: 863423059}
   player: {fileID: 1502327116}
   enemyPoint: 10
+  playerLifeManagement: {fileID: 1502327123}
 --- !u!4 &1750251722 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1748696317513272839, guid: 58e81eac137ecd04cbc42e40d99bcb83, type: 3}

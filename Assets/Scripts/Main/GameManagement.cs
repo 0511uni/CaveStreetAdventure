@@ -69,6 +69,12 @@ public class GameManagement : MonoBehaviour
 
     #endregion
 
+    #region//インスペクターで設定する サウンドSE
+    public AudioSource SoundSE;
+    public AudioClip WinSE;
+    public AudioClip GameOverSE;
+    #endregion
+
     void Start()
     {
         titleBackButton.SetActive(false);
@@ -117,6 +123,8 @@ public class GameManagement : MonoBehaviour
     /// </summary>
     public void GameOver()
     {
+        SoundSE.PlayOneShot(GameOverSE);
+
         titleBackButton.SetActive(true);
 
         resultScoreText.SetActive(true);
@@ -195,6 +203,8 @@ public class GameManagement : MonoBehaviour
     /// </summary>
     public void GameClear()
     {
+        SoundSE.PlayOneShot(WinSE);
+
         titleBackButton.SetActive(true);
 
         resultScoreText.SetActive(true);

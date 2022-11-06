@@ -35,6 +35,12 @@ public class PlayerLifeManagement : MonoBehaviour
 
     #endregion
 
+    #region//インスペクターで設定する サウンドSE
+    public AudioSource SoundSE;
+    public AudioClip Se1;
+    public AudioClip Se2;
+    #endregion
+
     #region//プライベート変数 ハイスコアー保存キー
 
     string key = "HIGH SCORE"; //ハイスコアの保存先キー
@@ -73,6 +79,7 @@ public class PlayerLifeManagement : MonoBehaviour
         {
             item.SetActive(false);
         }
+
     }
 
     /// <summary>
@@ -90,6 +97,8 @@ public class PlayerLifeManagement : MonoBehaviour
             //  スコアを加算します
             score += 1;
 
+            //  スコアを加算時のSE
+            SoundSE.PlayOneShot(Se1);
 
             //  UI の表示を最新します
             SetCountText();
@@ -112,6 +121,9 @@ public class PlayerLifeManagement : MonoBehaviour
             score += 20;
             print("ビックだ");
 
+            //  スコアを加算時のSE
+            SoundSE.PlayOneShot(Se1);
+
             //  UI の表示を最新します
             SetCountText();
         }
@@ -119,6 +131,8 @@ public class PlayerLifeManagement : MonoBehaviour
         if (other.gameObject.CompareTag("Enemy"))
         {
             score--;
+
+            SoundSE.PlayOneShot(Se2); //SE
             //  UI の表示を最新します
             SetCountText();
         }
@@ -126,6 +140,8 @@ public class PlayerLifeManagement : MonoBehaviour
          (other.gameObject.CompareTag("Enemy2"))
         {
             score -= 10;
+
+            SoundSE.PlayOneShot(Se2); //SE
             //  UI の表示を最新します
             SetCountText();
         }
@@ -133,6 +149,8 @@ public class PlayerLifeManagement : MonoBehaviour
          (other.gameObject.CompareTag("Enemy3"))
         {
             score -= 20;
+
+            SoundSE.PlayOneShot(Se2); //SE
             //  UI の表示を最新します
             SetCountText();
         }
