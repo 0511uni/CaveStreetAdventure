@@ -69,7 +69,7 @@ public class ScreenShotController : MonoBehaviour
 
         foreach (var winClauseUIObject in winClauseUIObjects)
         {
-            winClauseUIObject.SetActive(false);
+            winClauseUIObject.SetActive(true);
         }
     }
 }
