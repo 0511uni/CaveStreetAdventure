@@ -7,12 +7,24 @@ public class ScreenShotController : MonoBehaviour
     [SerializeField]
     GameObject canvas;
 
+    [SerializeField]
+    GameObject[] gameObjects;
+
     public void ShotButtonDown()
     {
         canvas.SetActive(false);
         // スクリーンショットをギャラリーに保存
         StartCoroutine(TakeScreenshotAndSave());
-        //canvas.SetActive(true);
+    }
+
+    public void ShotPlusButtonDown()
+    {
+        foreach (var gameObject in gameObjects)
+        {
+            gameObject.SetActive(false);
+        }      
+        // スクリーンショットをギャラリーに保存
+        StartCoroutine(TakeScreenshotAndSave());
     }
 
     // スクリーンショットをギャラリーに保存
@@ -36,5 +48,10 @@ public class ScreenShotController : MonoBehaviour
         Destroy(ss);
 
         canvas.SetActive(true);
+
+        foreach (var gameObject in gameObjects)
+        {
+            gameObject.SetActive(true);
+        }
     }
 }
