@@ -7,6 +7,8 @@ using UnityEngine.SocialPlatforms.Impl;
 using UnityEngine.UI;
 //using UnityEngine.UIElements;
 //using static UnityEditor.Timeline.TimelinePlaybackControls;
+
+
 /// <summary>
 /// ゲーム全体を制御する
 /// </summary>
@@ -191,10 +193,10 @@ public class GameManagement : MonoBehaviour
 
         buttonController.SetActive(false);
 
-        resultGameScoreText.text = "Score: " + playerLifeManagement.score.ToString();
+        resultGameScoreText.text = "Score: " + playerLifeManagement.Score.ToString();
         resultGamehighScoreText.text = "High Score: " + playerLifeManagement.highScore.ToString();
 
-        createSave.score = "Score: " + playerLifeManagement.score.ToString();
+        createSave.score = "Score: " + playerLifeManagement.Score.ToString();
         createSave.highScore = "High Score: " + playerLifeManagement.highScore.ToString();
     }
 
@@ -251,10 +253,10 @@ public class GameManagement : MonoBehaviour
             Destroy(downLift.GetComponent<Rigidbody2D>()); // Liftのコンポーネントを止める。
         }
 
-        resultGameScoreText.text = "Score: " + playerLifeManagement.score.ToString();
+        resultGameScoreText.text = "Score: " + playerLifeManagement.Score.ToString();
         resultGamehighScoreText.text = "High Score: " + playerLifeManagement.highScore.ToString();
 
-        createSave.score = "Score: " + playerLifeManagement.score.ToString();
+        createSave.score = "Score: " + playerLifeManagement.Score.ToString();
         createSave.highScore = "High Score: " + playerLifeManagement.highScore.ToString();
     }
 }

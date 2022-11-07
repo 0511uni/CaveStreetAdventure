@@ -67,9 +67,24 @@ public class PlayerLifeManagement : MonoBehaviour
         }
     }
 
+    public int Score
+    {
+        get => score;
+        set
+        {
+            if (value <= 0)
+            {
+                score = 0;
+                return;
+            }
+
+            score = value;
+        }
+    }
+
     void Start()
     {
-        score = 10;
+        Score = 10;
         scoreText.text = "Count: " + score.ToString();
         highScore = PlayerPrefs.GetInt(key, 0);
         //保存しておいたハイスコアをキーで呼び出し取得し保存されていなければ0になる
@@ -95,7 +110,8 @@ public class PlayerLifeManagement : MonoBehaviour
             other.gameObject.SetActive(false);
 
             //  スコアを加算します
-            score += 1;
+            Score++;           
+            //score += 1;
 
             //  スコアを加算時のSE
             SoundSE.PlayOneShot(Se1);
@@ -118,7 +134,7 @@ public class PlayerLifeManagement : MonoBehaviour
             other.gameObject.SetActive(false);
 
             //  スコアを加算します
-            score += 20;
+            Score += 20;
             print("ビックだ");
 
             //  スコアを加算時のSE
@@ -130,7 +146,7 @@ public class PlayerLifeManagement : MonoBehaviour
 
         if (other.gameObject.CompareTag("Enemy"))
         {
-            score--;
+            Score--;
 
             SoundSE.PlayOneShot(Se2); //SE
             //  UI の表示を最新します
@@ -139,7 +155,7 @@ public class PlayerLifeManagement : MonoBehaviour
         else if
          (other.gameObject.CompareTag("Enemy2"))
         {
-            score -= 10;
+            Score -= 10;
 
             SoundSE.PlayOneShot(Se2); //SE
             //  UI の表示を最新します
@@ -148,7 +164,7 @@ public class PlayerLifeManagement : MonoBehaviour
         else if
          (other.gameObject.CompareTag("Enemy3"))
         {
-            score -= 20;
+            Score -= 20;
 
             SoundSE.PlayOneShot(Se2); //SE
             //  UI の表示を最新します
@@ -161,12 +177,12 @@ public class PlayerLifeManagement : MonoBehaviour
     {
         Debug.Log("setcount");
         //  スコアの表示を最新
-        scoreText.text = "Score: " + score.ToString();
+        scoreText.text = "Score: " + Score.ToString();
         // ハイスコアより現在スコアが高い時
-        if (score > highScore)
+        if (Score > highScore)
         {
 
-            highScore = score;
+            highScore = Score;
             //ハイスコア更新
 
             PlayerPrefs.SetInt(key, highScore);
@@ -175,7 +191,7 @@ public class PlayerLifeManagement : MonoBehaviour
             highScoreText.text = "HighScore: " + highScore.ToString();
             //ハイスコアを表示
         }
-        else if (score <= 0)
+        else if (Score <= 0)
         {
             gameManagement.GameOver();
         }
