@@ -7,8 +7,11 @@ public class ScreenShotController : MonoBehaviour
     [SerializeField]
     GameObject waterMark;
 
+    //[SerializeField]
+    //GameObject restartButton;
+
     [SerializeField]
-    GameObject canvas;
+    GameObject[] canvasAlls;
 
     [SerializeField]
     GameObject[] gameObjects;
@@ -23,7 +26,10 @@ public class ScreenShotController : MonoBehaviour
 
     public void ShotButtonDown()
     {
-        canvas.SetActive(false);
+        foreach (var canvasAll in canvasAlls)
+        {
+            canvasAll.SetActive(false);
+        }
         waterMark.SetActive(true);
         // スクリーンショットをギャラリーに保存
         StartCoroutine(TakeScreenshotAndSave());
@@ -46,6 +52,9 @@ public class ScreenShotController : MonoBehaviour
         {
             winClauseUIObject.SetActive(false);
         }
+
+        //restartButton.SetActive(false);
+
         waterMark.SetActive(true);
         // スクリーンショットをギャラリーに保存
         StartCoroutine(TakeScreenshotAndSave());
@@ -71,7 +80,10 @@ public class ScreenShotController : MonoBehaviour
         // メモリリークの回避
         Destroy(ss);
 
-        canvas.SetActive(true);
+        foreach (var canvasAll in canvasAlls)
+        {
+            canvasAll.SetActive(true);
+        }
 
         foreach (var gameObject in gameObjects)
         {
