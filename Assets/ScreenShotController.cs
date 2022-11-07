@@ -10,6 +10,9 @@ public class ScreenShotController : MonoBehaviour
     [SerializeField]
     GameObject[] gameObjects;
 
+    [SerializeField]
+    GameObject[] winClauseUIObjects;
+
     public void ShotButtonDown()
     {
         canvas.SetActive(false);
@@ -23,6 +26,16 @@ public class ScreenShotController : MonoBehaviour
         {
             gameObject.SetActive(false);
         }      
+        // スクリーンショットをギャラリーに保存
+        StartCoroutine(TakeScreenshotAndSave());
+    }
+
+    public void WinShotButtonDown()
+    {
+        foreach (var winClauseUIObject in winClauseUIObjects)
+        {
+            winClauseUIObject.SetActive(false);
+        }
         // スクリーンショットをギャラリーに保存
         StartCoroutine(TakeScreenshotAndSave());
     }
@@ -52,6 +65,11 @@ public class ScreenShotController : MonoBehaviour
         foreach (var gameObject in gameObjects)
         {
             gameObject.SetActive(true);
+        }
+
+        foreach (var winClauseUIObject in winClauseUIObjects)
+        {
+            winClauseUIObject.SetActive(false);
         }
     }
 }
