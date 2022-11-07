@@ -207,8 +207,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 802336215}
-        m_TargetAssemblyTypeName: ScreenShotController, Assembly-CSharp
+      - m_Target: {fileID: 854542337}
+        m_TargetAssemblyTypeName: WinScreenShotController, Assembly-CSharp
         m_MethodName: WinShotButtonDown
         m_Mode: 1
         m_Arguments:
@@ -296,7 +296,7 @@ Transform:
   - {fileID: 692570944}
   - {fileID: 385818863}
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &22987580
 PrefabInstance:
@@ -2265,7 +2265,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &235754282
 MonoBehaviour:
@@ -2723,7 +2723,7 @@ Transform:
   - {fileID: 653343795}
   - {fileID: 923858692}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &348916868
 GameObject:
@@ -3622,7 +3622,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &401843787
 Rigidbody2D:
@@ -5406,7 +5406,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &566530963 stripped
 Transform:
@@ -22739,7 +22739,7 @@ Transform:
   - {fileID: 1964523610}
   - {fileID: 388097294}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &650580990
 GameObject:
@@ -23847,7 +23847,7 @@ Transform:
   - {fileID: 532038848}
   - {fileID: 131511420}
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &776364510
 GameObject:
@@ -24025,10 +24025,6 @@ MonoBehaviour:
   - {fileID: 741232254}
   - {fileID: 1736698269}
   - {fileID: 243260043}
-  winClauseUIObjects:
-  - {fileID: 6956538}
-  - {fileID: 1736698269}
-  - {fileID: 1704480757}
 --- !u!4 &802336216
 Transform:
   m_ObjectHideFlags: 0
@@ -24196,6 +24192,55 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 838750357}
   m_CullTransparentMesh: 0
+--- !u!1 &854542336
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 854542338}
+  - component: {fileID: 854542337}
+  m_Layer: 0
+  m_Name: WinScreenShot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &854542337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 854542336}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 301329dbff4ce2b41bfde00d74bca4d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waterMark: {fileID: 1720852588}
+  winClauseUIObjects:
+  - {fileID: 6956538}
+  - {fileID: 1704480757}
+  - {fileID: 1736698269}
+--- !u!4 &854542338
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 854542336}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -2, y: 8, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &856798351 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5022960959289328531, guid: bd9443788574cf84cbf9ff2c4b65024b, type: 3}
@@ -24644,7 +24689,7 @@ Transform:
   - {fileID: 935685375}
   - {fileID: 1881102743}
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &887626433
 GameObject:
@@ -30360,7 +30405,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1502327116}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 81.463, y: 8.522, z: 0}
+  m_LocalPosition: {x: -2, y: 8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -30495,7 +30540,7 @@ Transform:
   - {fileID: 1273875154}
   - {fileID: 596114262}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1516666805 stripped
 GameObject:
@@ -31501,7 +31546,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1697951030
 BoxCollider2D:
@@ -32352,7 +32397,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1780583571
 PrefabInstance:
@@ -33096,7 +33141,7 @@ Transform:
   - {fileID: 63163637}
   - {fileID: 906711088}
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1918347120
 GameObject:
@@ -34992,7 +35037,7 @@ RectTransform:
   - {fileID: 1736698270}
   - {fileID: 1720852589}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}

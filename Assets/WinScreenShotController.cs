@@ -2,45 +2,25 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ScreenShotController : MonoBehaviour
+public class WinScreenShotController : MonoBehaviour
 {
     [SerializeField]
     GameObject waterMark;
 
     [SerializeField]
-    GameObject[] canvasAlls;
+    GameObject[] winClauseUIObjects;
 
-    [SerializeField]
-    GameObject[] gameObjects;
-
-    void Start()
+    public void WinShotButtonDown()
     {
-        waterMark.SetActive(false);
-    }
-
-    public void ShotButtonDown()
-    {
-        foreach (var canvasAll in canvasAlls)
+        foreach (var winClauseUIObject in winClauseUIObjects)
         {
-            canvasAll.SetActive(false);
+            winClauseUIObject.SetActive(false);
         }
+
         waterMark.SetActive(true);
         // スクリーンショットをギャラリーに保存
         StartCoroutine(TakeScreenshotAndSave());
     }
-
-    public void ShotPlusButtonDown()
-    {
-        foreach (var gameObject in gameObjects)
-        {
-            gameObject.SetActive(false);
-        }
-        waterMark.SetActive(true);
-        // スクリーンショットをギャラリーに保存
-        StartCoroutine(TakeScreenshotAndSave());
-    }
-
-    
 
     // スクリーンショットをギャラリーに保存
     private IEnumerator TakeScreenshotAndSave()
@@ -62,14 +42,10 @@ public class ScreenShotController : MonoBehaviour
         // メモリリークの回避
         Destroy(ss);
 
-        foreach (var canvasAll in canvasAlls)
-        {
-            canvasAll.SetActive(true);
-        }
 
-        foreach (var gameObject in gameObjects)
+        foreach (var winClauseUIObject in winClauseUIObjects)
         {
-            gameObject.SetActive(true);
+            winClauseUIObject.SetActive(true);
         }
 
         waterMark.SetActive(false);
