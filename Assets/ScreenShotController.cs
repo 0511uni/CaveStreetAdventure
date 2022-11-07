@@ -5,6 +5,9 @@ using UnityEngine;
 public class ScreenShotController : MonoBehaviour
 {
     [SerializeField]
+    GameObject waterMark;
+
+    [SerializeField]
     GameObject canvas;
 
     [SerializeField]
@@ -13,9 +16,15 @@ public class ScreenShotController : MonoBehaviour
     [SerializeField]
     GameObject[] winClauseUIObjects;
 
+    void Start()
+    {
+        waterMark.SetActive(false);
+    }
+
     public void ShotButtonDown()
     {
         canvas.SetActive(false);
+        waterMark.SetActive(true);
         // スクリーンショットをギャラリーに保存
         StartCoroutine(TakeScreenshotAndSave());
     }
@@ -25,7 +34,8 @@ public class ScreenShotController : MonoBehaviour
         foreach (var gameObject in gameObjects)
         {
             gameObject.SetActive(false);
-        }      
+        }
+        waterMark.SetActive(true);
         // スクリーンショットをギャラリーに保存
         StartCoroutine(TakeScreenshotAndSave());
     }
@@ -36,6 +46,7 @@ public class ScreenShotController : MonoBehaviour
         {
             winClauseUIObject.SetActive(false);
         }
+        waterMark.SetActive(true);
         // スクリーンショットをギャラリーに保存
         StartCoroutine(TakeScreenshotAndSave());
     }
@@ -71,5 +82,7 @@ public class ScreenShotController : MonoBehaviour
         {
             winClauseUIObject.SetActive(true);
         }
+
+        waterMark.SetActive(false);
     }
 }
