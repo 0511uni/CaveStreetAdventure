@@ -11,6 +11,8 @@ public class WarpPointUI : MonoBehaviour
 {
     GameObject obj;
 
+    RectTransform rectTransform;
+
     [Header("-----------------------------\n" +
         "【 一方通行を作る方法 】\n" +
         "移動先オブジェクトのコライダーの\n" +
@@ -29,9 +31,15 @@ public class WarpPointUI : MonoBehaviour
 
     void Start()
     {
-        RectTransform rectTransform = transform as RectTransform;
+        rectTransform = GetComponent<RectTransform>();
 
-        transVec = rectTransform.anchoredPosition;
+        rectTransform.anchoredPosition = transVec;
+        
+        transVec = transObj.rectTransform.anchoredPosition;
+
+        //RectTransform rectTransform = transform as RectTransform;
+
+        //transVec = rectTransform.anchoredPosition;s
 
         //transVec = transObj.anchoredPosition;
 
