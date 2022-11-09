@@ -1,12 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 /// <summary>
 /// オブジェクトがワープする
 /// 移動先オブジェクトのisTrigger外すと一方通行ができる。
 /// </summary>
-public class WarpPoint : MonoBehaviour
+public class WarpPointUI : MonoBehaviour
 {
     GameObject obj;
 
@@ -17,7 +18,7 @@ public class WarpPoint : MonoBehaviour
         "-----------------------------")]
     [Header("ワープさせる相手オブジェクト\n" +
         "※ 双方をアタッチ必須 ※")]
-    public WarpPoint transObj;
+    public WarpPointUI transObj;
 
     Vector2 transVec;
 
@@ -28,7 +29,11 @@ public class WarpPoint : MonoBehaviour
 
     void Start()
     {
-        transVec = transObj.transform.position;
+        RectTransform rectTransform = transform as RectTransform;
+
+        transVec = rectTransform.anchoredPosition;
+
+        //transVec = transObj.anchoredPosition;
 
         //初期では移動可能なためTrue
         moveStatus = true;
@@ -40,17 +45,17 @@ public class WarpPoint : MonoBehaviour
     /// <param name="other">オブジェクト</param>
     void OnTriggerEnter2D(Collider2D other)
     {
-            obj = GameObject.Find(other.name);
-            //自分が移動可能なとき移動する。
+        obj = GameObject.Find(other.name);
+        //自分が移動可能なとき移動する。
 
 
-            if (moveStatus)
-            {
+        if (moveStatus)
+        {
 
-                //移動先は直後移動できないようにする 
-                transObj.moveStatus = false;
-                obj.transform.position = transVec;
-            } // 移動   
+            //移動先は直後移動できないようにする 
+            transObj.moveStatus = false;
+            obj.transform.position = transVec;
+        } // 移動   
     }
 
     /// <summary>
