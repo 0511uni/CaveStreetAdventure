@@ -62,13 +62,13 @@ public class WarpPointUI : MonoBehaviour
     /// オブジェクトが引き金でイベントが発生する
     /// </summary>
     /// <param name="other">オブジェクト</param>
-    void OnTriggerEnter2D(Collider2D hit)
-    {
-        if (hit.CompareTag("end"))
-        {
-            Debug.Log("a");
-            end.anchoredPosition += new Vector2(0, -1700);
-        }
+    //void OnTriggerEnter2D(Collider2D hit)
+    //{
+    //    if (hit.CompareTag("end"))
+    //    {
+    //        Debug.Log("a");
+    //        end.anchoredPosition += new Vector2(0, -700);
+    //    }
 
 
         //obj = other.GetComponent<RectTransform>();
@@ -89,7 +89,7 @@ public class WarpPointUI : MonoBehaviour
         //    transObj.moveStatus = false;
         //    obj = transVec;
         //} // 移動   
-    }
+    //}//
 
     ///// <summary>
     ///// 物体と離れた直後呼ばれる 
