@@ -19,6 +19,7 @@ public class WarpUI : MonoBehaviour
         "※ 双方をアタッチ必須 ※")]
     public WarpUI transObj;
 
+    public RectTransform to;
     Vector2 transVec;
 
     //移動状態を表すフラグ
@@ -28,7 +29,8 @@ public class WarpUI : MonoBehaviour
 
     void Start()
     {
-        transVec = transObj.transform.position;
+          transVec = transObj.transform.position;
+      //  transVec =transObj. transform.localPosition;
 
         //初期では移動可能なためTrue
         moveStatus = true;
@@ -49,7 +51,9 @@ public class WarpUI : MonoBehaviour
 
             //移動先は直後移動できないようにする 
             transObj.moveStatus = false;
-            obj.transform.position = transVec;
+            // obj.transform.position = transVec;
+            // obj.transform.localPosition = transVec;
+            other.GetComponent<RectTransform>().localPosition = to.localPosition; 
         } // 移動   
     }
 

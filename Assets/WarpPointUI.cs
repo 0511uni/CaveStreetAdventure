@@ -55,7 +55,8 @@ public class WarpPointUI : MonoBehaviour
 
     private void Update()
     {
-        end.anchoredPosition += new Vector2(0, 5);
+        //  end.anchoredPosition += new Vector2(0, 5);//localPosition
+        end.localPosition += Vector3.up * 1f;
     }
 
     /// <summary>
