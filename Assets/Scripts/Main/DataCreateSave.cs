@@ -4,7 +4,7 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "SaveData")]
 public class DataCreateSave : ScriptableObject
 {
-    public string score = "Score: ";
+    public string Score = "Score: ";
     public string highScore = "High Score: ";
     public string key = "HIGH SCORE";
 }

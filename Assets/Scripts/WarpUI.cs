@@ -45,7 +45,7 @@ public class WarpUI : MonoBehaviour
         obj = GameObject.Find(other.name);
         //自分が移動可能なとき移動する。
         Debug.Log("warp");
-
+        
         if (moveStatus)
         {
 
