@@ -18,7 +18,7 @@ public class TweetButton : MonoBehaviour
     //「つぶやく」ボタンを押したときの処理
     public void OnClickTweetButton()
     {
-        scoreText.text = datSave.Score;
+        scoreText.text = datSave.Score.ToString();
         highscoreText.text = PlayerPrefs.GetInt(datSave.key).ToString();
 
         var text = "今回の記録は『"

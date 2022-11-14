@@ -206,7 +206,7 @@ public class GameManagement : MonoBehaviour
         resultGameScoreText.text = "Score: " + playerLifeManagement.Score.ToString();
         resultGamehighScoreText.text = "High Score: " + playerLifeManagement.highScore.ToString();
 
-        createSave.Score = "Score: " + playerLifeManagement.Score.ToString();
+        createSave.Score = playerLifeManagement.Score;
         createSave.highScore = "High Score: " + playerLifeManagement.highScore.ToString();
     }
 
@@ -266,7 +266,7 @@ public class GameManagement : MonoBehaviour
         resultGameScoreText.text = "Score: " + playerLifeManagement.Score.ToString();
         resultGamehighScoreText.text = "High Score: " + playerLifeManagement.highScore.ToString();
 
-        createSave.Score = "Score: " + playerLifeManagement.Score.ToString();
+        createSave.Score = playerLifeManagement.Score;
         createSave.highScore = "High Score: " + playerLifeManagement.highScore.ToString();
     }
 }
