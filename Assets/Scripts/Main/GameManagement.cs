@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting.FullSerializer;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.SocialPlatforms.Impl;
@@ -69,6 +70,8 @@ public class GameManagement : MonoBehaviour
 
     [SerializeField] Button resumeButton;
 
+    [SerializeField] Text inputName;
+
     #endregion
 
     #region//インスペクターで設定する サウンドSE
@@ -118,6 +121,13 @@ public class GameManagement : MonoBehaviour
         print("Title");
         Resume();
         SceneManager.LoadScene("TitleMenuScene");
+    }
+
+    public void RankingNameButton()
+    {
+        Debug.Log("RankB");
+        string name = inputName.text;
+        createSave.Name = name.ToString();
     }
 
     /// <summary>
