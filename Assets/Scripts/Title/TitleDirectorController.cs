@@ -28,7 +28,7 @@ public class TitleDirectorController : MonoBehaviour
     public void RankingStart()
     {
         print("b");
-        UnityEngine.SceneManagement.SceneManager.LoadScene("Ranking_Jump Adventure Land");
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Ranking");
     }
 
     //　ゲーム終了ボタンを押したら実行する

@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class WinScreenShotController : MonoBehaviour
@@ -8,7 +9,18 @@ public class WinScreenShotController : MonoBehaviour
     GameObject waterMark;
 
     [SerializeField]
+    GameObject icons2;
+
+    [SerializeField]
     GameObject[] winClauseUIObjects;
+
+    //[SerializeField]
+    //RectTransform icons;
+
+    //private void Start()
+    //{
+    //    //icons = GetComponent<RectTransform>();
+    //}
 
     public void WinShotButtonDown()
     {
@@ -18,6 +30,9 @@ public class WinScreenShotController : MonoBehaviour
         }
 
         waterMark.SetActive(true);
+
+        icons2.SetActive(true);
+        //icons.localPosition = new Vector3(0, 292,0);
         // スクリーンショットをギャラリーに保存
         StartCoroutine(TakeScreenshotAndSave());
     }
@@ -49,5 +64,9 @@ public class WinScreenShotController : MonoBehaviour
         }
 
         waterMark.SetActive(false);
+
+        icons2.SetActive(false);
+
+        //icons.localPosition = new Vector3(0, 777, 0);
     }
 }

@@ -5,12 +5,15 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/TitleMenuScene.unity
     guid: 9e5c290a15fa1b747bbcbfb11b299742
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/GameMain.unity
     guid: f44d177afda34534ba773887e6fbd093
+  - enabled: 1
+    path: Assets/Scenes/Ranking.unity
+    guid: 810fe2859d572154298669b9f6a400b6
   - enabled: 0
     path: Assets/Sample/DataCreateSample/DataCreateMain.unity
     guid: ab8bfb642fd498b4482c8fb04508be3e
@@ -20,7 +23,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Sample/Jump Adventure Land/Scenes/Main_Jump Adventure Land.unity
     guid: 69a89891edea5a140b6ee3437a2b84e6
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/DescriptionScene.unity
     guid: 72f8d77040ebfa840ae9f1d866aee23e
   m_configObjects: {}

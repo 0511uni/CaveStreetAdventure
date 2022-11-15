@@ -130,4 +130,9 @@ public class RankingManager : MonoBehaviour
         Debug.Log("クリア");
         displayField.text = "";
     }
+
+    public void TitleBackButton()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene("TitleMenuScene");
+    }
 }
