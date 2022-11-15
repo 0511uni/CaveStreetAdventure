@@ -13,16 +13,16 @@ MonoBehaviour:
   m_Name: ScoreData
   m_EditorClassIdentifier: 
   Score: 10
-  highScore: 'High Score: 333'
+  highScore: 'High Score: 92'
   key: HIGH SCORE
   Name: 232324
   scoreKey: rankScore
   scorekeys: []
   namekeys: []
   rankings:
-  - name: "\u308F\u306E"
-    score: 300
-  - name: "\u3053\u306B\u3057"
-    score: 100
-  - name: yamada
+  - name: reuihriewr
+    score: 11
+  - name: r3r
+    score: 0
+  - name: rwrq
     score: 10

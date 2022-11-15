@@ -1,11 +1,14 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
+using Unity.VisualScripting.Antlr3.Runtime;
 using Unity.VisualScripting.FullSerializer;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.SocialPlatforms.Impl;
 using UnityEngine.UI;
+using static DataCreateSave;
 //using UnityEngine.UIElements;
 //using static UnityEditor.Timeline.TimelinePlaybackControls;
 
@@ -126,8 +129,31 @@ public class GameManagement : MonoBehaviour
     public void RankingNameButton()
     {
         Debug.Log("RankB");
-        string name = inputName.text;
-        createSave.Name = name.ToString();
+        string nameValue = inputName.text;
+
+        //Ranker ranker = new Ranker(name, sprite, score);
+        //rankers.Add(ranker);
+
+        Ranking rank = new Ranking(nameValue, playerLifeManagement.Score);
+        createSave.rankings.Add(rank);
+
+        
+
+        //foreach (var item in createSave.rankings)
+        //{
+        //    item.name = nameValue;
+        //    item.score = playerLifeManagement.Score;
+        //}
+
+
+        //createSave.name = nameValue;
+        //createSave.rankings.Add(nameValue, playerLifeManagement.Score);
+        //for (int i = 0; i < createSave.rankings.Count; i++)
+        //{
+        //    createSave.rankings[i].name = nameValue;
+        //}
+        //createSave.rankings[0].name = nameValue;
+        //createSave.rankings[1].name = nameValue;
     }
 
     /// <summary>

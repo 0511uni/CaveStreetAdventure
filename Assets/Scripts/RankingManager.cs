@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 //using UnityEngine.SocialPlatforms.Impl;
 using UnityEngine.UI;
+using static DataCreateSave;
 //using static System.Net.Mime.MediaTypeNames;
 
 public class RankingManager : MonoBehaviour
@@ -74,9 +75,14 @@ public class RankingManager : MonoBehaviour
 
         displayField.text = "";
 
+        //datSave.rankings.Sort();
+        //datSave.rankings.Clear();
+
+
         foreach (var ranking in datSave.rankings)
         {
-            displayField.text += ranking.name + ranking.score.ToString() + "\n";
+            displayField.text += ranking.name + "さん\n" +
+                "Score：" + ranking.score.ToString() + "\n\n";
         }
         //displayField.text += datSave.Name.ToString() + "さん\t\t" + datSave.Score.ToString() + "\n";
 
@@ -119,8 +125,9 @@ public class RankingManager : MonoBehaviour
         PlayerPrefs.SetString("data", displayField.text);
     }
 
-    void Update()
+    public void ClearPanel()
     {
-
+        Debug.Log("クリア");
+        displayField.text = "";
     }
 }
