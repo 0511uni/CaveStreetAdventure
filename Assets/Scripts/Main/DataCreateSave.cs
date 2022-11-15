@@ -9,4 +9,5 @@ public class DataCreateSave : ScriptableObject
     public string key = "HIGH SCORE";
     public string Name = "Name:";
     public string scoreKey = "rankScore";
+    public string[] keys;
 }
