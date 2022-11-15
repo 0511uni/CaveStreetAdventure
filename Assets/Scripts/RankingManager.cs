@@ -70,7 +70,15 @@ public class RankingManager : MonoBehaviour
         //string rankers = "A 100\nB 120\nC 130";
         //displayField.text = rankers;
 
-        displayField.text += datSave.Name.ToString() + "さん\t\t" + datSave.Score.ToString() + "\n";
+        //displayField.text += datSave.rankings.ToString();
+
+        displayField.text = "";
+
+        foreach (var ranking in datSave.rankings)
+        {
+            displayField.text += ranking.name + ranking.score.ToString() + "\n";
+        }
+        //displayField.text += datSave.Name.ToString() + "さん\t\t" + datSave.Score.ToString() + "\n";
 
         //PlayerPrefs.SetInt(datSave.scoreKey, datSave.Score);
 
