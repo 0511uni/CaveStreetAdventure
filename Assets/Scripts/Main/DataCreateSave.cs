@@ -12,4 +12,13 @@ public class DataCreateSave : ScriptableObject
     public string[] scorekeys;
     public string[] namekeys;
 
+    public List<Ranking> rankings = new List<Ranking>();
+
+
+    [System.Serializable]
+    public class Ranking
+    {
+        public string name;
+        public int score;
+    }
 }
