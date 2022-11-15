@@ -12,14 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 208ed626de968f240a1da4d9b3c78df8, type: 3}
   m_Name: ScoreData
   m_EditorClassIdentifier: 
-  Score: 0
-  highScore: 'High Score: '
+  Score: 10
+  highScore: 'High Score: 333'
   key: HIGH SCORE
-  Name: 'Name:'
+  Name: 232324
   scoreKey: rankScore
-  keys:
-  - key1
-  - kes2
-  - kes3
-  - kes4
-  - kes5
+  scorekeys: []
+  namekeys: []
+  rankings:
+  - name: "\u308F\u306E"
+    score: 300
+  - name: "\u3053\u306B\u3057"
+    score: 100
+  - name: yamada
+    score: 10
