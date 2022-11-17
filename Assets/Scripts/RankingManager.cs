@@ -75,7 +75,7 @@ public class RankingManager : MonoBehaviour
 
         displayField.text = "";
 
-        //datSave.rankings.Sort();
+        datSave.rankings.Sort((a, b) => b.score - a.score);
         //datSave.rankings.Clear();
         //datSave.rankings.Clear();
 
@@ -87,7 +87,7 @@ public class RankingManager : MonoBehaviour
                 "Score：" + ranking.score.ToString() + "\n\n";
         }
 
-        datSave.rankings.Sort();
+        
         //displayField.text += datSave.Name.ToString() + "さん\t\t" + datSave.Score.ToString() + "\n";
 
         //PlayerPrefs.SetInt(datSave.scoreKey, datSave.Score);
