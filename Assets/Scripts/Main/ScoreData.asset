@@ -15,14 +15,19 @@ MonoBehaviour:
   Score: 10
   highScore: 'High Score: 92'
   key: HIGH SCORE
-  Name: 232324
-  scoreKey: rankScore
-  scorekeys: []
-  namekeys: []
   rankings:
+  - name: rr
+    score: 24
+    timer: 6:00
+  - name: fsdddfsdf
+    score: 24
+    timer: 02:50
   - name: reuihriewr
     score: 11
-  - name: r3r
-    score: 0
+    timer: 
   - name: rwrq
     score: 10
+    timer: 
+  - name: r3r
+    score: 0
+    timer: 

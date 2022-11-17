@@ -90,7 +90,7 @@ public class GameManagement : MonoBehaviour
         resultScoreText.SetActive(false);
         resultTimer.enabled = false;
         gameOverUI.SetActive(false);
-        winUI.SetActive(true);
+        winUI.SetActive(false);
         pausePanel.SetActive(false);// 最初は非表示
         pauseButton.onClick.AddListener(Pause);
         resumeButton.onClick.AddListener(Resume);
@@ -143,8 +143,9 @@ public class GameManagement : MonoBehaviour
     {
         Debug.Log("RankB");
         string nameValue = inputName.text;
+        string timer = resultTimer.text;
 
-        Ranking rank = new Ranking(nameValue, playerLifeManagement.Score);//, timerController.
+        Ranking rank = new Ranking(nameValue, playerLifeManagement.Score, timer);
         gameStatus.rankings.Add(rank);
     }
 

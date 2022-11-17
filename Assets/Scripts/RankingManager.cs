@@ -33,7 +33,8 @@ public class RankingManager : MonoBehaviour
         foreach (var ranking in gameStatus.rankings)
         {
             displayField.text += ranking.name + "さん\n" +
-                "Score：" + ranking.score.ToString() + "\n\n";
+                "Score：" + ranking.score.ToString() + "\n" + 
+                ranking.timer + "\n\n";
         }
     }
 

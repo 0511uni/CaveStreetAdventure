@@ -20,13 +20,13 @@ public class GameStatus : ScriptableObject
     {
         public string name;
         public int score;
-        //public string timer;
+        public string timer;
 
-        public Ranking(string nameValue, int score)
-        {//, string timer
+        public Ranking(string nameValue, int score, string timer)
+        { 
             name = nameValue;
             this.score = score;
-            //this.timer = timer;
+            this.timer = timer;
         }
         //public List<Ranking> Rankers => Ranking.OrderByDescending(Ranking => Ranking.score).ToList();
 
