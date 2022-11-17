@@ -174,18 +174,7 @@ public class GameManagement : MonoBehaviour
         foreach (var enemy in enemys)
         {
             enemy.GetComponent<EnemyRoundTripAct>().enabled = false; // Enemyのコンポーネントを止める。
-            //enemy.GetComponent<EnemyDownMove>().enabled = false; // Enemyのコンポーネントを止める。
-            //Destroy(enemy.GetComponent<Rigidbody2D>());// EnemyのRigidbodyを止める。
         }
-
-        //enemys = GameObject.FindGameObjectsWithTag("Enemy");
-
-        //foreach (var enemy2 in enemys)
-        //{
-
-        //    enemy2.GetComponent<EnemyDownMove>().enabled = false; // Enemyのコンポーネントを止める。
-        //    Destroy(enemy2.GetComponent<Rigidbody2D>());// EnemyのRigidbodyを止める。
-        //}
 
         enemys = GameObject.FindGameObjectsWithTag("Enemy2");
 
@@ -206,7 +195,6 @@ public class GameManagement : MonoBehaviour
         foreach (var warp in warps)
         {
             warp.SetActive(false); // Warpを止める。
-            //warp.GetComponent<WarpPoint>().enabled = false;
         }
 
         downLifts = GameObject.FindGameObjectsWithTag("Lift");
@@ -224,7 +212,6 @@ public class GameManagement : MonoBehaviour
         resultGameScoreText.text = "Score: " + playerLifeManagement.Score.ToString();
         resultGamehighScoreText.text = "High Score: " + playerLifeManagement.highScore.ToString();
 
-        gameStatus.Score = playerLifeManagement.Score;
         gameStatus.highScore = "High Score: " + playerLifeManagement.highScore.ToString();
     }
 
@@ -284,7 +271,7 @@ public class GameManagement : MonoBehaviour
         resultGameScoreText.text = "Score: " + playerLifeManagement.Score.ToString();
         resultGamehighScoreText.text = "High Score: " + playerLifeManagement.highScore.ToString();
 
-        gameStatus.Score = playerLifeManagement.Score;
+
         gameStatus.highScore = "High Score: " + playerLifeManagement.highScore.ToString();
     }
 }

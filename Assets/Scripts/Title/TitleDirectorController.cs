@@ -11,10 +11,6 @@ public class TitleDirectorController : MonoBehaviour
 
     [SerializeField]
     Text resultGamehighScoreText;
-
-    [SerializeField]
-    PlayerLifeManagement playerLifeManagement;
-    
  
 
     //　スタートボタンを押したら実行する

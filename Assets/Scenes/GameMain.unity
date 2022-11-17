@@ -2387,7 +2387,7 @@ MonoBehaviour:
   resultGameScoreText: {fileID: 735420301}
   resultGamehighScoreText: {fileID: 162020059}
   resultScoreText: {fileID: 973439082}
-  createSave: {fileID: 11400000, guid: 7596a03b4de9c9440aceea3798abb451, type: 2}
+  gameStatus: {fileID: 11400000, guid: 7596a03b4de9c9440aceea3798abb451, type: 2}
   playerLifeManagement: {fileID: 1502327123}
   resultTimer: {fileID: 753169941}
   timerController: {fileID: 753169943}
@@ -22391,7 +22391,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 579694172}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
