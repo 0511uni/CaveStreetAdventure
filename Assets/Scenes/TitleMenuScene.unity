@@ -1383,9 +1383,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bdbed112687b8d743b605e22b1fc6d4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  datSave: {fileID: 11400000, guid: 7596a03b4de9c9440aceea3798abb451, type: 2}
+  gameStatus: {fileID: 11400000, guid: 7596a03b4de9c9440aceea3798abb451, type: 2}
   resultGamehighScoreText: {fileID: 1024108871}
-  playerLifeManagement: {fileID: 0}
 --- !u!1 &1285690742
 GameObject:
   m_ObjectHideFlags: 0

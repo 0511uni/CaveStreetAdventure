@@ -90,7 +90,7 @@ public class GameManagement : MonoBehaviour
         resultScoreText.SetActive(false);
         resultTimer.enabled = false;
         gameOverUI.SetActive(false);
-        winUI.SetActive(false);
+        winUI.SetActive(true);
         pausePanel.SetActive(false);// 最初は非表示
         pauseButton.onClick.AddListener(Pause);
         resumeButton.onClick.AddListener(Resume);

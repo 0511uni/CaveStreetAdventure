@@ -14,6 +14,11 @@ public class RankingManager : MonoBehaviour
     [SerializeField]
     GameStatus gameStatus;
 
+    void Start()
+    {
+        ShowRanking();
+    }
+
     public void OnClickRankingPush()
     {
         ShowRanking();

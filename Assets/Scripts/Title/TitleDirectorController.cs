@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class TitleDirectorController : MonoBehaviour
 {
     [SerializeField]
-    GameStatus datSave;
+    GameStatus gameStatus;
 
     [SerializeField]
     Text resultGamehighScoreText;
@@ -43,7 +43,8 @@ public class TitleDirectorController : MonoBehaviour
     void Start() 
     {
         Screen.SetResolution(400, 710, false, 60);
-        resultGamehighScoreText.text = "High Score: " + PlayerPrefs.GetInt(datSave.key).ToString();
+        gameStatus.Load();
+        resultGamehighScoreText.text = "High Score: " + PlayerPrefs.GetInt(gameStatus.key).ToString();
     }
 
 }
