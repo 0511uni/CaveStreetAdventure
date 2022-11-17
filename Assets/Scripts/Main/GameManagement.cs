@@ -8,7 +8,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.SocialPlatforms.Impl;
 using UnityEngine.UI;
-using static DataCreateSave;
+using static GameStatus;
 //using UnityEngine.UIElements;
 //using static UnityEditor.Timeline.TimelinePlaybackControls;
 
@@ -54,7 +54,7 @@ public class GameManagement : MonoBehaviour
     GameObject resultScoreText;
 
     [SerializeField]
-    DataCreateSave createSave;
+    GameStatus gameStatus;
 
     [SerializeField]
     PlayerLifeManagement playerLifeManagement;
@@ -135,32 +135,17 @@ public class GameManagement : MonoBehaviour
 
     public void RankingNameButton()
     {
+        AddRanking();
+        gameStatus.Save();
+    }
+
+    private void AddRanking()
+    {
         Debug.Log("RankB");
         string nameValue = inputName.text;
 
-        //Ranker ranker = new Ranker(name, sprite, score);
-        //rankers.Add(ranker);
-
-        Ranking rank = new Ranking(nameValue, playerLifeManagement.Score);
-        createSave.rankings.Add(rank);
-
-        
-
-        //foreach (var item in createSave.rankings)
-        //{
-        //    item.name = nameValue;
-        //    item.score = playerLifeManagement.Score;
-        //}
-
-
-        //createSave.name = nameValue;
-        //createSave.rankings.Add(nameValue, playerLifeManagement.Score);
-        //for (int i = 0; i < createSave.rankings.Count; i++)
-        //{
-        //    createSave.rankings[i].name = nameValue;
-        //}
-        //createSave.rankings[0].name = nameValue;
-        //createSave.rankings[1].name = nameValue;
+        Ranking rank = new Ranking(nameValue, playerLifeManagement.Score);//, timerController.
+        gameStatus.rankings.Add(rank);
     }
 
     /// <summary>
@@ -239,8 +224,8 @@ public class GameManagement : MonoBehaviour
         resultGameScoreText.text = "Score: " + playerLifeManagement.Score.ToString();
         resultGamehighScoreText.text = "High Score: " + playerLifeManagement.highScore.ToString();
 
-        createSave.Score = playerLifeManagement.Score;
-        createSave.highScore = "High Score: " + playerLifeManagement.highScore.ToString();
+        gameStatus.Score = playerLifeManagement.Score;
+        gameStatus.highScore = "High Score: " + playerLifeManagement.highScore.ToString();
     }
 
     /// <summary>
@@ -299,7 +284,7 @@ public class GameManagement : MonoBehaviour
         resultGameScoreText.text = "Score: " + playerLifeManagement.Score.ToString();
         resultGamehighScoreText.text = "High Score: " + playerLifeManagement.highScore.ToString();
 
-        createSave.Score = playerLifeManagement.Score;
-        createSave.highScore = "High Score: " + playerLifeManagement.highScore.ToString();
+        gameStatus.Score = playerLifeManagement.Score;
+        gameStatus.highScore = "High Score: " + playerLifeManagement.highScore.ToString();
     }
 }

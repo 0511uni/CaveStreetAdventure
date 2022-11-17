@@ -14,8 +14,9 @@ public class TimerController : MonoBehaviour
     [SerializeField]
     int countdownMinutes = 3;
 
-    private float countdownSeconds;
-    private Text timeText;
+    float countdownSeconds;
+
+    Text timeText;
 
     void Start()
     {

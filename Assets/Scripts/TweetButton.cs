@@ -12,7 +12,7 @@ public class TweetButton : MonoBehaviour
     public Text highscoreText;
 
     [SerializeField]
-    DataCreateSave datSave;
+    GameStatus datSave;
 
 
     //「つぶやく」ボタンを押したときの処理

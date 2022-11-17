@@ -8,7 +8,7 @@ public class DataRead : MonoBehaviour
     DataKeep data;
 
     [SerializeField]
-    DataCreateSave datSave;
+    GameStatus datSave;
 
     void Start()
     {

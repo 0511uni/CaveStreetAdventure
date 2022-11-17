@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class TitleDirectorController : MonoBehaviour
 {
     [SerializeField]
-    DataCreateSave datSave;
+    GameStatus datSave;
 
     [SerializeField]
     Text resultGamehighScoreText;
