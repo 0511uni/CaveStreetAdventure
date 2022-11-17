@@ -77,13 +77,17 @@ public class RankingManager : MonoBehaviour
 
         //datSave.rankings.Sort();
         //datSave.rankings.Clear();
+        //datSave.rankings.Clear();
 
+        
 
         foreach (var ranking in datSave.rankings)
         {
             displayField.text += ranking.name + "さん\n" +
                 "Score：" + ranking.score.ToString() + "\n\n";
         }
+
+        datSave.rankings.Sort();
         //displayField.text += datSave.Name.ToString() + "さん\t\t" + datSave.Score.ToString() + "\n";
 
         //PlayerPrefs.SetInt(datSave.scoreKey, datSave.Score);
@@ -128,7 +132,8 @@ public class RankingManager : MonoBehaviour
     public void ClearPanel()
     {
         Debug.Log("クリア");
-        displayField.text = "";
+        datSave.rankings.Clear();
+        //displayField.text = "";
     }
 
     public void TitleBackButton()
