@@ -11,19 +11,20 @@ public class GameStatus : ScriptableObject
     public string highScore = "High Score: ";
     public string key = "HIGH SCORE";
 
-    private List<Ranking> rankings;// = new List<Ranking>();
+    public List<Ranking> rankings;// = new List<Ranking>();
 
-    public List<Ranking> Rankings
-    {
-        get => rankings; set
-        {
-            for (int i = 0; i < 5; i++)
-            {
+    //public List<Ranking> Rankings
+    //{
+    //    get => rankings; 
+    //    set
+    //    {
+    //        //for (int i = 0; i < 5; i++)
+    //        //{
 
-            }
-            rankings = value;
-        }
-    }
+    //        //}
+    //        rankings = value;
+    //    }
+    //}
 
     [System.Serializable]
     public class Ranking
@@ -39,10 +40,12 @@ public class GameStatus : ScriptableObject
             get => name;
             set
             {
-                for (int i = 0; i < 4; i++)
+                int i = 0;
+                if (i < 4)
                 {
-                    name[i].ToString();
+                    return;
                 }
+  
                 name = value;
             }
         }
