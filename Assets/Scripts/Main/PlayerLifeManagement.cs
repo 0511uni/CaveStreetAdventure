@@ -103,9 +103,9 @@ public class PlayerLifeManagement : MonoBehaviour
     /// <param name="other">タグの相手</param>
     void OnCollisionEnter2D(Collision2D other)
     {
-
+        // ぶつかったオブジェクトが収集アイテムだった場合
         if (other.gameObject.CompareTag("Item"))
-        {// ぶつかったオブジェクトが収集アイテムだった場合
+        {
             //　その収集アイテムを非表示にします
             other.gameObject.SetActive(false);
 
@@ -119,14 +119,7 @@ public class PlayerLifeManagement : MonoBehaviour
             //  UI の表示を最新します
             SetCountText();
 
-            //shotButton.SetActive(true);
-
             Items++;
-            //itemNam++;
-            //ShowItem(itemNam);
-
-            //itemNam--;
-            //ShowItem(itemNam);
         }
         else if (other.gameObject.CompareTag("Item10"))
         {
@@ -196,17 +189,4 @@ public class PlayerLifeManagement : MonoBehaviour
             gameManagement.GameOver();
         }
     }
-
-    //public void ShowItem(int namber)
-    //{
-    //    foreach (GameObject item in items)
-    //    {
-    //        item.SetActive(false);
-    //    }
-
-    //    for (int i = 0; i < namber; i++)
-    //    {
-    //        items[i].SetActive(true);
-    //    }       
-    //}
 }

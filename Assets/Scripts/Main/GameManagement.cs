@@ -127,11 +127,7 @@ public class GameManagement : MonoBehaviour
     }
 
     //　RANKING Buttonを押したら実行する
-    public void RankingStart()
-    {
-        print("b");
-        UnityEngine.SceneManagement.SceneManager.LoadScene("Ranking");
-    }
+    public void RankingStart() => UnityEngine.SceneManagement.SceneManager.LoadScene("Ranking");
 
     public void RankingNameButton()
     {

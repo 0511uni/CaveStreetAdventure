@@ -12,25 +12,23 @@ public class GameStatus : ScriptableObject
 
     public List<Ranking> rankings;// = new List<Ranking>();
 
-    //public List<Ranking> Rankers => rankings.OrderByDescending(Ranking => Ranking.score).ToList();
-
-
     [System.Serializable]
     public class Ranking
     {
-        public string name;
-        public int score;
-        public string timer;
+        string name;
+        int score;
+        string timer;
+
+        public int Score { get => score; set => score = value; }
+        public string Timer { get => timer; set => timer = value; }
+        public string Name { get => name; set => name = value; }
 
         public Ranking(string nameValue, int score, string timer)
         { 
-            name = nameValue;
-            this.score = score;
-            this.timer = timer;
+            Name = nameValue;
+            Score = score;
+            Timer = timer;
         }
-        //public List<Ranking> Rankers => Ranking.OrderByDescending(Ranking => Ranking.score).ToList();
-
-        //public string NameValue { get; }
     }
     public void Save()
     {
@@ -39,9 +37,6 @@ public class GameStatus : ScriptableObject
         Debug.Log(data);
 
         PlayerPrefs.SetString("SaveData", data);
-
-        //Debug.Log("セーブ");
-        //PlayerPrefs.SetString("data", displayField.text);
     }
 
     public void Load()

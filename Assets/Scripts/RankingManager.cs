@@ -16,46 +16,28 @@ public class RankingManager : MonoBehaviour
 
     void Start()
     {
-        ShowRanking();
-    }
-
-    public void OnClickRankingPush()
-    {
-        ShowRanking();
-    }
-
-    private void ShowRanking()
-    {
         displayField.text = "";
+        ShowRanking();
+    }
 
-        gameStatus.rankings.Sort((a, b) => b.score - a.score);
+    public void OnClickRankingPush() => ShowRanking();
+
+    void ShowRanking()
+    {
+
+        gameStatus.rankings.Sort((a, b) => b.Score - a.Score);
 
         foreach (var ranking in gameStatus.rankings)
         {
-            displayField.text += ranking.name + "さん\n" +
-                "Score：" + ranking.score.ToString() + "\n" + 
-                ranking.timer + "\n\n";
+            displayField.text += $"{ranking.Name}さん\nScore：{ranking.Score}\t{ranking.Timer}\n\n";
         }
     }
 
-    public void RoadButton()
-    {
-        gameStatus.Load();
-    }
+    public void RoadButton() => gameStatus.Load();
 
-    public void SaveButton()
-    {
-        gameStatus.Save();
-    }
+    public void SaveButton() => gameStatus.Save();
 
-    public void ClearPanel()
-    {
-        Debug.Log("クリア");
-        gameStatus.rankings.Clear();
-    }
+    public void ClearPanel() => gameStatus.rankings.Clear();
 
-    public void TitleBackButton()
-    {
-        UnityEngine.SceneManagement.SceneManager.LoadScene("TitleMenuScene");
-    }
+    public void TitleBackButton() => UnityEngine.SceneManagement.SceneManager.LoadScene("TitleMenuScene");
 }
