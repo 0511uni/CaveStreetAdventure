@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using static UnityEditor.Progress;
 
 [CreateAssetMenu(menuName = "GameStatus")]
 public class GameStatus : ScriptableObject
@@ -19,12 +20,23 @@ public class GameStatus : ScriptableObject
         int score;
         string timer;
 
-        public int Score { get => score; set => score = value; }
+        public int Score
+        {
+            get => score;
+            set
+            {
+                if (value < 0)
+                {
+                    return;
+                }
+                score = value;
+            }
+        }
         public string Timer { get => timer; set => timer = value; }
         public string Name { get => name; set => name = value; }
 
         public Ranking(string nameValue, int score, string timer)
-        { 
+        {
             Name = nameValue;
             Score = score;
             Timer = timer;
@@ -42,7 +54,7 @@ public class GameStatus : ScriptableObject
     public void Load()
     {
         var data = PlayerPrefs.GetString("SaveData");
-    
+
         Debug.Log(data);
 
         JsonUtility.FromJsonOverwrite(data, this);
