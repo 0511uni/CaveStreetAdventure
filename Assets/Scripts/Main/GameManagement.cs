@@ -75,13 +75,30 @@ public class GameManagement : MonoBehaviour
 
     [SerializeField] Text inputName;
 
+    public int InputName
+    {
+        get => inputNum; 
+        set
+        {
+            if (value > 3)
+            {
+                inputNum = value;
+            }
+            
+        }
+    }
+
     #endregion
 
     #region//インスペクターで設定する サウンドSE
     public AudioSource SoundSE;
     public AudioClip WinSE;
     public AudioClip GameOverSE;
+    private int inputNum;
+
     #endregion
+
+
 
     void Start()
     {
@@ -90,7 +107,7 @@ public class GameManagement : MonoBehaviour
         resultScoreText.SetActive(false);
         resultTimer.enabled = false;
         gameOverUI.SetActive(false);
-        winUI.SetActive(false);
+        winUI.SetActive(true);
         pausePanel.SetActive(false);// 最初は非表示
         pauseButton.onClick.AddListener(Pause);
         resumeButton.onClick.AddListener(Resume);
@@ -138,7 +155,19 @@ public class GameManagement : MonoBehaviour
     private void AddRanking()
     {
         Debug.Log("RankB");
+
         string nameValue = inputName.text;
+
+        //// 入力された文字の文字数をコンソール画面に表示する
+        //Debug.Log(nameValue.Length);
+
+        ////８文字まで入力できる。それ以上は入力できない
+        //if (nameValue.Length < 9)
+        //{
+        //    nameValue = inputName.text;
+        //    Debug.Log(nameValue);
+        //}
+
         string timer = resultTimer.text;
 
         Ranking rank = new Ranking(nameValue, playerLifeManagement.Score, timer);

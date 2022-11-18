@@ -13,42 +13,15 @@ MonoBehaviour:
   m_Name: ScoreData
   m_EditorClassIdentifier: 
   Score: 10
-  highScore: 'High Score: 92'
+  highScore: 'High Score: 333'
   key: HIGH SCORE
   rankings:
-  - name: rr
-    score: 24
-    timer: 6:00
-  - name: fsdddfsdf
-    score: 24
-    timer: 02:50
-  - name: reuihriewr
-    score: 11
-    timer: 
-  - name: "\u305D\u3093\u307E\u307E"
-    score: 11
-    timer: 02:38
-  - name: 
-    score: 11
-    timer: 02:47
-  - name: 
-    score: 11
-    timer: 02:47
-  - name: 
-    score: 11
-    timer: 02:47
-  - name: 
-    score: 11
-    timer: 02:47
-  - name: 
-    score: 11
-    timer: 02:47
-  - name: rwrq
-    score: 10
-    timer: 
-  - name: r3r
+  - name: wtwt
     score: 0
     timer: 
-  - name: r3r
-    score: 0
+  - name: yjutj
+    score: 34
+    timer: 
+  - name: rhrrehr
+    score: 77
     timer: 
