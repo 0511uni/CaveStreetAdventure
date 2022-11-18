@@ -15,13 +15,23 @@ MonoBehaviour:
   Score: 10
   highScore: 'High Score: 333'
   key: HIGH SCORE
+  <Score1>k__BackingField: 10
   rankings:
-  - name: wtwt
-    score: 0
+  - name: rhrrehr
+    score: 77
     timer: 
   - name: yjutj
     score: 34
     timer: 
-  - name: rhrrehr
-    score: 77
+  - name: wtwt
+    score: 0
+    timer: 
+  - name: wtwt
+    score: 0
+    timer: 
+  - name: wtwt
+    score: 0
+    timer: 
+  - name: "\uFF13\uFF14\uFF15"
+    score: 100
     timer: 

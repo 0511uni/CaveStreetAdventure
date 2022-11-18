@@ -1,4 +1,4 @@
-﻿using System.Collections;
+﻿//using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 //using UnityEngine.SocialPlatforms.Impl;
@@ -27,8 +27,14 @@ public class RankingManager : MonoBehaviour
 
         gameStatus.rankings.Sort((a, b) => b.Score - a.Score);
 
-        foreach (var ranking in gameStatus.rankings)
-        {
+        for (int i = 0; i < 5; i++)
+        {//gameStatus.rankings.Count
+
+            //if (gameStatus.rankings.Count >= 6)
+            //{
+            //    return;
+            //}
+            Ranking ranking = gameStatus.rankings[i];
             displayField.text += $"{ranking.Name}さん\nScore：{ranking.Score}\t{ranking.Timer}\n\n";
         }
     }

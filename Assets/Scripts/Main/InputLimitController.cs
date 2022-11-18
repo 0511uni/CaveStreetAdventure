@@ -13,9 +13,9 @@ public class InputLimitController : MonoBehaviour
     {
         Debug.Log(inputText.text.Length);
 
-        if (inputText.text.Length > 5)
+        if (inputText.text.Length > 6)
         {
-            inputText.text = inputText.text[..5];
+            inputText.text = inputText.text[..6];
         }
     }
 }
