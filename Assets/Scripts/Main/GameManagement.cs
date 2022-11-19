@@ -102,13 +102,14 @@ public class GameManagement : MonoBehaviour
 
     void Start()
     {
+        // 最初は非表示
         titleBackButton.SetActive(false);
         resultRSButton.SetActive(false);
         resultScoreText.SetActive(false);
         resultTimer.enabled = false;
         gameOverUI.SetActive(false);
         winUI.SetActive(false);
-        pausePanel.SetActive(false);// 最初は非表示
+        pausePanel.SetActive(false);
         pauseButton.onClick.AddListener(Pause);
         resumeButton.onClick.AddListener(Resume);
     }
@@ -143,15 +144,23 @@ public class GameManagement : MonoBehaviour
         SceneManager.LoadScene("TitleMenuScene");
     }
 
-    //　RANKING Buttonを押したら実行する
+    /// <summary>
+    /// 　RANKING Buttonを押したら実行する
+    /// </summary>
     public void RankingStart() => UnityEngine.SceneManagement.SceneManager.LoadScene("Ranking");
 
+    /// <summary>
+    /// ランキングを送るボタン
+    /// </summary>
     public void RankingNameButton()
     {
         AddRanking();
         gameStatus.Save();
     }
 
+    /// <summary>
+    /// ランキングにデータを生成する
+    /// </summary>
     private void AddRanking()
     {
         Debug.Log("RankB");

@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// InputFieldの入力制限コントロール
+/// </summary>
 public class InputLimitController : MonoBehaviour
 {
     [SerializeField]
     InputField inputText;
-
 
     public void CheckTextCount()
     {
