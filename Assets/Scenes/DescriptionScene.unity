@@ -2910,7 +2910,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: SEE YOU !!
+  m_Text: "Title Back \u25BC"
 --- !u!222 &794181840
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6710,8 +6710,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 764391810}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: GameEnd
+        m_TargetAssemblyTypeName: MainManager, Assembly-CSharp
+        m_MethodName: GameMenuStart
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

@@ -11,23 +11,26 @@ public class TitleDirectorController : MonoBehaviour
 
     [SerializeField]
     Text resultGamehighScoreText;
- 
 
-    //　スタートボタンを押したら実行する
-    public void GameStart()
-    {
-        print("a");
-        SceneManager.LoadScene("GameMain");
-    }
 
-    //　RANKING Buttonを押したら実行する
-    public void RankingStart()
-    {
-        print("b");
-        UnityEngine.SceneManagement.SceneManager.LoadScene("Ranking");
-    }
+    /// <summary>
+    ///　スタートボタンを押したら実行する
+    /// </summary>
+    public void GameStart() => SceneManager.LoadScene("GameMain");
 
-    //　ゲーム終了ボタンを押したら実行する
+    /// <summary>
+    ///　解説MENUに進む
+    /// </summary>
+    public void DescriptionStart() => SceneManager.LoadScene("DescriptionScene");
+
+    /// <summary>
+    ///　RANKING Buttonを押したら実行する
+    /// </summary>
+    public void RankingStart() => UnityEngine.SceneManagement.SceneManager.LoadScene("Ranking");
+
+    /// <summary>
+    ///  ゲーム終了ボタンを押したら実行する
+    /// </summary>
     public void GameEnd()
     {
 #if UNITY_EDITOR
@@ -39,7 +42,6 @@ public class TitleDirectorController : MonoBehaviour
 #endif
     }
 
-    // Use this for initialization
     void Start() 
     {
         Screen.SetResolution(400, 710, false, 60);

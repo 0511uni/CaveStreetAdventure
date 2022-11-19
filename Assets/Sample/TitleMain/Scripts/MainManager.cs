@@ -9,11 +9,7 @@ public class MainManager : MonoBehaviour
     /// <summary>
     /// Menuに遷移する
     /// </summary>
-    public void GameMenuStart()
-    {
-        print("Main");
-        SceneManager.LoadScene("Main");
-    }
+    public void GameMenuStart() => SceneManager.LoadScene("TitleMenuScene");
 
     /// <summary>
     /// 定数定義：壁方向
