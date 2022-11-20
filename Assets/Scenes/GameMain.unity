@@ -2136,7 +2136,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 164.00005, y: 191.00005}
+  m_AnchoredPosition: {x: 144, y: 191.00005}
   m_SizeDelta: {x: 500, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &162020059
@@ -2438,6 +2438,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94f4491f498ffa8409926b27ba76ae72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 1502327116}
   resultRSButton: {fileID: 1704480757}
   scoreUI: {fileID: 1388215406}
   buttonController: {fileID: 579694172}
@@ -2461,6 +2462,7 @@ MonoBehaviour:
   - {fileID: 665955988}
   winUI: {fileID: 507293923}
   gameOverUI: {fileID: 1465663345}
+  rankingButton: {fileID: 629972812}
   resultGameScoreText: {fileID: 735420301}
   resultGamehighScoreText: {fileID: 162020059}
   resultScoreText: {fileID: 973439082}
@@ -23692,7 +23694,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy: {fileID: 388097293}
   player: {fileID: 1502327116}
-  enemyPoint: 30
+  enemyPoint: 109
   playerLifeManagement: {fileID: 1502327123}
 --- !u!1001 &653343794
 PrefabInstance:
@@ -31326,6 +31328,7 @@ MonoBehaviour:
   gameManagement: {fileID: 235754282}
   playerShotAttackController: {fileID: 1502327124}
   shotButton: {fileID: 348916868}
+  gameStatus: {fileID: 11400000, guid: 7596a03b4de9c9440aceea3798abb451, type: 2}
   itemNam: 0
   items:
   - {fileID: 1862657367}

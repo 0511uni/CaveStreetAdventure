@@ -17,6 +17,9 @@ public class RankingManager : MonoBehaviour
     [SerializeField]
     GameStatus gameStatus;
 
+    [SerializeField]
+    Text rankingNumber;
+
     void Start()
     {
         displayField.text = "";
@@ -29,10 +32,18 @@ public class RankingManager : MonoBehaviour
     {
         gameStatus.rankings.Sort((a, b) => b.Score - a.Score);
 
-        for (int i = 0; i < 5; i++)
+        for (int i = 0; i < 10; i++)
         {//gameStatus.rankings.Count
+            int num = i + 1;
             Ranking ranking = gameStatus.rankings[i];
-            displayField.text += $"{ranking.Name}さん\nScore：{ranking.Score}\t{ranking.Timer}\n\n";
+            if (num == 10)
+            {
+                displayField.text += $"　{num}.\t\t　{ranking.Name}さん\n" +
+                $"\t\t\tScore：{ranking.Score}\t{ranking.Timer}\n\n";
+                return;
+            }
+            displayField.text += $"　{num}.\t\t\t　{ranking.Name}さん\n" +
+                $"\t\t\tScore：{ranking.Score}\t{ranking.Timer}\n\n";
         }
     }
 

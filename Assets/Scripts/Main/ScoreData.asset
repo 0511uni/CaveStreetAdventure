@@ -13,25 +13,73 @@ MonoBehaviour:
   m_Name: ScoreData
   m_EditorClassIdentifier: 
   Score: 10
-  highScore: 'High Score: 333'
+  highScore: 'High Score: 92'
   key: HIGH SCORE
   <Score1>k__BackingField: 10
   rankings:
-  - name: rhrrehr
-    score: 77
-    timer: 
-  - name: yjutj
-    score: 34
-    timer: 
-  - name: wtwt
-    score: 0
-    timer: 
-  - name: wtwt
-    score: 0
-    timer: 
-  - name: wtwt
-    score: 0
-    timer: 
   - name: "\uFF13\uFF14\uFF15"
     score: 100
-    timer: 
+    timer: 02:48
+  - name: rhrrehr
+    score: 77
+    timer: 02:48
+  - name: 
+    score: 51
+    timer: 02:18
+  - name: "\u533F\u540D"
+    score: 41
+    timer: 02:40
+  - name: "\u533F\u540D"
+    score: 41
+    timer: 02:35
+  - name: "\u533F\u540D"
+    score: 41
+    timer: 02:40
+  - name: "\u3042\u308A\u304C\u3068\u3046"
+    score: 41
+    timer: 02:44
+  - name: "\u3042\u308A\u304C\u3068\u3046"
+    score: 41
+    timer: 02:44
+  - name: "\u30A2\u30A4\u30C6\u30E0\u5B9F"
+    score: 41
+    timer: 02:46
+  - name: yjutj
+    score: 34
+    timer: 02:44
+  - name: "\uFF15\uFF15\uFF15\uFF15\uFF15\uFF15"
+    score: 21
+    timer: 02:45
+  - name: "\u3042\u308A\u304C\u3068\u3046\u3054"
+    score: 11
+    timer: 02:42
+  - name: "\u533F\u540D"
+    score: 10
+    timer: 02:59
+  - name: "\u533F\u540D"
+    score: 10
+    timer: 02:59
+  - name: "\u533F\u540D"
+    score: 10
+    timer: 02:59
+  - name: "\u533F\u540D"
+    score: 10
+    timer: 02:59
+  - name: "\u533F\u540D"
+    score: 10
+    timer: 02:59
+  - name: "\u533F\u540D"
+    score: 10
+    timer: 02:59
+  - name: "\u533F\u540D"
+    score: 10
+    timer: 02:59
+  - name: "\u533F\u540D"
+    score: 10
+    timer: 02:59
+  - name: knknk
+    score: 10
+    timer: 02:59
+  - name: llk
+    score: 10
+    timer: 02:59

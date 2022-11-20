@@ -85,13 +85,13 @@ public class MainManager : MonoBehaviour
                 panelWalls.transform.localPosition = new Vector3(0.0f, 0.0f, 0.0f);
                 break;
             case WALL_RIGHT:
-                panelWalls.transform.localPosition = new Vector3(-1000.0f, 0.0f, 0.0f);
+                panelWalls.transform.localPosition = new Vector3(-1500.0f, 0.0f, 0.0f);
                 break;
             case WALL_BACK:
-                panelWalls.transform.localPosition = new Vector3(-2000.0f, 0.0f, 0.0f);
+                panelWalls.transform.localPosition = new Vector3(-3000.0f, 0.0f, 0.0f);
                 break;
             case WALL_LEFT:
-                panelWalls.transform.localPosition = new Vector3(-3000.0f, 0.0f, 0.0f);
+                panelWalls.transform.localPosition = new Vector3(-4500.0f, 0.0f, 0.0f);
                 break;
         }
 
