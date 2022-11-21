@@ -32,7 +32,7 @@ public class RankingManager : MonoBehaviour
 
     void ShowRanking()
     {
-        gameStatus.rankings.Sort((a, b) => b.Score - a.Score);
+        //gameStatus.rankings.Sort((a, b) => b.Score - a.Score);
 
         int counter = Mathf.Min(10, gameStatus.rankings.Count);
         for (int i = 0; i < counter; i++)
@@ -45,8 +45,8 @@ public class RankingManager : MonoBehaviour
             //    $"\t\t\tScore：{ranking.Score}\t{ranking.Timer}\n\n";
             //    return;
             //}
-            displayField.text += $"{(i + 1),2}{ranking.Name,10}さん\n" +
-                $"{"Score:", 20}{ranking.Score, 2}{ranking.Timer,15}\n\n";
+            displayField.text += $"{(i + 1),3}{".",1}{ranking.Name,15}さん\n" +
+                $"{"Score:", 23}{ranking.Score, 2}{ranking.Timer,15}\n\n";
             //displayField.text += $"　{i + 1}.\t\t\t　{ranking.Name}さん\n" +
             //    $"\t\t\tScore：{ranking.Score}\t{ranking.Timer}\n\n";
         }

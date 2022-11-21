@@ -195,7 +195,7 @@ public class GameManagement : MonoBehaviour
 
         Ranking rank = new Ranking(nameValue, playerLifeManagement.Score, timer);
         gameStatus.rankings.Add(rank);
-
+        gameStatus.rankings.Sort((a, b) => b.Score - a.Score);
         inputName.GetComponent<Text>().enabled = false;
         rankingButton.GetComponent<Button>().enabled = false;
     }
