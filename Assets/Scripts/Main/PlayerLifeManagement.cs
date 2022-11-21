@@ -187,6 +187,11 @@ public class PlayerLifeManagement : MonoBehaviour
         //  スコアの表示を最新
         scoreText.text = "Score: " + Score.ToString();
 
+        Ranking ranking = gameStatus.rankings[0];
+
+        highScoreText.text = "HighScore: " + ranking.Score.ToString();
+        //ハイスコアを表示
+
         //Ranking rank = new Ranking(name, Score, timer);
         //if (Score > rank.Score)
         //{
@@ -198,19 +203,21 @@ public class PlayerLifeManagement : MonoBehaviour
         //    //ハイスコアを表示
         //}
         // ハイスコアより現在スコアが高い時
-        if (Score > highScore)
-        {
+        //if (Score > highScore)
+        //{
 
-            highScore = Score;
-            //ハイスコア更新
+        //    highScore = Score;
+        //    //ハイスコア更新
 
-            PlayerPrefs.SetInt(key, highScore);
-            //ハイスコアを保存
+        //    PlayerPrefs.SetInt(key, highScore);
+        //    //ハイスコアを保存
 
-            highScoreText.text = "HighScore: " + highScore.ToString();
-            //ハイスコアを表示
-        }
-        else if (Score <= 0)
+        //    highScoreText.text = "HighScore: " + highScore.ToString();
+        //    //ハイスコアを表示
+        //}
+        //else
+        //
+        if (Score <= 0)
         {
             gameManagement.GameOver();
         }

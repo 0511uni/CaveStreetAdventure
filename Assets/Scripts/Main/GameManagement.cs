@@ -340,8 +340,12 @@ public class GameManagement : MonoBehaviour
 
         //Ranking rank = new Ranking(nameValue, playerLifeManagement.Score, timer);
 
-        resultGamehighScoreText.text = "High Score: " + playerLifeManagement.highScore.ToString();
+        //resultGamehighScoreText.text = "High Score: " + playerLifeManagement.highScore.ToString();
 
-        gameStatus.highScore = "High Score: " + playerLifeManagement.highScore.ToString();
+        Ranking ranking = gameStatus.rankings[0];
+
+        resultGamehighScoreText.text = "HighScore: " + ranking.Score.ToString();
+
+        //gameStatus.highScore = "High Score: " + playerLifeManagement.highScore.ToString();
     }
 }

@@ -40,7 +40,7 @@ public class GameStatus : ScriptableObject
             {
                 if (value == "")
                 {
-                    name = "　匿名　";
+                    name = "匿名";
                     return;
                 }
                 name = value;
