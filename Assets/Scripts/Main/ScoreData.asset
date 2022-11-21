@@ -13,15 +13,13 @@ MonoBehaviour:
   m_Name: ScoreData
   m_EditorClassIdentifier: 
   Score: 10
-  highScore: 'High Score: 333'
+  highScore: 'High Score: 0'
   key: HIGH SCORE
+  <Score1>k__BackingField: 10
   rankings:
-  - name: wtwt
+  - name: "\uFF11\uFF12\uFF13\uFF15\uFF18"
     score: 0
-    timer: 
-  - name: yjutj
-    score: 34
-    timer: 
-  - name: rhrrehr
-    score: 77
-    timer: 
+    timer: 02:43
+  - name: "\uFF13\uFF14\uFF15\uFF16\uFF17"
+    score: 0
+    timer: 02:08
