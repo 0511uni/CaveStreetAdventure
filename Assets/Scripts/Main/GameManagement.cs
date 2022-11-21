@@ -8,7 +8,10 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.SocialPlatforms.Impl;
 using UnityEngine.UI;
+using UnityEngine.UIElements;
 using static GameStatus;
+using static UnityEngine.EventSystems.EventTrigger;
+using Button = UnityEngine.UI.Button;
 //using UnityEngine.UIElements;
 //using static UnityEditor.Timeline.TimelinePlaybackControls;
 
@@ -19,6 +22,9 @@ using static GameStatus;
 public class GameManagement : MonoBehaviour
 {
     #region//インスペクターで設定する
+
+    [SerializeField]
+    GameObject player;
 
     [SerializeField]
     GameObject resultRSButton;
@@ -43,6 +49,9 @@ public class GameManagement : MonoBehaviour
 
     [SerializeField]
     GameObject gameOverUI;
+
+    [SerializeField]
+    GameObject rankingButton;
 
     [SerializeField]
     Text resultGameScoreText;
@@ -75,6 +84,10 @@ public class GameManagement : MonoBehaviour
 
     [SerializeField] Text inputName;
 
+    string timer;
+
+    string nameValue;
+
     public int InputName
     {
         get => inputNum; 
@@ -102,13 +115,14 @@ public class GameManagement : MonoBehaviour
 
     void Start()
     {
+        // 最初は非表示
         titleBackButton.SetActive(false);
         resultRSButton.SetActive(false);
         resultScoreText.SetActive(false);
         resultTimer.enabled = false;
         gameOverUI.SetActive(false);
-        winUI.SetActive(true);
-        pausePanel.SetActive(false);// 最初は非表示
+        winUI.SetActive(false);
+        pausePanel.SetActive(false);
         pauseButton.onClick.AddListener(Pause);
         resumeButton.onClick.AddListener(Resume);
     }
@@ -143,17 +157,26 @@ public class GameManagement : MonoBehaviour
         SceneManager.LoadScene("TitleMenuScene");
     }
 
-    //　RANKING Buttonを押したら実行する
+    /// <summary>
+    /// 　RANKING Buttonを押したら実行する
+    /// </summary>
     public void RankingStart() => UnityEngine.SceneManagement.SceneManager.LoadScene("Ranking");
 
+    /// <summary>
+    /// ランキングを送るボタン
+    /// </summary>
     public void RankingNameButton()
     {
         AddRanking();
         gameStatus.Save();
     }
 
+    /// <summary>
+    /// ランキングにデータを生成する
+    /// </summary>
     private void AddRanking()
     {
+
         Debug.Log("RankB");
 
         string nameValue = inputName.text;
@@ -168,10 +191,13 @@ public class GameManagement : MonoBehaviour
         //    Debug.Log(nameValue);
         //}
 
-        string timer = resultTimer.text;
+       timer = resultTimer.text;
 
         Ranking rank = new Ranking(nameValue, playerLifeManagement.Score, timer);
         gameStatus.rankings.Add(rank);
+
+        inputName.GetComponent<Text>().enabled = false;
+        rankingButton.GetComponent<Button>().enabled = false;
     }
 
     /// <summary>
@@ -179,11 +205,13 @@ public class GameManagement : MonoBehaviour
     /// </summary>
     public void GameOver()
     {
+        Destroy(player.GetComponent<Rigidbody2D>());
+
         SoundSE.PlayOneShot(GameOverSE);
 
         titleBackButton.SetActive(true);
 
-        resultScoreText.SetActive(true);
+        resultScoreText.SetActive(false);
 
         winUI.SetActive(false);
 
@@ -235,8 +263,8 @@ public class GameManagement : MonoBehaviour
 
         buttonController.SetActive(false);
 
-        resultGameScoreText.text = "Score: " + playerLifeManagement.Score.ToString();
-        resultGamehighScoreText.text = "High Score: " + playerLifeManagement.highScore.ToString();
+        //resultGameScoreText.text = "Score: " + playerLifeManagement.Score.ToString();
+        //resultGamehighScoreText.text = "High Score: " + playerLifeManagement.highScore.ToString();
 
         gameStatus.highScore = "High Score: " + playerLifeManagement.highScore.ToString();
     }
@@ -246,6 +274,8 @@ public class GameManagement : MonoBehaviour
     /// </summary>
     public void GameClear()
     {
+        Destroy(player.GetComponent<Rigidbody2D>());
+
         SoundSE.PlayOneShot(WinSE);
 
         titleBackButton.SetActive(true);
@@ -293,10 +323,24 @@ public class GameManagement : MonoBehaviour
             downLift.GetComponent<LiftDownMove>().enabled = false; // Liftのコンポーネントを止める。
             Destroy(downLift.GetComponent<Rigidbody2D>()); // Liftのコンポーネントを止める。
         }
-
+        
         resultGameScoreText.text = "Score: " + playerLifeManagement.Score.ToString();
-        resultGamehighScoreText.text = "High Score: " + playerLifeManagement.highScore.ToString();
 
+        //gameStatus.rankings.Sort((a, b) => b.Score - a.Score);
+
+        //foreach (var rankings in gameStatus.rankings)
+        //{
+        //    if (playerLifeManagement.Score > rankings.Score)
+        //    {
+        //        playerLifeManagement.Score = rankings.Score;
+                
+        //    }
+            
+        //}
+
+        //Ranking rank = new Ranking(nameValue, playerLifeManagement.Score, timer);
+
+        resultGamehighScoreText.text = "High Score: " + playerLifeManagement.highScore.ToString();
 
         gameStatus.highScore = "High Score: " + playerLifeManagement.highScore.ToString();
     }

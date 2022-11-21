@@ -3,19 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// InputFieldの入力制限コントロール
+/// </summary>
 public class InputLimitController : MonoBehaviour
 {
     [SerializeField]
     InputField inputText;
 
-
     public void CheckTextCount()
     {
         Debug.Log(inputText.text.Length);
 
-        if (inputText.text.Length > 5)
+        if (inputText.text.Length > 6)
         {
-            inputText.text = inputText.text[..5];
+            inputText.text = inputText.text[..6];
         }
     }
 }

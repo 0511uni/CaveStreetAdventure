@@ -1,4 +1,4 @@
-﻿using System.Collections;
+﻿//using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 //using UnityEngine.SocialPlatforms.Impl;
@@ -6,6 +6,9 @@ using UnityEngine.UI;
 using static GameStatus;
 //using static System.Net.Mime.MediaTypeNames;
 
+/// <summary>
+/// Rankingを制御・表示する
+/// </summary>
 public class RankingManager : MonoBehaviour
 {
     [SerializeField]
@@ -13,6 +16,9 @@ public class RankingManager : MonoBehaviour
 
     [SerializeField]
     GameStatus gameStatus;
+
+    [SerializeField]
+    Text rankingNumber;
 
     void Start()
     {
@@ -24,12 +30,20 @@ public class RankingManager : MonoBehaviour
 
     void ShowRanking()
     {
-
         gameStatus.rankings.Sort((a, b) => b.Score - a.Score);
 
-        foreach (var ranking in gameStatus.rankings)
-        {
-            displayField.text += $"{ranking.Name}さん\nScore：{ranking.Score}\t{ranking.Timer}\n\n";
+        for (int i = 0; i < 10; i++)
+        {//gameStatus.rankings.Count
+            int num = i + 1;
+            Ranking ranking = gameStatus.rankings[i];
+            if (num == 10)
+            {
+                displayField.text += $"　{num}.\t\t　{ranking.Name}さん\n" +
+                $"\t\t\tScore：{ranking.Score}\t{ranking.Timer}\n\n";
+                return;
+            }
+            displayField.text += $"　{num}.\t\t\t　{ranking.Name}さん\n" +
+                $"\t\t\tScore：{ranking.Score}\t{ranking.Timer}\n\n";
         }
     }
 
