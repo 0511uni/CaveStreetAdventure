@@ -3,9 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-using UnityEngine.UIElements;
-using static GameStatus;
-
 /// <summary>
 /// プレイヤーのライフ管理
 /// </summary>
@@ -32,14 +29,9 @@ public class PlayerLifeManagement : MonoBehaviour
     [SerializeField]
     GameObject shotButton;
 
-    [SerializeField]
-    GameStatus gameStatus;
-
     public int itemNam;
     
     public GameObject[] items;
-
-    string timer;
 
     #endregion
 
@@ -56,9 +48,6 @@ public class PlayerLifeManagement : MonoBehaviour
     //bool gameOver;
     #endregion
 
-    /// <summary>
-    /// アイテム制御のプロパティ
-    /// </summary>
     public int Items
     {
         get => itemNam;
@@ -78,9 +67,6 @@ public class PlayerLifeManagement : MonoBehaviour
         }
     }
 
-    /// <summary>
-    /// スコア制御するプロパティ
-    /// </summary>
     public int Score
     {
         get => score;
@@ -101,7 +87,6 @@ public class PlayerLifeManagement : MonoBehaviour
         Score = 10;
         scoreText.text = "Count: " + score.ToString();
         highScore = PlayerPrefs.GetInt(key, 0);
-
         //保存しておいたハイスコアをキーで呼び出し取得し保存されていなければ0になる
         highScoreText.text = "High Score: " + highScore.ToString();
 
@@ -186,17 +171,6 @@ public class PlayerLifeManagement : MonoBehaviour
         Debug.Log("setcount");
         //  スコアの表示を最新
         scoreText.text = "Score: " + Score.ToString();
-
-        //Ranking rank = new Ranking(name, Score, timer);
-        //if (Score > rank.Score)
-        //{
-        //    rank.Score = Score;
-
-        //    gameStatus.Save();
-
-        //    highScoreText.text = "HighScore: " + rank.Score.ToString();
-        //    //ハイスコアを表示
-        //}
         // ハイスコアより現在スコアが高い時
         if (Score > highScore)
         {

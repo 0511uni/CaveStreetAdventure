@@ -15,34 +15,55 @@ public class GameStatus : ScriptableObject
     int score1;
     [field: SerializeField]
     public int Score1 { get; set; } = 10;
-
     public List<Ranking> rankings;// = new List<Ranking>();
-    
+
+    //public List<Ranking> Rankings
+    //{
+    //    get => rankings; 
+    //    set
+    //    {
+    //        //for (int i = 0; i < 5; i++)
+    //        //{
+
+    //        //}
+    //        rankings = value;
+    //    }
+    //}
 
     [System.Serializable]
     public class Ranking
     {
         [SerializeField]
         string name;
-
         [SerializeField]
         int score;
-
         [SerializeField]
         string timer;
 
-        public int Score { get => score; set => score = value; }
+
+        public int Score
+        {
+            get
+            {
+                return score;
+            }
+            set
+            {
+                score = value;
+            }
+        }
         public string Timer { get => timer; set => timer = value; }
         public string Name
         {
-            get => name; 
+            get => name;
             set
             {
-                if (value == "")
-                {
-                    name = "　匿名　";
-                    return;
-                }
+                //int i = 0;
+                //if (i < 4)
+                //{
+                //    return;
+                //}
+
                 name = value;
             }
         }

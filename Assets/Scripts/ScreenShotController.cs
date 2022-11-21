@@ -13,7 +13,10 @@ public class ScreenShotController : MonoBehaviour
     [SerializeField]
     GameObject[] gameObjects;
 
-    void Start() => waterMark.SetActive(false);
+    void Start()
+    {
+        waterMark.SetActive(false);
+    }
 
     public void ShotButtonDown()
     {
