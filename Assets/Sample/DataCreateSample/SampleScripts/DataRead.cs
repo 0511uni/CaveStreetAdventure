@@ -13,7 +13,7 @@ public class DataRead : MonoBehaviour
     void Start()
     {
         Debug.Log(data.score);
-        Debug.Log(datSave.Score);
-        Debug.Log(datSave.highScore);
+       // Debug.Log(datSave.Score);
+       // Debug.Log(datSave.highScore);
     }
 }

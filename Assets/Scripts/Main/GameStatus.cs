@@ -9,12 +9,12 @@ using UnityEngine.SocialPlatforms.Impl;
 public class GameStatus : ScriptableObject
 {
     public int Score = 0;
-    public string highScore = "High Score: ";
-    public string key = "HIGH SCORE";
+    //public string highScore = "High Score: ";
+    //public string key = "HIGH SCORE";
 
-    int score1;
-    [field: SerializeField]
-    public int Score1 { get; set; } = 10;
+    //int score1;
+    //[field: SerializeField]
+    //public int Score1 { get; set; } = 10;
 
     public List<Ranking> rankings;// = new List<Ranking>();
     

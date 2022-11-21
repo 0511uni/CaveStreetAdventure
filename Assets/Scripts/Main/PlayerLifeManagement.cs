@@ -99,11 +99,13 @@ public class PlayerLifeManagement : MonoBehaviour
     void Start()
     {
         Score = 10;
-        scoreText.text = "Count: " + score.ToString();
-        highScore = PlayerPrefs.GetInt(key, 0);
-
+        scoreText.text = "Score: " + Score.ToString();
+        //highScore = PlayerPrefs.GetInt(key, 0);
+        //gameStatus.Load();
+        gameStatus.rankings.Sort((a, b) => b.Score - a.Score);//ダミー用
+        Ranking ranking = gameStatus.rankings[0];
         //保存しておいたハイスコアをキーで呼び出し取得し保存されていなければ0になる
-        highScoreText.text = "High Score: " + highScore.ToString();
+        highScoreText.text = "HighScore: " + ranking.Score.ToString();
 
         foreach (var item in items)
         {

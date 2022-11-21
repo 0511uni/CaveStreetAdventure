@@ -196,6 +196,7 @@ public class GameManagement : MonoBehaviour
         Ranking rank = new Ranking(nameValue, playerLifeManagement.Score, timer);
         gameStatus.rankings.Add(rank);
         gameStatus.rankings.Sort((a, b) => b.Score - a.Score);
+
         inputName.GetComponent<Text>().enabled = false;
         rankingButton.GetComponent<Button>().enabled = false;
     }
@@ -266,7 +267,7 @@ public class GameManagement : MonoBehaviour
         //resultGameScoreText.text = "Score: " + playerLifeManagement.Score.ToString();
         //resultGamehighScoreText.text = "High Score: " + playerLifeManagement.highScore.ToString();
 
-        gameStatus.highScore = "High Score: " + playerLifeManagement.highScore.ToString();
+        //gameStatus.highScore = "High Score: " + playerLifeManagement.highScore.ToString();
     }
 
     /// <summary>
@@ -325,22 +326,6 @@ public class GameManagement : MonoBehaviour
         }
         
         resultGameScoreText.text = "Score: " + playerLifeManagement.Score.ToString();
-
-        //gameStatus.rankings.Sort((a, b) => b.Score - a.Score);
-
-        //foreach (var rankings in gameStatus.rankings)
-        //{
-        //    if (playerLifeManagement.Score > rankings.Score)
-        //    {
-        //        playerLifeManagement.Score = rankings.Score;
-                
-        //    }
-            
-        //}
-
-        //Ranking rank = new Ranking(nameValue, playerLifeManagement.Score, timer);
-
-        //resultGamehighScoreText.text = "High Score: " + playerLifeManagement.highScore.ToString();
 
         Ranking ranking = gameStatus.rankings[0];
 

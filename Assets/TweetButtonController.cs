@@ -1,12 +1,12 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.Networking;
 using UnityEngine.UI;
 using static GameStatus;
 
-public class TweetButton : MonoBehaviour
+public class TweetButtonController : MonoBehaviour
 {
-    //[SerializeField]
-    //GameObject scoreObject = null; // Textオブジェクト
     [SerializeField]
     Text nameText;
 
@@ -17,20 +17,19 @@ public class TweetButton : MonoBehaviour
     Text highScoreText;
 
     [SerializeField]
-    GameStatus datSave;
-
-    [SerializeField]
     GameStatus gameStatus;
 
+    [SerializeField]
+    PlayerLifeManagement playerLifeManagement;
 
     //「つぶやく」ボタンを押したときの処理
     public void OnClickTweetButton()
     {
-        
-        scoreText.text = gameStatus.Score.ToString();
+
+        scoreText.text = playerLifeManagement.Score.ToString();
 
         Ranking rank = gameStatus.rankings[1];
-        nameText.text = rank.Name;
+        nameText.text = rank.Name.ToString();
 
         Ranking ranking = gameStatus.rankings[0];
         //保存しておいたハイスコアをキーで呼び出し取得し保存されていなければ0になる
@@ -40,14 +39,13 @@ public class TweetButton : MonoBehaviour
         //highscoreText.text = PlayerPrefs.GetInt(datSave.key).ToString();
 
         var text = $"{nameText.text}さんの今回の記録は『{scoreText.text}』点でした! \n" +
-            $"High Scoreは、『{ highScoreText.text}』点でした! \n" +
+            $"High Scoreは、『{highScoreText.text}』点でした! \n" +
             $"挑戦者求む!!\n"
         + "https://www.google.com/‎ \n";
 
-        
+
         string[] hashtags = { "tag1", "tag2" };
 
         Application.OpenURL($"https://twitter.com/intent/tweet?text={UnityWebRequest.EscapeURL(text)}&hashtags={UnityWebRequest.EscapeURL(string.Join(",", hashtags))}");
     }
 }
-
