@@ -1,6 +1,8 @@
 ﻿//using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
 //using UnityEngine.SocialPlatforms.Impl;
 using UnityEngine.UI;
 using static GameStatus;
@@ -32,18 +34,21 @@ public class RankingManager : MonoBehaviour
     {
         gameStatus.rankings.Sort((a, b) => b.Score - a.Score);
 
-        for (int i = 0; i < 10; i++)
+        int counter = Mathf.Min(10, gameStatus.rankings.Count);
+        for (int i = 0; i < counter; i++)
         {//gameStatus.rankings.Count
-            int num = i + 1;
+
             Ranking ranking = gameStatus.rankings[i];
-            if (num == 10)
-            {
-                displayField.text += $"　{num}.\t\t　{ranking.Name}さん\n" +
-                $"\t\t\tScore：{ranking.Score}\t{ranking.Timer}\n\n";
-                return;
-            }
-            displayField.text += $"　{num}.\t\t\t　{ranking.Name}さん\n" +
-                $"\t\t\tScore：{ranking.Score}\t{ranking.Timer}\n\n";
+            //if (i + 1 == 10)
+            //{
+            //    displayField.text += $"　{i + 1}.\t\t　{ranking.Name}さん\n" +
+            //    $"\t\t\tScore：{ranking.Score}\t{ranking.Timer}\n\n";
+            //    return;
+            //}
+            displayField.text += $"{(i + 1),2}{ranking.Name,10}さん\n" +
+                $"{"Score:", 20}{ranking.Score, 2}{ranking.Timer,15}\n\n";
+            //displayField.text += $"　{i + 1}.\t\t\t　{ranking.Name}さん\n" +
+            //    $"\t\t\tScore：{ranking.Score}\t{ranking.Timer}\n\n";
         }
     }
 
