@@ -29,11 +29,11 @@ public class TweetButtonController : MonoBehaviour
         scoreText.text = playerLifeManagement.Score.ToString();
 
         Ranking rank = gameStatus.rankings[0];
-        nameText.text = rank.Name.ToString();
+        //nameText.text = rank.Name.ToString();
 
         Ranking ranking = gameStatus.rankings[0];
         //保存しておいたハイスコアをキーで呼び出し取得し保存されていなければ0になる
-        highScoreText.text = ranking.Score.ToString();
+        //highScoreText.text = ranking.Score.ToString();
 
         //scoreText.text = datSave.Score.ToString();
         //highscoreText.text = PlayerPrefs.GetInt(datSave.key).ToString();
@@ -44,7 +44,7 @@ public class TweetButtonController : MonoBehaviour
         + "https://www.google.com/‎ \n";
 
 
-        string[] hashtags = { "tag1", "tag2" };
+        string[] hashtags = { "2ゲーム", "Unity" };
 
         Application.OpenURL($"https://twitter.com/intent/tweet?text={UnityWebRequest.EscapeURL(text)}&hashtags={UnityWebRequest.EscapeURL(string.Join(",", hashtags))}");
     }
