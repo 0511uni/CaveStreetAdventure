@@ -169,12 +169,14 @@ public class GameManagement : MonoBehaviour
     {
         AddRanking();
         gameStatus.Save();
+        inputName.GetComponent<Text>().enabled = false;
+        rankingButton.GetComponent<Button>().enabled = false;
     }
 
     /// <summary>
     /// ランキングにデータを生成する
     /// </summary>
-    private void AddRanking()
+    public void AddRanking()
     {
 
         Debug.Log("RankB");
@@ -195,10 +197,7 @@ public class GameManagement : MonoBehaviour
 
         Ranking rank = new Ranking(nameValue, playerLifeManagement.Score, timer);
         gameStatus.rankings.Add(rank);
-        gameStatus.rankings.Sort((a, b) => b.Score - a.Score);
-
-        inputName.GetComponent<Text>().enabled = false;
-        rankingButton.GetComponent<Button>().enabled = false;
+        gameStatus.rankings.Sort((a, b) => b.Score - a.Score);   
     }
 
     /// <summary>

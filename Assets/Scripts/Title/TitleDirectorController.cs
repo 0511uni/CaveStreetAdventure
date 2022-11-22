@@ -48,7 +48,7 @@ public class TitleDirectorController : MonoBehaviour
         Screen.SetResolution(400, 710, false, 60);
         gameStatus.Load();
 
-        gameStatus.rankings.Sort((a, b) => b.Score - a.Score);//ダミー用
+        //gameStatus.rankings.Sort((a, b) => b.Score - a.Score);//ダミー用
         Ranking ranking = gameStatus.rankings[0];
 
         resultGamehighScoreText.text = "HighScore: " + ranking.Score.ToString();

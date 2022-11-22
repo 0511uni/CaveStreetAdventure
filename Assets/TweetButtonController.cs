@@ -16,6 +16,9 @@ public class TweetButtonController : MonoBehaviour
     [SerializeField]
     PlayerLifeManagement playerLifeManagement;
 
+    //[SerializeField]
+    //GameObject 
+
     //「つぶやく」ボタンを押したときの処理
     public void OnClickTweetButton()
     {
@@ -26,6 +29,8 @@ public class TweetButtonController : MonoBehaviour
         string scoreText = playerLifeManagement.Score.ToString();
 
         Ranking ranking = gameStatus.rankings[0];
+
+        gameStatus.rankings.Add(ranking);
 
         var text = $"{nameValue}さんの今回の記録は『{scoreText}』点でした! \n" +
             $"ハイスコアーは、{ranking.Name}さんの『{ranking.Score}』点です \n" +

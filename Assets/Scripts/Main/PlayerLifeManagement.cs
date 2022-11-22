@@ -102,7 +102,7 @@ public class PlayerLifeManagement : MonoBehaviour
         scoreText.text = "Score: " + Score.ToString();
         //highScore = PlayerPrefs.GetInt(key, 0);
         //gameStatus.Load();
-        gameStatus.rankings.Sort((a, b) => b.Score - a.Score);//ダミー用
+        //gameStatus.rankings.Sort((a, b) => b.Score - a.Score);//ダミー用
         Ranking ranking = gameStatus.rankings[0];
         //保存しておいたハイスコアをキーで呼び出し取得し保存されていなければ0になる
         highScoreText.text = "HighScore: " + ranking.Score.ToString();

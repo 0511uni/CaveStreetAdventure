@@ -31,7 +31,7 @@ public class RankingManager : MonoBehaviour
 
     void ShowRanking()
     {
-        gameStatus.rankings.Sort((a, b) => b.Score - a.Score);//ダミー用
+        //gameStatus.rankings.Sort((a, b) => b.Score - a.Score);//ダミー用
 
         int counter = Mathf.Min(10, gameStatus.rankings.Count);
         for (int i = 0; i < counter; i++)
