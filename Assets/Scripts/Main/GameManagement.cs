@@ -86,8 +86,6 @@ public class GameManagement : MonoBehaviour
 
     string timer;
 
-    string nameValue;
-
     public int InputName
     {
         get => inputNum;
@@ -160,7 +158,12 @@ public class GameManagement : MonoBehaviour
     /// <summary>
     /// 　RANKING Buttonを押したら実行する
     /// </summary>
-    public void RankingStart() => UnityEngine.SceneManagement.SceneManager.LoadScene("Ranking");
+    public void RankingStart()
+    {
+        AddRanking();
+        gameStatus.Save();
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Ranking");
+    }
 
     /// <summary>
     /// ランキングを送るボタン
@@ -169,8 +172,6 @@ public class GameManagement : MonoBehaviour
     {
         AddRanking();
         gameStatus.Save();
-        inputName.GetComponent<Text>().enabled = false;
-        rankingButton.GetComponent<Button>().enabled = false;
     }
 
     /// <summary>
@@ -198,6 +199,9 @@ public class GameManagement : MonoBehaviour
         Ranking rank = new Ranking(nameValue, playerLifeManagement.Score, timer);
         gameStatus.rankings.Add(rank);
         gameStatus.rankings.Sort((a, b) => b.Score - a.Score);
+
+        inputName.GetComponent<Text>().enabled = false;
+        rankingButton.GetComponent<Button>().enabled = false;
     }
 
     /// <summary>
@@ -262,11 +266,6 @@ public class GameManagement : MonoBehaviour
         scoreUI.SetActive(false);
 
         buttonController.SetActive(false);
-
-        //resultGameScoreText.text = "Score: " + playerLifeManagement.Score.ToString();
-        //resultGamehighScoreText.text = "High Score: " + playerLifeManagement.highScore.ToString();
-
-        //gameStatus.highScore = "High Score: " + playerLifeManagement.highScore.ToString();
     }
 
     /// <summary>
@@ -328,7 +327,6 @@ public class GameManagement : MonoBehaviour
 
         if (gameStatus.rankings.Count != 0)
         {
-
             Ranking ranking = gameStatus.rankings[0];
 
             resultGamehighScoreText.text = "HighScore: " + ranking.Score.ToString();
@@ -337,7 +335,5 @@ public class GameManagement : MonoBehaviour
         {
             resultGamehighScoreText.text = "HighScore: " + playerLifeManagement.Score.ToString();
         }
-
-            //gameStatus.highScore = "High Score: " + playerLifeManagement.highScore.ToString();
-        }
     }
+}

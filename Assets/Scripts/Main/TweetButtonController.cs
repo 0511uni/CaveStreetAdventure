@@ -5,7 +5,9 @@ using UnityEngine.Networking;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
 using static GameStatus;
-
+/// <summary>
+/// ツイッター共有の制御
+/// </summary>
 public class TweetButtonController : MonoBehaviour
 { 
     [SerializeField]
@@ -20,7 +22,9 @@ public class TweetButtonController : MonoBehaviour
     [SerializeField]
     GameObject gameManagement;
 
-    //「つぶやく」ボタンを押したときの処理
+   /// <summary>
+   /// 「つぶやく」ボタンを押したときの処理
+   /// </summary>
     public void OnClickTweetButton()
     {
         string nameValue = inputName.text;
@@ -29,16 +33,15 @@ public class TweetButtonController : MonoBehaviour
 
         string scoreText = playerLifeManagement.Score.ToString();
 
-        Ranking ranking = gameStatus.rankings[0];
-
         gameManagement.GetComponent<GameManagement>().AddRanking();
         gameStatus.Save();
+
+        Ranking ranking = gameStatus.rankings[0];
 
         var text = $"{nameValue}さんの今回の記録は『{scoreText}』点でした! \n" +
             $"ハイスコアーは、{ranking.Name}さんの『{ranking.Score}』点です \n" +
             $"挑戦者求む!!\n"
         + "https://www.google.com/‎\n";
-
 
         string[] hashtags = { "2ゲーム", "Unity" };
 

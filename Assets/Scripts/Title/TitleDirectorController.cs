@@ -5,6 +5,9 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using static GameStatus;
 
+/// <summary>
+/// タイトル画面の操作
+/// </summary>
 public class TitleDirectorController : MonoBehaviour
 {
     [SerializeField]
@@ -49,10 +52,19 @@ public class TitleDirectorController : MonoBehaviour
         gameStatus.Load();
 
         //gameStatus.rankings.Sort((a, b) => b.Score - a.Score);//ダミー用
-        Ranking ranking = gameStatus.rankings[0];
+        Ranking ranking;
 
-        resultGamehighScoreText.text = "HighScore: " + ranking.Score.ToString();
-        //resultGamehighScoreText.text = "High Score: " + PlayerPrefs.GetInt(gameStatus.key).ToString();
+        if (gameStatus.rankings.Count != 0)
+        {
+
+            ranking = gameStatus.rankings[0];
+
+            resultGamehighScoreText.text = "HighScore: " + ranking.Score.ToString();
+        }
+        else
+        {
+            resultGamehighScoreText.text = "HighScore : none memory";
+        }
     }
 
 }

@@ -23,8 +23,15 @@ public class RankingManager : MonoBehaviour
 
     void Start()
     {
-        displayField.text = "";
-        ShowRanking();
+        if (gameStatus.rankings.Count != 0)
+        {
+            displayField.text = "";
+            ShowRanking();
+        }
+        else
+        {
+            displayField.text = $"{"HighScore: none memory", 30}";
+        }
     }
 
     public void OnClickRankingPush() => ShowRanking();

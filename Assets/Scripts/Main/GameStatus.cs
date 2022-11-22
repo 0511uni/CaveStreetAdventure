@@ -5,6 +5,10 @@ using UnityEngine;
 using UnityEngine.SocialPlatforms.Impl;
 //using static UnityEditor.Progress;
 
+/// <summary>
+/// ゲームのスコアーやランキングの
+/// スクリプタブルオブジェクト
+/// </summary>
 [CreateAssetMenu(menuName = "GameStatus")]
 public class GameStatus : ScriptableObject
 {

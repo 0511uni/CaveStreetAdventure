@@ -101,7 +101,7 @@ public class PlayerLifeManagement : MonoBehaviour
         Score = 10;
         scoreText.text = "Score: " + Score.ToString();
         //highScore = PlayerPrefs.GetInt(key, 0);
-        //gameStatus.Load();
+
         //gameStatus.rankings.Sort((a, b) => b.Score - a.Score);//ダミー用
 
         Ranking ranking;
@@ -139,7 +139,6 @@ public class PlayerLifeManagement : MonoBehaviour
 
             //  スコアを加算します
             Score++;
-            //score += 1;
 
             //  スコアを加算時のSE
             SoundSE.PlayOneShot(Se1);
@@ -188,6 +187,7 @@ public class PlayerLifeManagement : MonoBehaviour
             Score -= 20;
 
             SoundSE.PlayOneShot(Se2); //SE
+
             //  UI の表示を最新します
             SetCountText();
         }
@@ -197,6 +197,7 @@ public class PlayerLifeManagement : MonoBehaviour
     public void SetCountText()
     {
         Debug.Log("setcount");
+
         //  スコアの表示を最新
         scoreText.text = "Score: " + Score.ToString();
 
@@ -205,43 +206,29 @@ public class PlayerLifeManagement : MonoBehaviour
         {
             Ranking ranking = gameStatus.rankings[0];
 
-            highScoreText.text = "HighScore: " + ranking.Score.ToString();
             //ハイスコアを表示
-
-
+            highScoreText.text = "HighScore: " + ranking.Score.ToString();
+            
+            //ランカーがスコアより高得点になったら
             if (Score > ranking.Score)
             {
+                // そのスコアーをランカーに代入
                 ranking.Score = Score;
 
+                // スクリプタブルオブジェクトの保存
                 gameStatus.Save();
 
-                highScoreText.text = "HighScore: " + ranking.Score.ToString();
                 //ハイスコアを表示
-            }
-            // ハイスコアより現在スコアが高い時
-            //if (Score > highScore)
-            //{
-
-            //    highScore = Score;
-            //    //ハイスコア更新
-
-            //    PlayerPrefs.SetInt(key, highScore);
-            //    //ハイスコアを保存
-
-            //    highScoreText.text = "HighScore: " + highScore.ToString();
-            //    //ハイスコアを表示
-            //}
-            //else
-            //
-            if (Score <= 0)
-            {
-                gameManagement.GameOver();
+                highScoreText.text = "HighScore: " + ranking.Score.ToString();
             }
         }
-        // らんかーが０にん
+        // ランカーがいないときは
         else
         {
             highScoreText.text = "HighScore: " + Score.ToString();
         }
+
+        //スコアゼロ以下になったらゲームオーバーが呼ばれる。
+        if (Score <= 0) gameManagement.GameOver();
     }
 }
