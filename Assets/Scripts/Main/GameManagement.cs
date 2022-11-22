@@ -90,14 +90,14 @@ public class GameManagement : MonoBehaviour
 
     public int InputName
     {
-        get => inputNum; 
+        get => inputNum;
         set
         {
             if (value > 3)
             {
                 inputNum = value;
             }
-            
+
         }
     }
 
@@ -193,11 +193,11 @@ public class GameManagement : MonoBehaviour
         //    Debug.Log(nameValue);
         //}
 
-       timer = resultTimer.text;
+        timer = resultTimer.text;
 
         Ranking rank = new Ranking(nameValue, playerLifeManagement.Score, timer);
         gameStatus.rankings.Add(rank);
-        gameStatus.rankings.Sort((a, b) => b.Score - a.Score);   
+        gameStatus.rankings.Sort((a, b) => b.Score - a.Score);
     }
 
     /// <summary>
@@ -323,13 +323,21 @@ public class GameManagement : MonoBehaviour
             downLift.GetComponent<LiftDownMove>().enabled = false; // Liftのコンポーネントを止める。
             Destroy(downLift.GetComponent<Rigidbody2D>()); // Liftのコンポーネントを止める。
         }
-        
+
         resultGameScoreText.text = "Score: " + playerLifeManagement.Score.ToString();
 
-        //Ranking ranking = gameStatus.rankings[0];
+        if (gameStatus.rankings.Count != 0)
+        {
 
-        //resultGamehighScoreText.text = "HighScore: " + ranking.Score.ToString();
+            Ranking ranking = gameStatus.rankings[0];
 
-        //gameStatus.highScore = "High Score: " + playerLifeManagement.highScore.ToString();
+            resultGamehighScoreText.text = "HighScore: " + ranking.Score.ToString();
+        }
+        else
+        {
+            resultGamehighScoreText.text = "HighScore: " + playerLifeManagement.Score.ToString();
+        }
+
+            //gameStatus.highScore = "High Score: " + playerLifeManagement.highScore.ToString();
+        }
     }
-}
