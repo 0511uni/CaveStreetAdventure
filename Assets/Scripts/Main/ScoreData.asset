@@ -13,43 +13,10 @@ MonoBehaviour:
   m_Name: ScoreData
   m_EditorClassIdentifier: 
   Score: 10
-  highScore: 'High Score: 120'
-  key: HIGH SCORE
-  <Score1>k__BackingField: 10
   rankings:
-  - name: "\u533F\u540D"
-    score: 100
-    timer: 02:52
-  - name: "\uFF13\uFF14\uFF15\uFF16\uFF17"
+  - name: "\uFF11\uFF12\uFF13\uFF15\uFF18"
     score: 30
-    timer: 02:08
-  - name: "\u30BF\u30D6"
-    score: 10
     timer: 02:43
-  - name: "\uFF13\uFF14\uFF15\uFF16\uFF17"
-    score: 2
-    timer: 02:08
-  - name: "\uFF13\uFF14\uFF15\uFF16\uFF17"
-    score: 0
-    timer: 02:08
-  - name: "\uFF13\uFF14\uFF15\uFF16\uFF17"
-    score: 0
-    timer: 02:08
-  - name: "\uFF13\uFF14\uFF15\uFF16\uFF17"
-    score: 0
-    timer: 02:08
-  - name: "\uFF13\uFF14\uFF15\uFF16\uFF17"
-    score: 0
-    timer: 02:08
-  - name: "\uFF13\uFF14\uFF15\uFF16\uFF17"
-    score: 0
-    timer: 02:08
-  - name: "\uFF13\uFF14\uFF15\uFF16\uFF17"
-    score: 0
-    timer: 02:08
-  - name: "\uFF13\uFF14\uFF15\uFF16\uFF17"
-    score: 0
-    timer: 02:08
   - name: "\uFF13\uFF14\uFF15\uFF16\uFF17"
     score: 0
     timer: 02:08
