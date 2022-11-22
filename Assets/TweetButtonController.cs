@@ -38,8 +38,8 @@ public class TweetButtonController : MonoBehaviour
         //scoreText.text = datSave.Score.ToString();
         //highscoreText.text = PlayerPrefs.GetInt(datSave.key).ToString();
 
-        var text = $"{nameText.text}さんの今回の記録は『{scoreText.text}』点でした! \n" +
-            $"High Scoreは、『{highScoreText.text}』点でした! \n" +
+        var text = $"{rank.Name}さんの今回の記録は『{scoreText}』点でした! \n" +
+            $"High Scoreは、『{ranking.Score}』点でした! \n" +
             $"挑戦者求む!!\n"
         + "https://www.google.com/‎ \n";
 
