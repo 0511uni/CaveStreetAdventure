@@ -6,18 +6,12 @@ using UnityEngine.UI;
 using static GameStatus;
 
 public class TweetButtonController : MonoBehaviour
-{
-    [SerializeField]
-    Text nameText;
-
-    [SerializeField]
-    Text scoreText;
-
-    [SerializeField]
-    Text highScoreText;
-
+{ 
     [SerializeField]
     GameStatus gameStatus;
+
+    [SerializeField]
+    Text inputName;
 
     [SerializeField]
     PlayerLifeManagement playerLifeManagement;
@@ -25,23 +19,18 @@ public class TweetButtonController : MonoBehaviour
     //「つぶやく」ボタンを押したときの処理
     public void OnClickTweetButton()
     {
+        string nameValue = inputName.text;
 
-        scoreText.text = playerLifeManagement.Score.ToString();
+        if (nameValue == "") nameValue = "匿名";
 
-        Ranking rank = gameStatus.rankings[0];
-        //nameText.text = rank.Name.ToString();
+        string scoreText = playerLifeManagement.Score.ToString();
 
         Ranking ranking = gameStatus.rankings[0];
-        //保存しておいたハイスコアをキーで呼び出し取得し保存されていなければ0になる
-        //highScoreText.text = ranking.Score.ToString();
 
-        //scoreText.text = datSave.Score.ToString();
-        //highscoreText.text = PlayerPrefs.GetInt(datSave.key).ToString();
-
-        var text = $"{rank.Name}さんの今回の記録は『{scoreText.text}』点でした! \n" +
-            $"High Scoreは、『{ranking.Score}』点でした! \n" +
+        var text = $"{nameValue}さんの今回の記録は『{scoreText}』点でした! \n" +
+            $"ハイスコアーは、{ranking.Name}さんの『{ranking.Score}』点です \n" +
             $"挑戦者求む!!\n"
-        + "https://www.google.com/‎ \n";
+        + "https://www.google.com/‎\n";
 
 
         string[] hashtags = { "2ゲーム", "Unity" };

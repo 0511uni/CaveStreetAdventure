@@ -31854,10 +31854,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 341d1815f69c15948b123326ef81860b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nameText: {fileID: 618399040}
-  scoreText: {fileID: 618399040}
-  highScoreText: {fileID: 618399040}
   gameStatus: {fileID: 11400000, guid: 7596a03b4de9c9440aceea3798abb451, type: 2}
+  inputName: {fileID: 1617253458}
   playerLifeManagement: {fileID: 1502327123}
 --- !u!1 &1516666805 stripped
 GameObject:
