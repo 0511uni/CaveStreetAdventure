@@ -28,7 +28,7 @@ public class TweetButtonController : MonoBehaviour
 
         scoreText.text = playerLifeManagement.Score.ToString();
 
-        Ranking rank = gameStatus.rankings[1];
+        Ranking rank = gameStatus.rankings[0];
         nameText.text = rank.Name.ToString();
 
         Ranking ranking = gameStatus.rankings[0];
