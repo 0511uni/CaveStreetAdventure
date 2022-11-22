@@ -13,13 +13,4 @@ MonoBehaviour:
   m_Name: ScoreData
   m_EditorClassIdentifier: 
   Score: 10
-  rankings:
-  - name: "\u533F\u540D"
-    score: 11
-    timer: 02:50
-  - name: 6666
-    score: 11
-    timer: 02:50
-  - name: "\uFF13\uFF14\uFF15\uFF16\uFF17"
-    score: 0
-    timer: 02:08
+  rankings: []

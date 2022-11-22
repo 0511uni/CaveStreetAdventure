@@ -36,7 +36,7 @@ public class PlayerLifeManagement : MonoBehaviour
     GameStatus gameStatus;
 
     public int itemNam;
-    
+
     public GameObject[] items;
 
     string timer;
@@ -103,9 +103,20 @@ public class PlayerLifeManagement : MonoBehaviour
         //highScore = PlayerPrefs.GetInt(key, 0);
         //gameStatus.Load();
         //gameStatus.rankings.Sort((a, b) => b.Score - a.Score);//ダミー用
-        Ranking ranking = gameStatus.rankings[0];
-        //保存しておいたハイスコアをキーで呼び出し取得し保存されていなければ0になる
-        highScoreText.text = "HighScore: " + ranking.Score.ToString();
+
+        Ranking ranking;
+        if (gameStatus.rankings.Count != 0)
+        {
+            ranking = gameStatus.rankings[0];
+            //保存しておいたハイスコアをキーで呼び出し取得し保存されていなければ0になる
+            highScoreText.text = "HighScore: " + ranking.Score.ToString();
+        }
+        else
+        {
+            ranking = null;
+            //保存しておいたハイスコアをキーで呼び出し取得し保存されていなければ0になる
+            highScoreText.text = "HighScore: " + Score.ToString();
+        }
 
         foreach (var item in items)
         {
@@ -127,7 +138,7 @@ public class PlayerLifeManagement : MonoBehaviour
             other.gameObject.SetActive(false);
 
             //  スコアを加算します
-            Score++;           
+            Score++;
             //score += 1;
 
             //  スコアを加算時のSE
@@ -189,39 +200,48 @@ public class PlayerLifeManagement : MonoBehaviour
         //  スコアの表示を最新
         scoreText.text = "Score: " + Score.ToString();
 
-        Ranking ranking = gameStatus.rankings[0];
-
-        highScoreText.text = "HighScore: " + ranking.Score.ToString();
-        //ハイスコアを表示
-
-        //Ranking rank = new Ranking(name, Score, timer);
-        if (Score > ranking.Score)
+        // ランカーがいれば
+        if (gameStatus.rankings.Count != 0)
         {
-            ranking.Score = Score;
-
-            gameStatus.Save();
+            Ranking ranking = gameStatus.rankings[0];
 
             highScoreText.text = "HighScore: " + ranking.Score.ToString();
             //ハイスコアを表示
+
+
+            if (Score > ranking.Score)
+            {
+                ranking.Score = Score;
+
+                gameStatus.Save();
+
+                highScoreText.text = "HighScore: " + ranking.Score.ToString();
+                //ハイスコアを表示
+            }
+            // ハイスコアより現在スコアが高い時
+            //if (Score > highScore)
+            //{
+
+            //    highScore = Score;
+            //    //ハイスコア更新
+
+            //    PlayerPrefs.SetInt(key, highScore);
+            //    //ハイスコアを保存
+
+            //    highScoreText.text = "HighScore: " + highScore.ToString();
+            //    //ハイスコアを表示
+            //}
+            //else
+            //
+            if (Score <= 0)
+            {
+                gameManagement.GameOver();
+            }
         }
-        // ハイスコアより現在スコアが高い時
-        //if (Score > highScore)
-        //{
-
-        //    highScore = Score;
-        //    //ハイスコア更新
-
-        //    PlayerPrefs.SetInt(key, highScore);
-        //    //ハイスコアを保存
-
-        //    highScoreText.text = "HighScore: " + highScore.ToString();
-        //    //ハイスコアを表示
-        //}
-        //else
-        //
-        if (Score <= 0)
+        // らんかーが０にん
+        else
         {
-            gameManagement.GameOver();
+            highScoreText.text = "HighScore: " + Score.ToString();
         }
     }
 }
