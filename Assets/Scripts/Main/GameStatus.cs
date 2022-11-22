@@ -17,7 +17,7 @@ public class GameStatus : ScriptableObject
     //public int Score1 { get; set; } = 10;
 
     public List<Ranking> rankings;// = new List<Ranking>();
-    
+
 
     [System.Serializable]
     public class Ranking
@@ -31,11 +31,24 @@ public class GameStatus : ScriptableObject
         [SerializeField]
         string timer;
 
-        public int Score { get => score; set => score = value; }
+        public int Score
+        {
+            get => score;
+            set
+            {
+                if (value <= 0)
+                {
+                    score = 0;
+                    return;
+                }
+
+                score = value;
+            }
+        }
         public string Timer { get => timer; set => timer = value; }
         public string Name
         {
-            get => name; 
+            get => name;
             set
             {
                 if (value == "")

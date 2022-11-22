@@ -31857,6 +31857,7 @@ MonoBehaviour:
   gameStatus: {fileID: 11400000, guid: 7596a03b4de9c9440aceea3798abb451, type: 2}
   inputName: {fileID: 1617253458}
   playerLifeManagement: {fileID: 1502327123}
+  gameManagement: {fileID: 235754280}
 --- !u!1 &1516666805 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5022960959289328530, guid: bd9443788574cf84cbf9ff2c4b65024b, type: 3}

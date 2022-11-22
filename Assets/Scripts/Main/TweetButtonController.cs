@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
 using UnityEngine.UI;
+using UnityEngine.UIElements;
 using static GameStatus;
 
 public class TweetButtonController : MonoBehaviour
@@ -30,9 +31,8 @@ public class TweetButtonController : MonoBehaviour
 
         Ranking ranking = gameStatus.rankings[0];
 
-        //gameStatus.rankings.Add(ranking);
-
         gameManagement.GetComponent<GameManagement>().AddRanking();
+        gameStatus.Save();
 
         var text = $"{nameValue}さんの今回の記録は『{scoreText}』点でした! \n" +
             $"ハイスコアーは、{ranking.Name}さんの『{ranking.Score}』点です \n" +

@@ -195,15 +195,15 @@ public class PlayerLifeManagement : MonoBehaviour
         //ハイスコアを表示
 
         //Ranking rank = new Ranking(name, Score, timer);
-        //if (Score > rank.Score)
-        //{
-        //    rank.Score = Score;
+        if (Score > ranking.Score)
+        {
+            ranking.Score = Score;
 
-        //    gameStatus.Save();
+            gameStatus.Save();
 
-        //    highScoreText.text = "HighScore: " + rank.Score.ToString();
-        //    //ハイスコアを表示
-        //}
+            highScoreText.text = "HighScore: " + ranking.Score.ToString();
+            //ハイスコアを表示
+        }
         // ハイスコアより現在スコアが高い時
         //if (Score > highScore)
         //{
