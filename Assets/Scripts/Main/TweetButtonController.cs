@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
+using UnityEngine.SocialPlatforms.Impl;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
 using static GameStatus;
@@ -29,19 +30,39 @@ public class TweetButtonController : MonoBehaviour
     {
         string nameValue = inputName.text;
 
-        if (nameValue == "") nameValue = "匿名";
-
         string scoreText = playerLifeManagement.Score.ToString();
 
-        gameManagement.GetComponent<GameManagement>().AddRanking();
-        gameStatus.Save();
+        string text;
 
-        Ranking ranking = gameStatus.rankings[0];
+        Ranking ranking;
 
-        var text = $"{nameValue}さんの今回の記録は『{scoreText}』点でした! \n" +
+        if (nameValue == "") nameValue = "匿名";
+
+        if (gameStatus.rankings.Count != 0)
+        {
+            ranking = gameStatus.rankings[0];
+            if (playerLifeManagement.Score >= ranking.Score)
+            {
+                text = $"{nameValue}さんの今回の記録は『{scoreText}』点でした! \n" +
+            $"ハイスコアーは、{nameValue}さんの『{scoreText}』点です \n" +
+            $"挑戦者求む!!\n"
+        + "https://www.google.com/‎\n";
+            }
+            else
+            {
+                text = $"{nameValue}さんの今回の記録は『{scoreText}』点でした! \n" +
             $"ハイスコアーは、{ranking.Name}さんの『{ranking.Score}』点です \n" +
             $"挑戦者求む!!\n"
         + "https://www.google.com/‎\n";
+            }
+        }
+        else
+        {
+            text = $"{nameValue}さんの今回の記録は『{scoreText}』点でした! \n" +
+            $"ハイスコアーは、{nameValue}さんの『{scoreText}』点です \n" +
+            $"挑戦者求む!!\n"
+        + "https://www.google.com/‎\n";
+        }
 
         string[] hashtags = { "2ゲーム", "Unity" };
 

@@ -45,7 +45,7 @@ public class GameManagement : MonoBehaviour
     GameObject[] downLifts;
 
     [SerializeField]
-    GameObject winUI;
+    GameObject[] winResults;//wins
 
     [SerializeField]
     GameObject gameOverUI;
@@ -58,9 +58,6 @@ public class GameManagement : MonoBehaviour
 
     [SerializeField]
     Text resultGamehighScoreText;
-
-    [SerializeField]
-    GameObject resultScoreText;
 
     [SerializeField]
     GameStatus gameStatus;
@@ -86,19 +83,6 @@ public class GameManagement : MonoBehaviour
 
     string timer;
 
-    public int InputName
-    {
-        get => inputNum;
-        set
-        {
-            if (value > 3)
-            {
-                inputNum = value;
-            }
-
-        }
-    }
-
     #endregion
 
     #region//インスペクターで設定する サウンドSE
@@ -114,13 +98,16 @@ public class GameManagement : MonoBehaviour
     void Start()
     {
         // 最初は非表示
+        foreach (var winResult in winResults)
+        {
+            winResult.SetActive(false);
+        }
+
         titleBackButton.SetActive(false);
         resultRSButton.SetActive(false);
-        resultScoreText.SetActive(false);
-        resultTimer.enabled = false;
         gameOverUI.SetActive(false);
-        winUI.SetActive(false);
         pausePanel.SetActive(false);
+        resultTimer.enabled = false;
         pauseButton.onClick.AddListener(Pause);
         resumeButton.onClick.AddListener(Resume);
     }
@@ -130,7 +117,8 @@ public class GameManagement : MonoBehaviour
     /// </summary>
     private void Pause()
     {
-        Time.timeScale = 0; // Time.timeScaleで時間の流れの速さを決める。0だと時間が停止する
+        // Time.timeScaleで時間の流れの速さを決める。0だと時間が停止する
+        Time.timeScale = 0;
         pausePanel.SetActive(true);
         titleBackButton.SetActive(true);
     }
@@ -156,7 +144,7 @@ public class GameManagement : MonoBehaviour
     }
 
     /// <summary>
-    /// 　RANKING Buttonを押したら実行する
+    /// RANKING Buttonを押したら実行する
     /// </summary>
     public void RankingStart()
     {
@@ -170,9 +158,12 @@ public class GameManagement : MonoBehaviour
     /// </summary>
     public void RankingNameButton()
     {
-        AddRanking();
-        gameStatus.Save();
+        //AddRanking();
+        inputName.GetComponent<Text>().enabled = false;
+        rankingButton.GetComponent<Button>().enabled = false;
     }
+
+    //public void Add
 
     /// <summary>
     /// ランキングにデータを生成する
@@ -199,10 +190,9 @@ public class GameManagement : MonoBehaviour
         Ranking rank = new Ranking(nameValue, playerLifeManagement.Score, timer);
         gameStatus.rankings.Add(rank);
         gameStatus.rankings.Sort((a, b) => b.Score - a.Score);
-
-        inputName.GetComponent<Text>().enabled = false;
-        rankingButton.GetComponent<Button>().enabled = false;
     }
+
+    
 
     /// <summary>
     /// ゲームオーバー実行
@@ -215,10 +205,6 @@ public class GameManagement : MonoBehaviour
 
         titleBackButton.SetActive(true);
 
-        resultScoreText.SetActive(false);
-
-        winUI.SetActive(false);
-
         gameOverUI.SetActive(true);
 
         resultRSButton.SetActive(true);
@@ -227,40 +213,53 @@ public class GameManagement : MonoBehaviour
 
         timerController.enabled = false;
 
+        foreach (var winResult in winResults)
+        {
+            winResult.SetActive(false);
+        }
+
         enemys = GameObject.FindGameObjectsWithTag("Enemy");
 
         foreach (var enemy in enemys)
         {
-            enemy.GetComponent<EnemyRoundTripAct>().enabled = false; // Enemyのコンポーネントを止める。
+            // Enemyのコンポーネントを止める。
+            enemy.GetComponent<EnemyRoundTripAct>().enabled = false;
         }
 
         enemys = GameObject.FindGameObjectsWithTag("Enemy2");
 
         foreach (var enemy in enemys)
         {
-            enemy.GetComponent<LoopMoveEnemy>().enabled = false; // Enemyのコンポーネントを止める。
+            // Enemyのコンポーネントを止める。
+            enemy.GetComponent<LoopMoveEnemy>().enabled = false;
         }
 
         enemys = GameObject.FindGameObjectsWithTag("Enemy3");
 
         foreach (var enemy in enemys)
         {
-            enemy.GetComponent<EnemyDownMove>().enabled = false; // Enemyのコンポーネントを止める。
-            Destroy(enemy.GetComponent<Rigidbody2D>());// EnemyのRigidbodyを止める。
+            // Enemyのコンポーネントを止める。
+            enemy.GetComponent<EnemyDownMove>().enabled = false;
+            // EnemyのRigidbodyを止める。
+            Destroy(enemy.GetComponent<Rigidbody2D>());  
         }
 
         warps = GameObject.FindGameObjectsWithTag("Warp");
         foreach (var warp in warps)
         {
-            warp.SetActive(false); // Warpを止める。
+            // Warpを止める。
+            warp.SetActive(false);
         }
 
         downLifts = GameObject.FindGameObjectsWithTag("Lift");
 
         foreach (var downLift in downLifts)
         {
-            downLift.GetComponent<LiftDownMove>().enabled = false; // Liftのコンポーネントを止める。
-            Destroy(downLift.GetComponent<Rigidbody2D>()); // LiftのRigidbodyを止める。
+            // Liftのコンポーネントを止める。
+            downLift.GetComponent<LiftDownMove>().enabled = false;
+
+            // LiftのRigidbodyを止める。
+            Destroy(downLift.GetComponent<Rigidbody2D>());
         }
 
         scoreUI.SetActive(false);
@@ -279,13 +278,9 @@ public class GameManagement : MonoBehaviour
 
         titleBackButton.SetActive(true);
 
-        resultScoreText.SetActive(true);
-
-        winUI.SetActive(true);
+        resultRSButton.SetActive(true);
 
         gameOverUI.SetActive(false);
-
-        resultRSButton.SetActive(true);
 
         buttonController.SetActive(false);
 
@@ -295,32 +290,44 @@ public class GameManagement : MonoBehaviour
 
         timerController.enabled = false;
 
+
+        foreach (var winResult in winResults)
+        {
+            winResult.SetActive(true);
+        }
+
         enemys = GameObject.FindGameObjectsWithTag("Enemy");
 
         foreach (var enemy in enemys)
         {
-            enemy.GetComponent<EnemyRoundTripAct>().enabled = false; // Enemyのコンポーネントを止める。
+            // Enemyのコンポーネントを止める。
+            enemy.GetComponent<EnemyRoundTripAct>().enabled = false;
         }
 
         enemys = GameObject.FindGameObjectsWithTag("Enemy2");
 
         foreach (var enemy in enemys)
         {
-            enemy.GetComponent<LoopMoveEnemy>().enabled = false; // Enemyのコンポーネントを止める。
+            // Enemyのコンポーネントを止める。
+            enemy.GetComponent<LoopMoveEnemy>().enabled = false;
         }
 
         warps = GameObject.FindGameObjectsWithTag("Warp");
         foreach (var warp in warps)
         {
-            warp.SetActive(false); // Warpのコンポーネントを止める。
+            // Warpのコンポーネントを止める。
+            warp.SetActive(false);
         }
 
         downLifts = GameObject.FindGameObjectsWithTag("Lift");
 
         foreach (var downLift in downLifts)
         {
-            downLift.GetComponent<LiftDownMove>().enabled = false; // Liftのコンポーネントを止める。
-            Destroy(downLift.GetComponent<Rigidbody2D>()); // Liftのコンポーネントを止める。
+            // Liftのコンポーネントを止める。
+            downLift.GetComponent<LiftDownMove>().enabled = false;
+
+            // Liftのコンポーネントを止める。
+            Destroy(downLift.GetComponent<Rigidbody2D>());
         }
 
         resultGameScoreText.text = "Score: " + playerLifeManagement.Score.ToString();

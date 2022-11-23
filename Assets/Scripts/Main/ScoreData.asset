@@ -13,34 +13,4 @@ MonoBehaviour:
   m_Name: ScoreData
   m_EditorClassIdentifier: 
   Score: 10
-  rankings:
-  - name: "\u533F\u540D"
-    score: 11
-    timer: 02:51
-  - name: "\u533F\u540D"
-    score: 11
-    timer: 02:51
-  - name: "\u533F\u540D"
-    score: 11
-    timer: 02:51
-  - name: "\u533F\u540D"
-    score: 11
-    timer: 02:51
-  - name: "\u533F\u540D"
-    score: 11
-    timer: 02:51
-  - name: "\u533F\u540D"
-    score: 11
-    timer: 02:51
-  - name: "\u533F\u540D"
-    score: 11
-    timer: 02:51
-  - name: "\u533F\u540D"
-    score: 11
-    timer: 02:51
-  - name: "\u533F\u540D"
-    score: 11
-    timer: 02:51
-  - name: "\u533F\u540D"
-    score: 11
-    timer: 02:51
+  rankings: []

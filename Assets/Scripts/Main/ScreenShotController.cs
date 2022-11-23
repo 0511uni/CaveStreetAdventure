@@ -22,6 +22,7 @@ public class ScreenShotController : MonoBehaviour
             canvasAll.SetActive(false);
         }
         waterMark.SetActive(true);
+
         // スクリーンショットをギャラリーに保存
         StartCoroutine(TakeScreenshotAndSave());
     }

@@ -2536,12 +2536,13 @@ MonoBehaviour:
   - {fileID: 474704473}
   - {fileID: 1689506605}
   - {fileID: 665955988}
-  winUI: {fileID: 507293923}
+  winResults:
+  - {fileID: 973439082}
+  - {fileID: 507293923}
   gameOverUI: {fileID: 1465663345}
   rankingButton: {fileID: 629972812}
   resultGameScoreText: {fileID: 735420301}
   resultGamehighScoreText: {fileID: 162020059}
-  resultScoreText: {fileID: 973439082}
   gameStatus: {fileID: 11400000, guid: 7596a03b4de9c9440aceea3798abb451, type: 2}
   playerLifeManagement: {fileID: 1502327123}
   resultTimer: {fileID: 753169941}
@@ -31569,7 +31570,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1502327116}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2, y: 8, z: 0}
+  m_LocalPosition: {x: 76.81, y: 7.68, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
