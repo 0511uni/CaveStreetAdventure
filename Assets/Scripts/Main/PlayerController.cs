@@ -32,6 +32,11 @@ public class PlayerController : MonoBehaviour
     /// </summary>
     public void LButtonDown()
     {
+        LeftMove();
+    }
+
+    void LeftMove()
+    {
         //rbody.AddForce(-transform.right * speed);
         rbody.MovePosition(transform.position + Vector3.left);
 
@@ -43,6 +48,11 @@ public class PlayerController : MonoBehaviour
     /// </summary>
     public void RButtonDown()
     {
+        RightMove();
+    }
+
+    void RightMove()
+    {
         //rbody.AddForce(transform.right * speed);
         //ransform.Translate(1, 0, 0);
         rbody.MovePosition(transform.position + Vector3.right);
@@ -53,6 +63,11 @@ public class PlayerController : MonoBehaviour
     /// ジャンプ（上）ボタンコントローラー
     /// </summary>
     public void UButtonDown()
+    {
+        Jump();
+    }
+
+    void Jump()
     {
         rbody.AddForce(transform.up * speed);
 
@@ -72,6 +87,11 @@ public class PlayerController : MonoBehaviour
     /// </summary>
     public void DButtonDown()
     {
+        DownMove();
+    }
+
+    void DownMove()
+    {
         rbody.MovePosition(transform.position + Vector3.down);
         //rbody.AddForce(-transform.up * speed);
     }
@@ -85,10 +105,29 @@ public class PlayerController : MonoBehaviour
         rbody = GetComponent<Rigidbody2D>();
     }
 
-    //void Update()
-    //{
-    //    rbody.velocity *= 0.98f;
-    //}
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.D))
+        {
+            Debug.Log("Dkey");
+            RightMove();
+        }
+        else if (Input.GetKeyDown(KeyCode.A))
+        {
+            Debug.Log("Akey");
+            LeftMove();
+        }
+        else if (Input.GetKeyDown(KeyCode.W))
+        {
+            Debug.Log("Wkey");
+            Jump();
+        }
+        else if (Input.GetKeyDown(KeyCode.S))
+        {
+            Debug.Log("SKey");
+            DownMove();
+        }
+    }
 
     void FixedUpdate()
     {

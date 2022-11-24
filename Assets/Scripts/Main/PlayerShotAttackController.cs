@@ -43,6 +43,12 @@ public class PlayerShotAttackController : MonoBehaviour
 
     public void SButtonDown()
     {
+        ShotControl();
+
+    }
+
+    void ShotControl()
+    {
         //Instantiate(shot, shotSpawn.position, shotSpawn.rotation);
         //GetComponent<AudioSource>().Play();
         //Instantiate(getItem, new Vector3(-1.0f, 0.0f, 0.0f), Quaternion.identity);
@@ -69,8 +75,6 @@ public class PlayerShotAttackController : MonoBehaviour
         //{
         //    return;
         //}
-
-
     }
 
     void ShotInstantiate(int shotNum)
@@ -99,11 +103,15 @@ public class PlayerShotAttackController : MonoBehaviour
     //    }
     //}
 
-    //void Update()
-    //{
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            ShotControl();
+        }
     //    foreach (Transform shotSpawn in shotSpawn)
     //    {
     //        Instantiate(shot, shotSpawn.position, shotSpawn.rotation);
     //    }
-    //}
+    }
 }
