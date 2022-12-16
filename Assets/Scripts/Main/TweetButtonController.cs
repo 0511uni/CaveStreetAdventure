@@ -46,14 +46,14 @@ public class TweetButtonController : MonoBehaviour
                 text = $"{nameValue}さんの今回の記録は『{scoreText}』点でした! \n" +
             $"ハイスコアーは、{nameValue}さんの『{scoreText}』点です \n" +
             $"挑戦者求む!!\n"
-        + "https://www.google.com/‎\n";
+        + "https://merenge.itch.io/cavestreetadventure‎\n";
             }
             else
             {
                 text = $"{nameValue}さんの今回の記録は『{scoreText}』点でした! \n" +
             $"ハイスコアーは、{ranking.Name}さんの『{ranking.Score}』点です \n" +
             $"挑戦者求む!!\n"
-        + "https://www.google.com/‎\n";
+        + "https://merenge.itch.io/cavestreetadventure‎\n";
             }
         }
         else
@@ -61,10 +61,10 @@ public class TweetButtonController : MonoBehaviour
             text = $"{nameValue}さんの今回の記録は『{scoreText}』点でした! \n" +
             $"ハイスコアーは、{nameValue}さんの『{scoreText}』点です \n" +
             $"挑戦者求む!!\n"
-        + "https://www.google.com/‎\n";
+        + "https://merenge.itch.io/cavestreetadventure‎\n";
         }
 
-        string[] hashtags = { "2ゲーム", "Unity" };
+        string[] hashtags = { "2dゲーム", "unity" };
 
         Application.OpenURL($"https://twitter.com/intent/tweet?text={UnityWebRequest.EscapeURL(text)}&hashtags={UnityWebRequest.EscapeURL(string.Join(",", hashtags))}");
     }
